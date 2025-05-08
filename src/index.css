@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,60 +36,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -96,6 +45,374 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-balsamiq text-body;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-balsamiq font-bold text-heading;
+  }
+  
+  p {
+    @apply font-balsamiq text-body;
+  }
+  
+  small {
+    @apply font-balsamiq text-caption;
+  }
+}
+
+@layer components {
+  /* Sketchy wobbly border styles */
+  .sketch-border {
+    @apply relative;
+    border: 2px solid #000;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    transform: rotate(0.3deg);
+  }
+  
+  /* Wobbly outlines for elements */
+  .sketch-outline {
+    position: relative;
+    border: 2px solid #000;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sketchy button */
+  .sketch-btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    background: #2179FF;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-radius: 4px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    transform: rotate(-0.5deg);
+    transition: all 0.2s ease;
+  }
+  
+  .sketch-btn:hover {
+    background-color: #1a61cc; /* 10% darker */
+    transform: rotate(-0.7deg) translate(1px, 1px);
+  }
+  
+  .sketch-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .sketch-btn-disabled {
+    opacity: 0.3;
+    background: transparent;
+    border: 2px solid #000;
+    color: #000;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  
+  /* Sketchy input */
+  .sketch-input {
+    position: relative;
+    padding: 6px 10px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 4px;
+    transform: rotate(0.3deg);
+  }
+  
+  .sketch-input:focus-within {
+    border-width: 3px;
+    outline: none;
+  }
+  
+  /* Sketchy checkbox */
+  .sketch-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    display: inline-block;
+    position: relative;
+    transform: rotate(1deg);
+  }
+  
+  /* Sketchy radio */
+  .sketch-radio {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transform: rotate(1deg);
+  }
+  
+  /* Sketchy toggle */
+  .sketch-toggle {
+    width: 40px;
+    height: 20px;
+    background: #999;
+    border: 2px solid #000;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sketch-toggle::after {
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background: white;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s;
+  }
+  
+  .sketch-toggle.active {
+    background: #2179FF;
+  }
+  
+  .sketch-toggle.active::after {
+    transform: translateX(20px);
+  }
+  
+  /* Sketchy table */
+  .sketch-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .sketch-table th, .sketch-table td {
+    border-bottom: 1px solid #000;
+    padding: 6px 12px;
+    text-align: left;
+  }
+  
+  .sketch-table th {
+    font-weight: bold;
+    background: #f3f3f3;
+  }
+  
+  /* Sketchy card */
+  .sketch-card {
+    border: 2px solid #000;
+    border-radius: 4px;
+    padding: 12px;
+    background: white;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    transform: rotate(-0.3deg);
+  }
+  
+  /* Sketchy navbar */
+  .sketch-navbar {
+    background: #999;
+    border-bottom: 2px solid #000;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Sketchy tabs */
+  .sketch-tabs {
+    display: flex;
+    border-bottom: 2px solid #000;
+  }
+  
+  .sketch-tab {
+    padding: 6px 12px;
+    border: 2px solid #000;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-right: 4px;
+    transform: rotate(0.5deg);
+  }
+  
+  .sketch-tab.active {
+    background: #f3f3f3;
+    font-weight: bold;
+    transform: rotate(-0.3deg) translateY(2px);
+    z-index: 1;
+  }
+  
+  /* Sketchy breadcrumbs */
+  .sketch-breadcrumbs {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sketch-breadcrumbs-divider {
+    margin: 0 8px;
+  }
+  
+  /* Sketchy sidebar */
+  .sketch-sidebar {
+    width: 180px;
+    border-right: 2px solid #000;
+    height: 100%;
+    padding: 12px;
+  }
+  
+  .sketch-sidebar-item {
+    padding: 6px 12px;
+    margin-bottom: 6px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    display: block;
+    transform: rotate(0.2deg);
+  }
+  
+  .sketch-sidebar-item.active {
+    border-width: 2px;
+    font-weight: bold;
+    transform: rotate(-0.2deg);
+  }
+  
+  /* Sketchy toast */
+  .sketch-toast {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: #999;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 2px solid #000;
+    max-width: 300px;
+    transform: rotate(0.5deg);
+  }
+  
+  /* Sketchy loader */
+  .sketch-loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin-loader 1.5s linear infinite;
+  }
+  
+  /* Sketchy error banner */
+  .sketch-error-banner {
+    background: #ffe0e0;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sketch-error-banner::before {
+    content: "!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff0000;
+    color: white;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  /* Sketchy modal */
+  .sketch-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-0.5deg);
+    width: 480px;
+    height: 320px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    z-index: 1000;
+  }
+  
+  /* Sketchy drawer */
+  .sketch-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    border-left: 2px solid #000;
+    padding: 16px;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sketch-drawer.open {
+    transform: translateX(0);
+  }
+  
+  /* Sketchy sticky note */
+  .sketch-sticky-note {
+    width: 90px;
+    height: 90px;
+    background: #ffff99;
+    padding: 8px;
+    transform: rotate(3deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .sketch-sticky-note::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 15px 15px;
+    border-color: transparent transparent #ffcc66 transparent;
+  }
+  
+  /* Breakline rectangle with zigzag */
+  .sketch-breakline {
+    height: 10px;
+    width: 100%;
+    background-image: linear-gradient(45deg, transparent 48%, #000 49%, #000 51%, transparent 52%);
+    background-size: 10px 10px;
+    margin: 16px 0;
+    opacity: 0.5;
+  }
+  
+  /* Placeholder text */
+  .sketch-placeholder {
+    position: relative;
+    height: 14px;
+    background: #e5e5e5;
+    margin: 5px 0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .sketch-placeholder::after {
+    content: "~~~";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #999;
+    overflow: hidden;
   }
 }

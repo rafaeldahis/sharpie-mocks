@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Add our marker-style specific colors
+				sketch: {
+					black: '#000',
+					midGrey: '#999',
+					accentBlue: '#2179FF',
+					disabled: 'rgba(153, 153, 153, 0.3)', // 30% opacity grey
+					hover: '#f3f3f3'
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'spin-loader': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'spin-loader': 'spin-loader 1.5s linear infinite'
+			},
+			fontFamily: {
+				'balsamiq': ['Balsamiq Sans', 'cursive']
+			},
+			fontSize: {
+				'heading': '18px',
+				'body': '14px',
+				'caption': '12px',
+				'large-metric': '28px'
+			},
+			spacing: {
+				'marker-sm': '12px',  // Basic rhythm
+				'marker-md': '24px',  // Logical sections
 			}
 		}
 	},
