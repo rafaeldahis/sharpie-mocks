@@ -13,21 +13,31 @@ const Index = () => {
       </div>
       
       {/* AI Prototyping Instructions */}
-      <div className="mb-12 p-4 sketch-card">
+      <div className="mb-12 p-4 sketch-card bg-[#F6F6F7]">
         <h2 className="text-2xl font-bold marker-heading mb-4">Using with AI Prototyping Tools</h2>
         <div className="space-y-4">
           <p className="marker-text">
-            To use these sketch-style components with AI prototyping tools, follow these simple steps:
+            Generate sketch-style interfaces by using natural language prompts with AI prototyping tools:
           </p>
-          <ol className="list-decimal pl-6 space-y-2 marker-text">
-            <li>Import the marker styles CSS: <code className="bg-gray-100 px-1 py-0.5">import '@/styles/marker-styles.css'</code></li>
-            <li>Use the component classes with your HTML elements: <code className="bg-gray-100 px-1 py-0.5">{"<button className='sketch-btn'>Click Me</button>"}</code></li>
-            <li>Or import the React components: <code className="bg-gray-100 px-1 py-0.5">import {'{ SketchButton }'} from '@/components/marker'</code></li>
-            <li>Combine with Tailwind for layout and additional styling</li>
-          </ol>
-          <p className="marker-text mt-4">
-            This design system adds a fun, hand-drawn aesthetic to your interfaces that works great with AI-generated prototypes!
-          </p>
+          <div className="space-y-4 marker-text">
+            <div className="p-3 bg-white rounded-md border border-gray-200">
+              <p className="font-bold">Example prompts you can use:</p>
+              <ul className="list-disc pl-6 space-y-2 mt-2">
+                <li>"Create a playful sign-up form with hand-drawn sketch buttons and inputs"</li>
+                <li>"Design a dashboard with sketch-style cards and wobbly borders"</li>
+                <li>"Show me a sketch-style navigation with tabs and a hand-drawn logo"</li>
+              </ul>
+            </div>
+            <p>To integrate the components in your code:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Include styles: <code className="bg-white px-1 py-0.5">import '@/styles/marker-styles.css'</code></li>
+              <li>Use utility classes: <code className="bg-white px-1 py-0.5">className="sketch-btn sketch-card marker-text"</code></li>
+              <li>Or import components: <code className="bg-white px-1 py-0.5">import {'{ SketchButton, SketchCard }'} from '@/components/marker'</code></li>
+            </ul>
+            <p className="italic mt-2">
+              This design system brings a playful, hand-drawn aesthetic that makes AI-generated interfaces feel more creative and approachable!
+            </p>
+          </div>
         </div>
       </div>
       
