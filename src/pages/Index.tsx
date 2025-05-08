@@ -17,7 +17,7 @@ const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   return (
-    <div className="min-h-screen bg-gray-50 font-balsamiq">
+    <div className="min-h-screen bg-gray-50 font-comic">
       {/* Header with title */}
       <header className="bg-white border-b-2 border-black py-4 mb-8">
         <div className="container mx-auto">
@@ -33,11 +33,11 @@ const Index = () => {
           <div className="mb-marker-md sketch-card">
             <h3 className="mb-marker-sm">1.1 Typography</h3>
             <div className="mb-marker-sm">
-              <h4 className="text-heading font-bold mb-1">Heading (18pt, Balsamiq Sans Bold)</h4>
-              <p className="text-body mb-1">Body Text (14pt, Balsamiq Sans Regular)</p>
-              <small className="text-caption">Caption Text (12pt, Balsamiq Sans Regular)</small>
+              <h4 className="text-heading font-bold mb-1">Heading (18pt, Comic Sans MS Bold)</h4>
+              <p className="text-body mb-1">Body Text (14pt, Comic Sans MS Regular)</p>
+              <small className="text-caption">Caption Text (12pt, Comic Sans MS Regular)</small>
             </div>
-            <div className="font-bold mt-marker-sm">Google Fonts: Balsamiq Sans</div>
+            <div className="font-bold mt-marker-sm">Google Fonts: Comic Sans MS</div>
           </div>
           
           {/* 1.2 Colors & Strokes */}
@@ -212,7 +212,7 @@ const Index = () => {
                 <div className="flex items-center">
                   <div className="sketch-radio mr-2 relative">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-black rounded-full scale-25"></div>
+                      <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
                     </div>
                   </div>
                   <span>Selected</span>
@@ -351,10 +351,10 @@ const Index = () => {
               <div className="flex-1">
                 <div className="sketch-outline p-4">
                   <div className="h-40 flex items-center justify-center">
-                    <div className="relative w-32 h-32">
-                      <div className="absolute inset-0 bg-sketch-midGrey border border-black" style={{ clipPath: 'polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%)' }}></div>
-                      <div className="absolute inset-0 bg-sketch-accentBlue border border-black" style={{ clipPath: 'polygon(50% 50%, 50% 0%, 0% 0%, 0% 70%)' }}></div>
-                      <div className="absolute inset-0 bg-gray-300 border border-black" style={{ clipPath: 'polygon(50% 50%, 0% 70%, 0% 100%, 50% 100%)' }}></div>
+                    <div className="relative w-32 h-32 rounded-full">
+                      <div className="absolute inset-0 bg-sketch-midGrey border border-black rounded-full" style={{ clipPath: 'polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%)' }}></div>
+                      <div className="absolute inset-0 bg-sketch-accentBlue border border-black rounded-full" style={{ clipPath: 'polygon(50% 50%, 50% 0%, 0% 0%, 0% 70%)' }}></div>
+                      <div className="absolute inset-0 bg-gray-300 border border-black rounded-full" style={{ clipPath: 'polygon(50% 50%, 0% 70%, 0% 100%, 50% 100%)' }}></div>
                     </div>
                   </div>
                   <div className="mt-2 text-center">Pie Chart</div>
@@ -521,21 +521,6 @@ const Index = () => {
         <section className="mb-marker-md">
           <h2 className="mb-marker-sm">7. Annotation Conventions</h2>
           
-          {/* Sticky Note */}
-          <div className="mb-marker-md sketch-card">
-            <h3 className="mb-marker-sm">Sticky Notes</h3>
-            <div className="relative p-12">
-              <div className="sketch-placeholder w-full h-20 mb-1"></div>
-              <div className="sketch-sticky-note absolute top-0 right-0">
-                <span className="text-xs">Reviewer comment goes here</span>
-              </div>
-              <div className="absolute top-12 right-12 border-t-2 border-r-2 border-black w-12 h-12 transform -rotate-45"></div>
-            </div>
-            <div className="mt-2 text-sm">
-              Sticky-note = yellow square 90 × 90 px with folded corner; use for reviewer comments
-            </div>
-          </div>
-          
           {/* Scribble-Lorem */}
           <div className="mb-marker-md sketch-card">
             <h3 className="mb-marker-sm">Scribble-Lorem</h3>
@@ -612,7 +597,7 @@ const Index = () => {
       
       <footer className="bg-sketch-midGrey border-t-2 border-black py-4 mt-8">
         <div className="container mx-auto text-center text-white">
-          <p>Marker-Style UI Guide - Balsamiq Sans - 2024</p>
+          <p>Marker-Style UI Guide - Comic Sans MS - 2024</p>
         </div>
       </footer>
     </div>
@@ -620,3 +605,4 @@ const Index = () => {
 };
 
 export default Index;
+
