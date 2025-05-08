@@ -9,3 +9,6 @@ export { default as SketchToggle } from './SketchToggle';
 export { default as SketchPieChart } from './SketchPieChart';
 export { default as SketchTable } from './SketchTable';
 export { default as SketchLoader } from './SketchLoader';
+export { default as SketchPagination } from './SketchPagination';
+export { default as SketchTooltip } from './SketchTooltip';
+export { default as SketchIconography } from './SketchIconography';

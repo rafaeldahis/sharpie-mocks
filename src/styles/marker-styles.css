@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
 
 /* Base marker styles */
@@ -434,4 +435,199 @@
   align-items: center;
   color: #999;
   overflow: hidden;
+}
+
+/* NEW STYLES BELOW */
+
+/* Sketchy Pagination */
+.sketch-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.sketch-pagination-pages {
+  display: flex;
+  align-items: center;
+}
+
+.sketch-pagination-item {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin: 0 4px;
+  background: white;
+  font-weight: bold;
+  transform: rotate(0.5deg);
+  transition: all 0.2s ease;
+}
+
+.sketch-pagination-item:hover {
+  background-color: #f3f3f3;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-pagination-item.active {
+  background-color: #2179FF;
+  color: white;
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sketch-pagination-arrow {
+  padding: 6px 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: white;
+  transform: rotate(-0.5deg);
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.sketch-pagination-arrow:hover {
+  background-color: #f3f3f3;
+  transform: rotate(0.5deg);
+}
+
+.sketch-pagination-arrow.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.sketch-pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Sketchy Tooltips */
+.sketch-tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sketch-tooltip {
+  position: absolute;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid #000;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 14px;
+  max-width: 200px;
+  text-align: center;
+  z-index: 1000;
+  transform: rotate(-0.5deg);
+  white-space: nowrap;
+}
+
+.sketch-tooltip::after {
+  content: '';
+  position: absolute;
+  border: 8px solid transparent;
+}
+
+.sketch-tooltip-top::after {
+  border-top-color: #000;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sketch-tooltip-right::after {
+  border-right-color: #000;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sketch-tooltip-bottom::after {
+  border-bottom-color: #000;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sketch-tooltip-left::after {
+  border-left-color: #000;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Sketchy Icons */
+.sketch-icon {
+  display: inline-flex;
+  position: relative;
+}
+
+.sketch-icon-svg {
+  transform: rotate(0.5deg);
+  filter: url('#sketch-filter');
+}
+
+/* Sketchy Grid System */
+.sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 8px;
+  border: 2px dashed #000;
+  margin: 8px 0;
+}
+
+.sketch-grid-item {
+  height: 40px;
+  background: #f3f3f3;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+/* Add SVG filter for sketchy effect */
+@media screen {
+  body:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  body:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='sketch-filter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.01' numOctaves='3' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='2' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E");
+  }
+}
+
+/* Color Palette Variables */
+:root {
+  /* Primary colors */
+  --sketch-primary: #2179FF;
+  --sketch-secondary: #FF5733;
+  --sketch-accent: #33CC66;
+  
+  /* Grayscale */
+  --sketch-black: #000000;
+  --sketch-dark-gray: #555555;
+  --sketch-mid-gray: #999999;
+  --sketch-light-gray: #f3f3f3;
+  --sketch-white: #FFFFFF;
+  
+  /* Spacing scale */
+  --sketch-space-1: 2px;
+  --sketch-space-2: 4px;  
+  --sketch-space-3: 8px;
+  --sketch-space-4: 12px;
+  --sketch-space-5: 16px;
+  --sketch-space-6: 24px;
 }

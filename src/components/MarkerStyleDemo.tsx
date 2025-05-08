@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   SketchButton,
@@ -9,7 +8,10 @@ import {
   SketchToggle,
   SketchPieChart,
   SketchTable,
-  SketchLoader
+  SketchLoader,
+  SketchPagination,
+  SketchTooltip,
+  SketchIconography
 } from './marker';
 
 const MarkerStyleDemo: React.FC = () => {
@@ -19,6 +21,7 @@ const MarkerStyleDemo: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleButtonClick = () => {
     setIsLoading(true);
@@ -241,6 +244,181 @@ const MarkerStyleDemo: React.FC = () => {
         {/* Table */}
         <SketchCard title="Table" className="mb-6">
           <SketchTable headers={tableHeaders} rows={tableRows} />
+        </SketchCard>
+
+        {/* Pagination */}
+        <SketchCard title="Pagination Controls" className="mb-6">
+          <div className="space-y-4">
+            <p>Hand-drawn pagination for multi-page content:</p>
+            <SketchPagination 
+              totalPages={5}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            />
+          </div>
+        </SketchCard>
+
+        {/* Tooltips */}
+        <SketchCard title="Tooltips" className="mb-6">
+          <div className="space-y-4">
+            <p>Hover over these elements to see tooltips:</p>
+            <div className="flex flex-wrap gap-4 items-center">
+              <SketchTooltip content="This is a button with a tooltip">
+                <SketchButton variant="primary">Hover Me</SketchButton>
+              </SketchTooltip>
+              
+              <SketchTooltip content="Information about this feature" position="top">
+                <div className="sketch-btn inline-flex items-center justify-center w-8 h-8 p-0 bg-blue-100 text-blue-500 rounded-full">
+                  i
+                </div>
+              </SketchTooltip>
+              
+              <SketchTooltip content="Click to edit this item" position="bottom">
+                <div className="sketch-btn inline-flex items-center justify-center w-8 h-8 p-0">
+                  <SketchIconography icon="edit" />
+                </div>
+              </SketchTooltip>
+            </div>
+          </div>
+        </SketchCard>
+
+        {/* Iconography */}
+        <SketchCard title="Iconography" className="mb-6">
+          <div className="space-y-4">
+            <p>Hand-drawn icon set for common actions:</p>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-4 my-4">
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="search" />
+                <span className="text-sm mt-1">Search</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="edit" />
+                <span className="text-sm mt-1">Edit</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="delete" />
+                <span className="text-sm mt-1">Delete</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="home" />
+                <span className="text-sm mt-1">Home</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="settings" />
+                <span className="text-sm mt-1">Settings</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="user" />
+                <span className="text-sm mt-1">User</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="heart" />
+                <span className="text-sm mt-1">Favorite</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="check" />
+                <span className="text-sm mt-1">Done</span>
+              </div>
+            </div>
+          </div>
+        </SketchCard>
+
+        {/* Color Palette */}
+        <SketchCard title="Color Palette" className="mb-6">
+          <div className="space-y-4">
+            <p>Design system color palette:</p>
+            
+            <h4 className="font-bold mt-3">Primary Colors</h4>
+            <div className="grid grid-cols-3 gap-2">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded sketch-border bg-[#2179FF]"></div>
+                <span className="text-xs mt-1">Primary</span>
+                <span className="text-xs">#2179FF</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded sketch-border bg-[#FF5733]"></div>
+                <span className="text-xs mt-1">Secondary</span>
+                <span className="text-xs">#FF5733</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded sketch-border bg-[#33CC66]"></div>
+                <span className="text-xs mt-1">Accent</span>
+                <span className="text-xs">#33CC66</span>
+              </div>
+            </div>
+            
+            <h4 className="font-bold mt-3">Grayscale</h4>
+            <div className="grid grid-cols-5 gap-2">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded sketch-border bg-black"></div>
+                <span className="text-xs mt-1">Black</span>
+                <span className="text-xs">#000000</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded sketch-border bg-[#555555]"></div>
+                <span className="text-xs mt-1">Dark</span>
+                <span className="text-xs">#555555</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded sketch-border bg-[#999999]"></div>
+                <span className="text-xs mt-1">Mid</span>
+                <span className="text-xs">#999999</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded sketch-border bg-[#f3f3f3]"></div>
+                <span className="text-xs mt-1">Light</span>
+                <span className="text-xs">#f3f3f3</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded sketch-border bg-white"></div>
+                <span className="text-xs mt-1">White</span>
+                <span className="text-xs">#FFFFFF</span>
+              </div>
+            </div>
+          </div>
+        </SketchCard>
+
+        {/* Grid & Spacing */}
+        <SketchCard title="Grid System & Spacing" className="mb-6">
+          <div className="space-y-4">
+            <p>Grid layout and spacing guidelines:</p>
+            
+            <h4 className="font-bold mt-3">Grid Example</h4>
+            <div className="sketch-grid mb-6">
+              <div className="sketch-grid-item"></div>
+              <div className="sketch-grid-item"></div>
+              <div className="sketch-grid-item"></div>
+              <div className="sketch-grid-item"></div>
+            </div>
+            
+            <h4 className="font-bold mt-3">Spacing Scale</h4>
+            <div className="flex flex-wrap items-end gap-2">
+              <div className="flex flex-col items-center">
+                <div className="h-2 w-2 bg-sketch-accentBlue sketch-border"></div>
+                <span className="text-xs mt-1">2px</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="h-4 w-4 bg-sketch-accentBlue sketch-border"></div>
+                <span className="text-xs mt-1">4px</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="h-6 w-6 bg-sketch-accentBlue sketch-border"></div>
+                <span className="text-xs mt-1">8px</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="h-8 w-8 bg-sketch-accentBlue sketch-border"></div>
+                <span className="text-xs mt-1">12px</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="h-12 w-12 bg-sketch-accentBlue sketch-border"></div>
+                <span className="text-xs mt-1">16px</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="h-16 w-16 bg-sketch-accentBlue sketch-border"></div>
+                <span className="text-xs mt-1">24px</span>
+              </div>
+            </div>
+          </div>
         </SketchCard>
 
         {/* Modals & Drawers */}
