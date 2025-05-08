@@ -17,15 +17,24 @@ const Index = () => {
         <h2 className="text-2xl font-bold marker-heading mb-4">Using with AI Prototyping Tools</h2>
         <div className="space-y-4">
           <p className="marker-text">
-            Create sketch-style interfaces by asking your AI prototyping tool to:
+            To add these sketch-style elements to your project in any AI prototyping tool:
           </p>
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200">
-              <p className="font-bold">Simply tell your AI tool:</p>
-              <p className="mt-2 italic">"Add a sketch-style design to this interface with hand-drawn elements, comic fonts, and wobbly borders."</p>
+              <p className="font-bold">Copy the CSS styles:</p>
+              <ol className="list-decimal pl-6 mt-2">
+                <li>Ask your AI tool to "Copy the CSS styles for marker/sketch styles from this page"</li>
+                <li>Then say: "Apply these sketch styles to my UI components"</li>
+                <li>Or try: "Create a hand-drawn version of my interface using these sketch styles"</li>
+              </ol>
             </div>
             
-            <p className="italic mt-2">
+            <div className="p-3 bg-white rounded-md border border-gray-200 mt-2">
+              <p className="font-bold">Quick implementation:</p>
+              <p className="mt-2 italic">"Add these marker-style CSS classes to my project and create a hand-drawn sketch interface with wobbly borders and Comic Sans font"</p>
+            </div>
+            
+            <p className="italic mt-4">
               This design system brings a playful, hand-drawn aesthetic that makes interfaces feel more creative and approachable!
             </p>
           </div>
