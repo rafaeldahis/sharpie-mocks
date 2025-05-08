@@ -105,7 +105,7 @@ export default {
 				'spin-loader': 'spin-loader 1.5s linear infinite'
 			},
 			fontFamily: {
-				'balsamiq': ['Balsamiq Sans', 'cursive']
+				'comic': ['"Comic Sans MS"', 'cursive']
 			},
 			fontSize: {
 				'heading': '18px',

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -45,20 +45,20 @@
   }
 
   body {
-    @apply bg-background text-foreground font-balsamiq text-body;
+    @apply bg-background text-foreground font-comic text-body;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-balsamiq font-bold text-heading;
+    @apply font-comic font-bold text-heading;
   }
   
   p {
-    @apply font-balsamiq text-body;
+    @apply font-comic text-body;
   }
   
   small {
-    @apply font-balsamiq text-caption;
+    @apply font-comic text-caption;
   }
 }
 
