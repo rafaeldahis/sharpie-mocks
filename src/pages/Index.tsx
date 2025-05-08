@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="text-center mb-10">
-        <h1 className="text-5xl md:text-6xl font-comic marker-heading font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-sketch-accentBlue text-white">
+        <h1 className="text-5xl md:text-6xl font-comic marker-heading font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-[#FEF7CD] text-black">
           Sharpie Mocks
         </h1>
         <p className="text-xl mt-4 font-comic">A sketch-style design system for playful interfaces</p>
