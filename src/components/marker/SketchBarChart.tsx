@@ -21,9 +21,6 @@ const SketchBarChart: React.FC<SketchBarChartProps> = ({
 }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   
-  // Find the maximum value in the data for scaling
-  const maxValue = Math.max(...data.map(item => item.value));
-  
   // Generate random values if data is empty
   const displayData = data.length > 0 ? data : [
     { label: 'Jan', value: Math.floor(Math.random() * 80) + 20, color: '#FF5733' },
