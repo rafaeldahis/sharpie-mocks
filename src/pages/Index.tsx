@@ -9,7 +9,7 @@ const Index = () => {
         <h1 className="text-5xl md:text-6xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-[#FFFF00] text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
           Sharpie Mocks
         </h1>
-        <p className="text-xl mt-4 font-comic">A complete sketch-style design system for playful interfaces</p>
+        <p className="text-xl mt-4 font-comic">A complete sketch-style design system to communicate product ideas</p>
         
         <div className="flex items-center justify-center gap-2 mt-4 font-comic">
           <a 
@@ -74,10 +74,6 @@ const Index = () => {
               <p className="font-bold">Quick implementation:</p>
               <p className="mt-2 italic">"Add these marker-style CSS classes to my project and create a hand-drawn sketch interface with wobbly borders and Comic Sans font"</p>
             </div>
-            
-            <p className="italic mt-4">
-              This design system brings a playful, hand-drawn aesthetic that makes interfaces feel more creative and approachable!
-            </p>
           </div>
         </div>
       </div>
