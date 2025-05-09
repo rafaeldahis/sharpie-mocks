@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Copy } from "lucide-react";
 
 const Index = () => {
   const [api, setApi] = useState<any>(null);
@@ -101,9 +102,12 @@ const Index = () => {
           </p>
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
-              <p>
-                Copy and paste this exact string: <span className="font-medium text-blue-600">"Apply the sketch CSS styles from this file (link: https://github.com/rafaeldahis/sharpie-mocks/blob/main/src/styles/marker-styles.css) to create a hand-drawn UI with wobbly elements and marker aesthetics"</span>
-              </p>
+              <div className="flex items-center gap-2">
+                <Copy className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" />
+                <p>
+                  <span className="font-medium text-blue-600">"Apply the sketch CSS styles from this file (link: https://github.com/rafaeldahis/sharpie-mocks/blob/main/src/styles/marker-styles.css) to create a hand-drawn UI with wobbly elements and marker aesthetics"</span>
+                </p>
+              </div>
             </div>
             
             <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
