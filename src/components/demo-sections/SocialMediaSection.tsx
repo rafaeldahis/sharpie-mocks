@@ -11,7 +11,7 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
   const [rating, setRating] = useState(0);
 
   return (
-    <SketchCard title="Social Media" className="mb-6 col-span-1 md:col-span-2">
+    <SketchCard title="Social Media" className="mb-6">
       <div className="space-y-8">
         {/* Post Card */}
         <div>
