@@ -66,18 +66,7 @@ const Index = () => {
     copyToClipboard(markerStylesCSS);
   };
 
-  const fontSetupCode = `<!-- Preconnect to Google Fonts for better performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Load fonts with display=swap parameter for better rendering -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&display=swap">`;
-
-  const copyFontSetup = () => {
-    copyToClipboard(fontSetupCode);
-  };
-
-  const instructionText = "Apply the sketch CSS styles attached to create a hand-drawn UI with wobbly elements and marker aesthetics";
+  const instructionText = "Apply the sketch CSS styles attached to create a hand-drawn UI with wobbly elements and marker aesthetics. Check the fonts used and make sure your HTML header tag preconnecs and loads them.";
 
   console.log("Index component about to render JSX");
 
@@ -149,23 +138,6 @@ const Index = () => {
                 </p>
               </div>
             </div>
-
-            <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.3deg">
-              <div className="flex items-center gap-2">
-                <Copy 
-                  size={24}
-                  className="cursor-pointer text-gray-500 hover:text-blue-600" 
-                  onClick={copyFontSetup}
-                  aria-label="Copy font setup HTML"
-                />
-                <div className="text-black">
-                  <span className="font-medium">2 - Copy these font tags for your HTML head:</span>
-                  <pre className="mt-2 bg-gray-50 p-2 rounded-sm text-sm overflow-x-auto">
-                    {fontSetupCode}
-                  </pre>
-                </div>
-              </div>
-            </div>
             
             <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
               <div className="flex items-center gap-2">
@@ -176,7 +148,7 @@ const Index = () => {
                   aria-label="Copy instruction text"
                 />
                 <p className="text-black">
-                  <span className="font-medium">3 - Add to your prompt: "{instructionText}"</span>
+                  <span className="font-medium">2 - Add to your prompt: "{instructionText}"</span>
                 </p>
               </div>
             </div>
