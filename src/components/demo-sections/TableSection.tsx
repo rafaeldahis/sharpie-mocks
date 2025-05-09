@@ -41,24 +41,12 @@ const TableSection: React.FC<TableSectionProps> = ({ tableHeaders, tableRows }) 
 
   return (
     <SketchCard title="Table" className="mb-6">
-      <div className="space-y-6">
-        {/* Original simple table */}
-        <div className="mb-4">
-          <h3 className="text-lg font-medium mb-2">Basic Table</h3>
-          <SketchTable headers={tableHeaders} rows={tableRows} />
-        </div>
-        
-        {/* Enhanced table with status and actions */}
-        <div>
-          <h3 className="text-lg font-medium mb-2">Enhanced Table with Status & Actions</h3>
-          <SketchTable 
-            headers={enhancedHeaders} 
-            rows={enhancedTableData} 
-            showStatus={true}
-            showActions={true}
-          />
-        </div>
-      </div>
+      <SketchTable 
+        headers={enhancedHeaders} 
+        rows={enhancedTableData} 
+        showStatus={true}
+        showActions={true}
+      />
     </SketchCard>
   );
 };
