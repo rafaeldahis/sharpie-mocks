@@ -49,7 +49,7 @@ const Index = () => {
         <div className="absolute inset-0 -z-10" style={{
           border: '2.5px solid black',
           borderRadius: '8px',
-          transform: 'rotate(-0.5deg)',
+          transform: 'rotate(-0.7deg)',
           background: '#F6F6F7',
           boxShadow: '2px 2px 0px rgba(0,0,0,0.1)',
           clipPath: "polygon(1% 5%, 3% 1%, 7% 3%, 15% 0%, 25% 2%, 35% 1%, 45% 0%, 55% 2%, 65% 3%, 75% 1%, 85% 2%, 95% 1%, 99% 4%, 98% 15%, 100% 25%, 99% 35%, 100% 45%, 99% 55%, 98% 65%, 100% 75%, 98% 85%, 99% 95%, 95% 97%, 85% 99%, 75% 98%, 65% 100%, 55% 99%, 45% 100%, 35% 98%, 25% 99%, 15% 97%, 5% 98%, 1% 95%)",
@@ -61,7 +61,7 @@ const Index = () => {
             To add these sketch-style elements to your project in any AI prototyping tool:
           </p>
           <div className="space-y-4 marker-text">
-            <div className="p-3 bg-white rounded-md border border-gray-200">
+            <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <p className="font-bold">Copy the CSS styles:</p>
               <ol className="list-decimal pl-6 mt-2">
                 <li>Ask your AI tool to "Copy the CSS styles for marker/sketch styles from this page"</li>
@@ -70,7 +70,7 @@ const Index = () => {
               </ol>
             </div>
             
-            <div className="p-3 bg-white rounded-md border border-gray-200 mt-2">
+            <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
               <p className="font-bold">Quick implementation:</p>
               <p className="mt-2 italic">"Add these marker-style CSS classes to my project and create a hand-drawn sketch interface with wobbly borders and Comic Sans font"</p>
             </div>

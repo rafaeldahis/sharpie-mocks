@@ -26,7 +26,7 @@
   border: 2px solid #000;
   border-radius: 4px;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-  transform: rotate(0.3deg);
+  transform: rotate(-0.5deg);
 }
 
 /* Wobbly outlines for elements */
@@ -35,6 +35,7 @@
   border: 2px solid #000;
   border-radius: 4px;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  transform: rotate(0.3deg);
 }
 
 /* Sketchy button */
@@ -49,17 +50,17 @@
   border: 2px solid #000;
   border-radius: 4px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
-  transform: rotate(-0.5deg);
+  transform: rotate(-0.7deg);
   transition: all 0.2s ease;
 }
 
 .sketch-btn:hover {
   background-color: #1a61cc; /* 10% darker */
-  transform: rotate(-0.7deg) translate(1px, 1px);
+  transform: rotate(-1deg) translate(1px, 1px);
 }
 
 .sketch-btn:active {
-  transform: translate(2px, 2px);
+  transform: translate(2px, 2px) rotate(-0.7deg);
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -70,6 +71,7 @@
   color: #000;
   box-shadow: none;
   cursor: not-allowed;
+  transform: rotate(0.5deg);
 }
 
 /* Sketchy input */
@@ -85,6 +87,7 @@
 .sketch-input:focus-within {
   border-width: 3px;
   outline: none;
+  transform: rotate(-0.3deg);
 }
 
 /* Sketchy checkbox */
@@ -129,6 +132,7 @@
   border-radius: 20px;
   position: relative;
   display: inline-block;
+  transform: rotate(-0.5deg);
 }
 
 .sketch-toggle::after {
@@ -157,6 +161,7 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+  transform: rotate(-0.2deg);
 }
 
 .sketch-table th, .sketch-table td {
@@ -168,6 +173,7 @@
 .sketch-table th {
   font-weight: bold;
   background: #f3f3f3;
+  transform: rotate(0.2deg);
 }
 
 /* Sketchy card */
@@ -177,7 +183,7 @@
   padding: 12px;
   background: white;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  transform: rotate(-0.3deg);
+  transform: rotate(-0.6deg);
 }
 
 /* Sketchy navbar */
@@ -188,12 +194,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transform: rotate(-0.2deg);
 }
 
 /* Sketchy tabs */
 .sketch-tabs {
   display: flex;
   border-bottom: 2px solid #000;
+  transform: rotate(-0.3deg);
 }
 
 .sketch-tab {
@@ -202,7 +210,7 @@
   border-bottom: none;
   border-radius: 4px 4px 0 0;
   margin-right: 4px;
-  transform: rotate(0.5deg);
+  transform: rotate(0.7deg);
 }
 
 /* Sketchy tab styling for shadcn UI tabs */
@@ -210,7 +218,7 @@
   border: 2px solid #000;
   border-radius: 4px 4px 0 0;
   margin-right: 4px;
-  transform: rotate(0.5deg);
+  transform: rotate(0.7deg);
   font-family: 'Playpen Sans', cursive;
   background: white;
 }
@@ -218,7 +226,7 @@
 .sketch-tab-trigger[data-state="active"] {
   background: #f3f3f3;
   font-weight: bold;
-  transform: rotate(-0.3deg) translateY(2px);
+  transform: rotate(-0.5deg) translateY(2px);
   z-index: 1;
   box-shadow: 2px 0 0 rgba(0, 0, 0, 0.1);
 }
@@ -227,6 +235,7 @@
 .sketch-breadcrumbs {
   display: flex;
   align-items: center;
+  transform: rotate(-0.3deg);
 }
 
 .sketch-breadcrumbs-divider {
@@ -239,6 +248,7 @@
   border-right: 2px solid #000;
   height: 100%;
   padding: 12px;
+  transform: rotate(-0.2deg);
 }
 
 .sketch-sidebar-item {
@@ -247,13 +257,13 @@
   border: 1px solid #000;
   border-radius: 4px;
   display: block;
-  transform: rotate(0.2deg);
+  transform: rotate(0.4deg);
 }
 
 .sketch-sidebar-item.active {
   border-width: 2px;
   font-weight: bold;
-  transform: rotate(-0.2deg);
+  transform: rotate(-0.4deg);
 }
 
 /* Sketchy toast */
@@ -267,7 +277,7 @@
   border-radius: 4px;
   border: 2px solid #000;
   max-width: 300px;
-  transform: rotate(0.5deg);
+  transform: rotate(0.8deg);
 }
 
 /* Sketchy loader */
@@ -278,6 +288,7 @@
   border-radius: 50%;
   border-top-color: transparent;
   animation: spin-loader 1.5s linear infinite;
+  transform: rotate(-0.5deg);
 }
 
 @keyframes spin-loader {
@@ -294,6 +305,7 @@
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  transform: rotate(-0.7deg);
 }
 
 .sketch-error-banner::before {
@@ -319,6 +331,7 @@
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  transform: rotate(0.5deg);
 }
 
 .sketch-warning-banner::before {
@@ -344,6 +357,7 @@
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  transform: rotate(-0.4deg);
 }
 
 .sketch-success-banner::before {
@@ -365,7 +379,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-0.5deg);
+  transform: translate(-50%, -50%) rotate(-0.8deg);
   width: 480px;
   height: 320px;
   background: white;
@@ -387,12 +401,12 @@
   border-left: 2px solid #000;
   padding: 16px;
   z-index: 999;
-  transform: translateX(100%);
+  transform: translateX(100%) rotate(-0.3deg);
   transition: transform 0.3s ease;
 }
 
 .sketch-drawer.open {
-  transform: translateX(0);
+  transform: translateX(0) rotate(-0.3deg);
 }
 
 /* Breakline rectangle with zigzag */
@@ -403,6 +417,7 @@
   background-size: 10px 10px;
   margin: 16px 0;
   opacity: 0.5;
+  transform: rotate(-0.2deg);
 }
 
 /* Pie charts should be circular */
@@ -423,6 +438,7 @@
   margin: 5px 0;
   border-radius: 2px;
   overflow: hidden;
+  transform: rotate(-0.3deg);
 }
 
 .sketch-placeholder::after {
@@ -446,6 +462,7 @@
   gap: 8px;
   margin: 16px 0;
   font-family: 'Playpen Sans', cursive;
+  transform: rotate(-0.3deg);
 }
 
 .sketch-pagination-pages {
@@ -464,7 +481,7 @@
   margin: 0 4px;
   background: white;
   font-weight: bold;
-  transform: rotate(0.5deg);
+  transform: rotate(0.7deg);
   transition: all 0.2s ease;
 }
 
@@ -527,7 +544,7 @@
   max-width: 200px;
   text-align: center;
   z-index: 1000;
-  transform: rotate(-0.5deg);
+  transform: rotate(-0.7deg);
   white-space: nowrap;
 }
 
@@ -598,6 +615,7 @@
   padding: 0.75rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
+  transform: rotate(-0.2deg);
 }
 
 .sketch-icon-item:hover {
@@ -619,6 +637,7 @@
   padding: 8px;
   border: 2px dashed #000;
   margin: 8px 0;
+  transform: rotate(-0.3deg);
 }
 
 .sketch-grid-item {
@@ -626,6 +645,7 @@
   background: #f3f3f3;
   border: 1px solid #000;
   border-radius: 4px;
+  transform: rotate(0.5deg);
 }
 
 /* Add SVG filter for sketchy effect */
