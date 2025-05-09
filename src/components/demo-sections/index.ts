@@ -1,64 +1,29 @@
 
-import TypographySection from './TypographySection';
-import ButtonsSection from './ButtonsSection';
-import FormElementsSection from './FormElementsSection';
-import LoadingStatesSection from './LoadingStatesSection';
-import ChartsSection from './ChartsSection';
-import NavigationElementsSection from './NavigationElementsSection';
-import MessagesSection from './MessagesSection';
-import TableSection from './TableSection';
-import TooltipsSection from './TooltipsSection';
-import IconographySection from './IconographySection';
-import ColorPaletteSection from './ColorPaletteSection';
-import GridSpacingSection from './GridSpacingSection';
-import ModalDrawerSection from './ModalDrawerSection';
-import BadgesTagsSection from './BadgesTagsSection';
-import DropdownSection from './DropdownSection';
-import NotificationBadgesSection from './NotificationBadgesSection';
-import ProgressSection from './ProgressSection';
-import FileUploadSection from './FileUploadSection';
-import ImageGallerySection from './ImageGallerySection';
-import TimelineSection from './TimelineSection';
-import CalendarSection from './CalendarSection';
-import SocialMediaSection from './SocialMediaSection';
-import PricingTableSection from './PricingTableSection';
-import TestimonialSection from './TestimonialSection';
-import NumericStepperSection from './NumericStepperSection';
-import FAQSection from './FAQSection';
-import PasswordFieldSection from './PasswordFieldSection';
-import AvatarSection from './AvatarSection';
-import EmptyStateSection from './EmptyStateSection';
-import MiniTrendSection from './MiniTrendSection';
-
-export {
-  TypographySection,
-  ButtonsSection,
-  FormElementsSection,
-  LoadingStatesSection,
-  ChartsSection,
-  NavigationElementsSection,
-  MessagesSection,
-  TableSection,
-  TooltipsSection,
-  IconographySection,
-  ColorPaletteSection,
-  GridSpacingSection,
-  ModalDrawerSection,
-  BadgesTagsSection,
-  DropdownSection,
-  NotificationBadgesSection,
-  ProgressSection,
-  FileUploadSection,
-  ImageGallerySection,
-  TimelineSection,
-  CalendarSection,
-  SocialMediaSection,
-  PricingTableSection,
-  TestimonialSection,
-  NumericStepperSection,
-  FAQSection,
-  PasswordFieldSection,
-  AvatarSection,
-  EmptyStateSection,
-  MiniTrendSection
-};
+export { default as TypographySection } from './TypographySection';
+export { default as ButtonsSection } from './ButtonsSection';
+export { default as FormElementsSection } from './FormElementsSection';
+export { default as LoadingStatesSection } from './LoadingStatesSection';
+export { default as NavigationElementsSection } from './NavigationElementsSection';
+export { default as MessagesSection } from './MessagesSection';
+export { default as TableSection } from './TableSection';
+export { default as IconographySection } from './IconographySection';
+export { default as ColorPaletteSection } from './ColorPaletteSection';
+export { default as GridSpacingSection } from './GridSpacingSection';
+export { default as TooltipsSection } from './TooltipsSection';
+export { default as NumericStepperSection } from './NumericStepperSection';
+export { default as ChartsSection } from './ChartsSection';
+export { default as ModalDrawerSection } from './ModalDrawerSection';
+export { default as BadgesTagsSection } from './BadgesTagsSection';
+export { default as NotificationBadgesSection } from './NotificationBadgesSection';
+export { default as ProgressSection } from './ProgressSection';
+export { default as FileUploadSection } from './FileUploadSection';
+export { default as ImageGallerySection } from './ImageGallerySection';
+export { default as TimelineSection } from './TimelineSection';
+export { default as CalendarSection } from './CalendarSection';
+export { default as SocialMediaSection } from './SocialMediaSection';
+export { default as PricingTableSection } from './PricingTableSection';
+export { default as TestimonialSection } from './TestimonialSection';
+export { default as FAQSection } from './FAQSection';
+export { default as AvatarSection } from './AvatarSection';
+export { default as EmptyStateSection } from './EmptyStateSection';
+export { default as MiniTrendSection } from './MiniTrendSection';

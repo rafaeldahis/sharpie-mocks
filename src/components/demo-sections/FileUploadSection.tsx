@@ -7,7 +7,7 @@ const FileUploadSection: React.FC = () => {
     <SketchCard title="File Upload" className="mb-6">
       <div className="space-y-4">
         <p className="mb-4 font-medium">Drag and drop file upload:</p>
-        <div className="transform rotate-0.5">
+        <div className="sketch-border bg-white p-4 transform rotate-0.5">
           <SketchFileUpload 
             accept=".jpg,.png,.pdf"
             multiple

@@ -8,7 +8,7 @@ const NotificationBadgesSection: React.FC = () => {
     <SketchCard title="Notification Badges" className="mb-6">
       <div className="space-y-4">
         <p className="mb-4 font-medium">Notification badges for different elements:</p>
-        <div className="flex space-x-8 justify-center">
+        <div className="sketch-border bg-white p-4 flex space-x-8 justify-center">
           <div className="sketch-notification-container transform rotate-1">
             <div className="sketch-notification-icon">
               <Bell size={20} />

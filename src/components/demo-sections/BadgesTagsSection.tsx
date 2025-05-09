@@ -13,7 +13,7 @@ const BadgesTagsSection: React.FC = () => {
     <SketchCard title="Badges & Tags" className="mb-6">
       <div className="mb-6">
         <p className="mb-4 font-medium">Badges:</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="sketch-border bg-white p-4 flex flex-wrap gap-3">
           <SketchBadge variant="default" className="transform rotate-1">Default</SketchBadge>
           <SketchBadge variant="primary" className="transform -rotate-0.5">Primary</SketchBadge>
           <SketchBadge variant="success" className="transform rotate-0.5">Success</SketchBadge>
@@ -24,7 +24,7 @@ const BadgesTagsSection: React.FC = () => {
       
       <div>
         <p className="mb-4 font-medium">Tags:</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="sketch-border bg-white p-4 flex flex-wrap gap-3">
           {selectedTags.map((tag, index) => (
             <SketchTag key={index} onRemove={() => removeTag(tag)} className={`transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'}`}>
               {tag}
