@@ -1,73 +1,147 @@
-# Welcome to your Lovable project
+# 🖍️ Marker Style Design System
 
-## Project info
+A playful, hand-drawn sketch-style UI kit that brings personality to web applications with a creative marker aesthetic.
 
-**URL**: https://lovable.dev/projects/abde8798-1e67-4915-976b-93ea90fd1d9a
+![Marker Style Preview](https://via.placeholder.com/800x400?text=Marker+Style+Preview)
 
-## How can I edit this code?
+## 🚀 Overview
 
-There are several ways of editing your application.
+Marker Style is a design system that provides sketch-style UI components reminiscent of hand-drawn mockups and wireframes. It's perfect for:
 
-**Use Lovable**
+- Prototypes and wireframes that maintain a sketch feel
+- Creative applications and websites targeting children or education
+- Projects that want to stand out with a playful, unique aesthetic
+- Presentations or demos that want to maintain a "work-in-progress" look
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/abde8798-1e67-4915-976b-93ea90fd1d9a) and start prompting.
+## ✨ Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Sketch-Style Components**: Buttons, inputs, cards, checkboxes and more with a hand-drawn aesthetic
+- **Wobbly Borders & Effects**: Non-uniform borders and shapes that mimic hand-drawn elements
+- **Comic Sans Font**: The quintessential casual font for maximum playfulness
+- **Hand-Drawn Iconography**: Common UI icons with a sketchy appearance
+- **Tooltip System**: Contextual information with sketch-style tooltips
+- **Pagination Controls**: Navigate through multi-page content with hand-drawn pagination
+- **Color System**: Predefined color palette specifically designed for sketch-style interfaces
+- **Grid & Spacing System**: Consistent layout tools for alignment
 
-**Use your preferred IDE**
+## 🎨 Components
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The design system includes the following components:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- `SketchButton`: Primary, secondary, and outline variants
+- `SketchInput`: Text input fields with labels
+- `SketchCheckbox`: Toggleable checkbox controls
+- `SketchRadio`: Radio button selection controls
+- `SketchCard`: Content containers with borders
+- `SketchToggle`: On/off toggle switches
+- `SketchPieChart`: Simple data visualization
+- `SketchTable`: Tabular data display
+- `SketchLoader`: Loading indicator
+- `SketchPagination`: Page navigation controls
+- `SketchTooltip`: Contextual information popovers
+- `SketchIconography`: Hand-drawn icon set
 
-Follow these steps:
+## 📋 Usage
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/marker-style-design-system.git
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Navigate to the project directory
+cd marker-style-design-system
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Using with AI Tools
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To incorporate these sketch-style elements in AI prototyping tools:
 
-**Use GitHub Codespaces**
+1. Copy the CSS styles from `src/styles/marker-styles.css`
+2. Ask your AI tool: "Apply these sketch styles to my UI components"
+3. Or direct prompt: "Create a hand-drawn version of my interface using these sketch styles"
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Integrating in Your Project
 
-## What technologies are used for this project?
+#### Method 1: Copy CSS and Components
 
-This project is built with:
+1. Copy the `marker-styles.css` file into your project
+2. Import the CSS file in your main entry point
+3. Copy the React components from the `src/components/marker` directory
+4. Use the components in your application
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```jsx
+import './path/to/marker-styles.css';
+import { SketchButton, SketchCard } from './path/to/components';
 
-## How can I deploy this project?
+function App() {
+  return (
+    <div>
+      <SketchCard title="Welcome!">
+        <p>This is my sketch-style card</p>
+        <SketchButton>Click Me!</SketchButton>
+      </SketchCard>
+    </div>
+  );
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/abde8798-1e67-4915-976b-93ea90fd1d9a) and click on Share -> Publish.
+#### Method 2: Tailwind Integration
 
-## Can I connect a custom domain to my Lovable project?
+Add these classes to your Tailwind config:
 
-Yes, you can!
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'comic': ['"Comic Sans MS"', 'cursive']
+      },
+      // other extensions from marker-tailwind-config.js
+    }
+  }
+}
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📱 Responsive Design
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+All components are responsive by default and will adapt to different screen sizes. The design system uses a flexible approach that works well on mobile, tablet, and desktop.
+
+## 🎯 Browser Support
+
+The design system works on all modern browsers:
+- Chrome
+- Firefox
+- Safari
+- Edge
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to contribute:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👏 Acknowledgments
+
+- Inspired by sketch-style wireframe aesthetics
+- Comic Sans MS font for the playful typography
+- Hand-drawn UI patterns common in whiteboard and brainstorming sessions
+
+## 🔗 Links
+
+- [Demo Site](https://lovable.dev/projects/abde8798-1e67-4915-976b-93ea90fd1d9a)
+- [Documentation](https://github.com/yourusername/marker-style-design-system/blob/main/src/docs/MarkerStyleGuide.md)
