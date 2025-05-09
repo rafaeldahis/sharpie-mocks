@@ -3,11 +3,7 @@ import React, { useState } from 'react';
 import { SketchCard, SketchSocialCard } from '../marker';
 import { Heart, MessageCircle, Share } from 'lucide-react';
 
-interface SocialMediaSectionProps {
-  renderStars: (count: number) => React.ReactNode;
-}
-
-const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) => {
+const SocialMediaSection: React.FC = () => {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(42);
 
@@ -32,7 +28,13 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
               <h3 className="font-bold text-lg">Rate this product</h3>
             </div>
             <div className="sketch-review-stars mt-3 mb-3">
-              {renderStars(4)}
+              {[1, 2, 3, 4, 5].map((star) => (
+                <button key={star} className={`sketch-rating-star ${star <= 4 ? 'active' : ''}`}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill={star <= 4 ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </button>
+              ))}
             </div>
             <div className="sketch-review-label">Your rating: 4/5 stars</div>
           </div>
@@ -42,11 +44,11 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
         <div className="sketch-border bg-white p-4 transform -rotate-0.5">
           <SketchSocialCard 
             avatar="JD"
-            name="John Doe"
-            time="5 hours ago"
-            content="Just launched my new design portfolio using the sketchy UI kit! Check it out and let me know what you think."
-            initialLikes={likeCount}
-            initialComments={8}
+            name="John Doodle"
+            time="Posted 2 hours ago"
+            content="Just finished my latest sketch! What do you think of these wobbly marker-style UI elements?"
+            initialLikes={12}
+            initialComments={3}
             className=""
           />
         </div>
