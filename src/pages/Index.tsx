@@ -137,7 +137,7 @@ const Index = () => {
                   aria-label="Copy CSS file contents"
                 />
                 <p>
-                  <span className="font-medium text-blue-600">1 - "Copy this CSS file and paste or attach it to your prompt"</span>
+                  <span className="font-medium text-blue-600">1 - Copy this CSS file and attach it to your prompt</span>
                 </p>
               </div>
             </div>
@@ -146,11 +146,11 @@ const Index = () => {
               <div className="flex items-center gap-2">
                 <Copy 
                   className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" 
-                  onClick={() => copyToClipboard(`"${instructionText}"`)}
+                  onClick={() => copyToClipboard(instructionText)}
                   aria-label="Copy instruction text"
                 />
                 <p>
-                  <span className="font-medium text-blue-600">2 - "{instructionText}"</span>
+                  <span className="font-medium text-blue-600">2 - Add to your prompt: "{instructionText}"</span>
                 </p>
               </div>
             </div>
