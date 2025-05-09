@@ -27,28 +27,28 @@ const SketchNotificationBadge: React.FC<SketchNotificationBadgeProps> = ({
   const getPositionClass = () => {
     switch(position) {
       case 'top-left':
-        return 'sketch-notification-badge-top-left';
+        return '-top-2 -left-2';
       case 'bottom-right':
-        return 'sketch-notification-badge-bottom-right';
+        return '-bottom-2 -right-2';
       case 'bottom-left':
-        return 'sketch-notification-badge-bottom-left';
+        return '-bottom-2 -left-2';
       default:
-        return 'sketch-notification-badge-top-right';
+        return '-top-2 -right-2';
     }
   };
   
   const getColorClass = () => {
     switch(color) {
       case 'red':
-        return 'sketch-notification-badge-red';
+        return 'bg-red-500';
       case 'green':
-        return 'sketch-notification-badge-green';
+        return 'bg-green-500';
       case 'yellow':
-        return 'sketch-notification-badge-yellow';
+        return 'bg-yellow-500';
       case 'orange':
-        return 'sketch-notification-badge-orange';
+        return 'bg-orange-500';
       default:
-        return 'sketch-notification-badge-blue';
+        return 'bg-blue-500';
     }
   };
   
@@ -69,11 +69,11 @@ const SketchNotificationBadge: React.FC<SketchNotificationBadgeProps> = ({
   };
   
   return (
-    <div className={`sketch-notification-container ${className}`}>
-      <div className="sketch-notification-icon">
+    <div className={`sketch-notification-container relative inline-block ${className}`}>
+      <div className="sketch-notification-icon w-10 h-10 border-2 border-black rounded-full bg-white flex items-center justify-center sketch-border">
         {renderIcon()}
       </div>
-      <span className={`sketch-notification-badge ${getPositionClass()} ${getColorClass()}`}>
+      <span className={`absolute ${getPositionClass()} ${getColorClass()} text-white text-xs w-5 h-5 flex items-center justify-center rounded-full border border-black transform rotate-3 sketch-border font-bold`}>
         {displayCount}
       </span>
     </div>

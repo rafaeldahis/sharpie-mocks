@@ -17,26 +17,32 @@ const ProgressSection: React.FC<ProgressSectionProps> = ({ steps }) => {
     <SketchCard title="Progress Indicators" className="mb-6">
       <div className="space-y-8">
         {/* Progress Bar Example */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="text-lg font-medium marker-heading">Progress Bar</h3>
-          <SketchProgressBar value={65} className="mb-2" color="#2179FF" />
-          <p className="text-sm text-gray-500">65% Complete</p>
+          <div className="transform rotate-0.5">
+            <SketchProgressBar value={65} className="mb-2" color="#2179FF" />
+          </div>
+          <p className="text-sm text-gray-600">65% Complete</p>
         </div>
         
         {/* Steps Example */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="text-lg font-medium marker-heading">Progress Steps</h3>
-          <SketchSteps steps={steps} />
+          <div className="transform -rotate-0.5">
+            <SketchSteps steps={steps} />
+          </div>
         </div>
         
         {/* Pagination Example */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="text-lg font-medium marker-heading">Pagination</h3>
-          <SketchPagination 
-            totalPages={5}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-          />
+          <div className="transform rotate-0.5">
+            <SketchPagination 
+              totalPages={5}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            />
+          </div>
         </div>
       </div>
     </SketchCard>

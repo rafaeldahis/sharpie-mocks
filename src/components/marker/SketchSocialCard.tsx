@@ -45,15 +45,15 @@ const SketchSocialCard: React.FC<SketchSocialCardProps> = ({
   };
   
   return (
-    <div className={`sketch-social-card ${className}`}>
-      <div className="sketch-social-card-header">
-        <div className="sketch-social-card-avatar">
+    <div className={`sketch-social-card p-4 sketch-border border-2 border-black bg-white shadow-md transform -rotate-0.5 ${className}`}>
+      <div className="sketch-social-card-header flex items-center mb-3">
+        <div className="sketch-social-card-avatar w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center border-2 border-black mr-3 sketch-border">
           {typeof avatar === 'string' ? (
-            <div className="sketch-social-card-avatar-image">
+            <div className="sketch-social-card-avatar-image font-comic font-bold">
               {avatar.length === 2 ? (
                 avatar
               ) : (
-                <img src={avatar} alt={`${name}'s avatar`} />
+                <img src={avatar} alt={`${name}'s avatar`} className="rounded-full" />
               )}
             </div>
           ) : (
@@ -61,26 +61,26 @@ const SketchSocialCard: React.FC<SketchSocialCardProps> = ({
           )}
         </div>
         <div className="sketch-social-card-meta">
-          <div className="sketch-social-card-name">{name}</div>
-          <div className="sketch-social-card-time">{time}</div>
+          <div className="sketch-social-card-name font-comic font-bold">{name}</div>
+          <div className="sketch-social-card-time text-sm text-gray-500">{time}</div>
         </div>
       </div>
       
-      <div className="sketch-social-card-content">
+      <div className="sketch-social-card-content mb-4 py-2 text-gray-700">
         {content}
       </div>
       
-      <div className="sketch-social-card-actions">
+      <div className="sketch-social-card-actions flex border-t-2 border-black sketch-border pt-3">
         <button 
-          className={`sketch-social-card-action ${liked ? 'sketch-social-card-action-active' : ''}`}
+          className={`sketch-social-card-action flex items-center space-x-1 mr-4 ${liked ? 'text-red-500' : 'text-gray-600'} hover:text-red-500`}
           onClick={handleLike}
         >
-          <Heart size={18} />
+          <Heart size={18} fill={liked ? "currentColor" : "none"} />
           <span>Like{likes > 0 ? ` (${likes})` : ''}</span>
         </button>
         
         <button 
-          className="sketch-social-card-action"
+          className="sketch-social-card-action flex items-center space-x-1 mr-4 text-gray-600 hover:text-blue-500"
           onClick={handleComment}
         >
           <MessageSquare size={18} />
@@ -88,7 +88,7 @@ const SketchSocialCard: React.FC<SketchSocialCardProps> = ({
         </button>
         
         <button 
-          className="sketch-social-card-action"
+          className="sketch-social-card-action flex items-center space-x-1 text-gray-600 hover:text-green-500"
           onClick={handleShare}
         >
           <Share size={18} />

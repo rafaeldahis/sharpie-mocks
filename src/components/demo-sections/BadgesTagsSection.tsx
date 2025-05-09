@@ -11,27 +11,27 @@ const BadgesTagsSection: React.FC = () => {
 
   return (
     <SketchCard title="Badges & Tags" className="mb-6">
-      <div className="mb-4">
-        <p className="mb-2">Badges:</p>
-        <div className="flex flex-wrap gap-2">
-          <SketchBadge variant="default">Default</SketchBadge>
-          <SketchBadge variant="primary">Primary</SketchBadge>
-          <SketchBadge variant="success">Success</SketchBadge>
-          <SketchBadge variant="warning">Warning</SketchBadge>
-          <SketchBadge variant="danger">Danger</SketchBadge>
+      <div className="mb-6">
+        <p className="mb-4 font-medium">Badges:</p>
+        <div className="flex flex-wrap gap-3">
+          <SketchBadge variant="default" className="transform rotate-1">Default</SketchBadge>
+          <SketchBadge variant="primary" className="transform -rotate-0.5">Primary</SketchBadge>
+          <SketchBadge variant="success" className="transform rotate-0.5">Success</SketchBadge>
+          <SketchBadge variant="warning" className="transform -rotate-1">Warning</SketchBadge>
+          <SketchBadge variant="danger" className="transform rotate-0.7">Danger</SketchBadge>
         </div>
       </div>
       
       <div>
-        <p className="mb-2">Tags:</p>
-        <div className="flex flex-wrap gap-2">
+        <p className="mb-4 font-medium">Tags:</p>
+        <div className="flex flex-wrap gap-3">
           {selectedTags.map((tag, index) => (
-            <SketchTag key={index} onRemove={() => removeTag(tag)}>
+            <SketchTag key={index} onRemove={() => removeTag(tag)} className={`transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'}`}>
               {tag}
             </SketchTag>
           ))}
-          <SketchTag>CSS</SketchTag>
-          <SketchTag>HTML</SketchTag>
+          <SketchTag className="transform rotate-0.5">CSS</SketchTag>
+          <SketchTag className="transform -rotate-0.7">HTML</SketchTag>
         </div>
       </div>
     </SketchCard>
