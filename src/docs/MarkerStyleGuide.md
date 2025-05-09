@@ -29,6 +29,45 @@ import 'marker-style-kit/dist/styles.css';
 import { SketchButton, SketchCard } from 'marker-style-kit';
 ```
 
+## Font Integration
+
+The Marker Style Design System uses playful fonts like Playpen Sans and Shantell Sans. For optimal performance, add these to your HTML head:
+
+```html
+<!-- Preconnect to Google Fonts domain to establish early connection -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Load the fonts with display=swap for better performance -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&display=swap">
+```
+
+Then configure the fonts in your Tailwind config:
+
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'playpen': ['"Playpen Sans"', 'cursive', 'sans-serif'],
+        'shantell': ['"Shantell Sans"', 'cursive', 'sans-serif'],
+        'comic': ['"Comic Sans MS"', '"Comic Neue"', 'cursive', 'sans-serif'],
+      }
+    }
+  }
+}
+```
+
+Use these fonts in your components:
+
+```jsx
+<h1 className="font-playpen">Playpen Sans Heading</h1>
+<p className="font-shantell">Shantell Sans paragraph</p>
+<div className="font-comic">Comic style text</div>
+```
+
 ## Tailwind CSS Integration
 
 Add the marker style theme extensions to your `tailwind.config.js`:
@@ -48,20 +87,6 @@ module.exports = {
   },
   // Rest of your config
 };
-```
-
-## Font Integration
-
-The Marker Style Design System uses Comic Sans MS as its primary font. Make sure to include it in your project:
-
-1. Add the Google Fonts import in your CSS or HTML:
-```css
-@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
-```
-
-2. Or add it to your HTML head:
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap">
 ```
 
 ## Components
