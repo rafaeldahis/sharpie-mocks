@@ -11,12 +11,24 @@ interface ImageGallerySectionProps {
 }
 
 const ImageGallerySection: React.FC<ImageGallerySectionProps> = ({ galleryImages }) => {
+  // Make sure all image URLs are valid by prefixing with Unsplash base URL if needed
+  const processedImages = galleryImages.map(image => {
+    // If the image source doesn't start with http, add the Unsplash URL prefix
+    if (!image.src.startsWith('http')) {
+      return {
+        ...image,
+        src: `https://images.unsplash.com/${image.src}`
+      };
+    }
+    return image;
+  });
+
   return (
     <SketchCard title="Image Gallery" className="mb-6">
       <div className="space-y-4">
         <p>Responsive image gallery with captions:</p>
         <SketchImageGallery 
-          images={galleryImages}
+          images={processedImages}
           columns={3}
         />
       </div>

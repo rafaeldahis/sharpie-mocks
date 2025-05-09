@@ -19,6 +19,11 @@ const SketchImageGallery: React.FC<SketchImageGalleryProps> = ({
   className = '',
 }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  
+  const handleImageError = (index: number) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }));
+  };
   
   const openLightbox = (index: number) => {
     setSelectedIndex(index);
@@ -40,57 +45,95 @@ const SketchImageGallery: React.FC<SketchImageGalleryProps> = ({
   
   return (
     <div className={`sketch-gallery-container ${className}`}>
-      <div className={`sketch-gallery-grid sketch-gallery-columns-${columns}`}>
+      <div 
+        className="grid gap-4" 
+        style={{ 
+          gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` 
+        }}
+      >
         {images.map((image, index) => (
-          <div key={index} className="sketch-gallery-item" onClick={() => openLightbox(index)}>
-            <img 
-              src={image.src} 
-              alt={image.alt} 
-              className="sketch-gallery-image" 
-            />
-            {image.caption && (
-              <div className="sketch-gallery-caption">{image.caption}</div>
+          <div 
+            key={index} 
+            className="relative overflow-hidden border-2 border-black rounded-md transform rotate-0.3deg hover:rotate-0 transition-transform cursor-pointer" 
+            style={{ 
+              boxShadow: '3px 3px 0 rgba(0, 0, 0, 0.1)',
+              aspectRatio: '4/3'
+            }}
+            onClick={() => !imageErrors[index] && openLightbox(index)}
+          >
+            {!imageErrors[index] ? (
+              <>
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  onError={() => handleImageError(index)}
+                  className="w-full h-full object-cover"
+                />
+                {image.caption && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm">
+                    {image.caption}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-600 p-4 text-center">
+                <p>Image not available</p>
+              </div>
             )}
           </div>
         ))}
       </div>
       
-      {selectedIndex !== null && (
-        <div className="sketch-gallery-lightbox" onClick={closeLightbox}>
-          <div className="sketch-gallery-lightbox-content" onClick={e => e.stopPropagation()}>
+      {selectedIndex !== null && !imageErrors[selectedIndex] && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4" 
+          onClick={closeLightbox}
+        >
+          <div 
+            className="max-w-4xl w-full bg-white rounded-md relative transform -rotate-0.8deg" 
+            onClick={e => e.stopPropagation()}
+            style={{ boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.3)' }}
+          >
             <button 
-              className="sketch-gallery-lightbox-close" 
+              className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-2 border-black rounded-full text-xl z-10 transform rotate-0.8deg hover:rotate-0"
               onClick={closeLightbox}
               aria-label="Close lightbox"
             >
               ×
             </button>
-            <button 
-              className="sketch-gallery-lightbox-prev" 
-              onClick={goToPrevious}
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <div className="sketch-gallery-lightbox-image-container">
-              <img 
-                src={images[selectedIndex].src} 
-                alt={images[selectedIndex].alt} 
-                className="sketch-gallery-lightbox-image" 
-              />
+            
+            <div className="p-4">
+              <div className="relative h-96 border-2 border-black overflow-hidden">
+                <img 
+                  src={images[selectedIndex].src} 
+                  alt={images[selectedIndex].alt} 
+                  className="w-full h-full object-contain" 
+                />
+              </div>
+              
               {images[selectedIndex].caption && (
-                <div className="sketch-gallery-lightbox-caption">
+                <div className="text-center p-4 text-lg font-medium">
                   {images[selectedIndex].caption}
                 </div>
               )}
+              
+              <div className="flex justify-between mt-4">
+                <button 
+                  className="sketch-btn transform -rotate-1"
+                  onClick={goToPrevious}
+                  aria-label="Previous image"
+                >
+                  Previous
+                </button>
+                <button 
+                  className="sketch-btn transform rotate-1"
+                  onClick={goToNext}
+                  aria-label="Next image"
+                >
+                  Next
+                </button>
+              </div>
             </div>
-            <button 
-              className="sketch-gallery-lightbox-next" 
-              onClick={goToNext}
-              aria-label="Next image"
-            >
-              ›
-            </button>
           </div>
         </div>
       )}
