@@ -11,7 +11,7 @@ const Index = () => {
         </h1>
         <p className="text-xl mt-4 font-comic">A complete sketch-style design system for playful interfaces</p>
         
-        <div className="flex items-center justify-center gap-4 mt-4 font-comic">
+        <div className="flex items-center justify-center gap-2 mt-4 font-comic">
           <a 
             href="https://github.com/rafaeldahis/sharpie-mocks" 
             target="_blank" 
@@ -24,7 +24,7 @@ const Index = () => {
             </svg>
             /sharpie-mocks
           </a>
-          <span className="text-gray-600">by</span>
+          <span className="text-gray-600 mx-1">by</span>
           <a 
             href="https://x.com/rafaeldahis" 
             target="_blank" 
