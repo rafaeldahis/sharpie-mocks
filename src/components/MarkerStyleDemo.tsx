@@ -45,7 +45,7 @@ const MarkerStyleDemo: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4 font-comic">
-      <p className="mb-8 text-center text-lg">All marker style components displayed on a single page for easy viewing.</p>
+      <p className="mb-8 text-center text-lg">All marker style components on a single page.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Typography */}
@@ -318,6 +318,22 @@ const MarkerStyleDemo: React.FC = () => {
               <div className="flex flex-col items-center">
                 <SketchIconography icon="check" />
                 <span className="text-sm mt-1">Done</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="bell" />
+                <span className="text-sm mt-1">Notifications</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="bookmark" />
+                <span className="text-sm mt-1">Bookmark</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="calendar" />
+                <span className="text-sm mt-1">Calendar</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SketchIconography icon="star" />
+                <span className="text-sm mt-1">Star</span>
               </div>
             </div>
           </div>
