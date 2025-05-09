@@ -17,15 +17,15 @@ const SketchBadge: React.FC<SketchBadgeProps> = ({
   const getVariantClasses = () => {
     switch(variant) {
       case 'primary':
-        return 'sketch-badge-primary';
+        return 'bg-blue-500 text-white border-black';
       case 'success':
-        return 'sketch-badge-success';
+        return 'bg-green-500 text-white border-black';
       case 'warning':
-        return 'sketch-badge-warning';
+        return 'bg-orange-400 text-white border-black';
       case 'danger':
-        return 'sketch-badge-danger';
+        return 'bg-red-500 text-white border-black';
       default:
-        return 'sketch-badge-default';
+        return 'bg-white text-black border-black';
     }
   };
   

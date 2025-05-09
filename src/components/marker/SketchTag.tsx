@@ -17,7 +17,7 @@ const SketchTag: React.FC<SketchTagProps> = ({
       {children}
       {onRemove && (
         <button 
-          className="sketch-tag-remove" 
+          className="sketch-tag-remove ml-2 flex items-center justify-center" 
           onClick={onRemove}
           aria-label="Remove tag"
         >
