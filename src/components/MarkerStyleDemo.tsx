@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -12,15 +13,15 @@ import {
   IconographySection,
   ColorPaletteSection,
   GridSpacingSection,
+  TooltipsSection,      // Moved to Core Design System
+  DropdownSection,      // Moved to Core Design System
   
   // Ready-to-Use Components
   ChartsSection,
   PaginationSection,
-  TooltipsSection,
   ModalDrawerSection,
   ProgressBarsSection,
   BadgesTagsSection,
-  DropdownSection,
   NotificationBadgesSection,
   StepsSection,
   FileUploadSection,
@@ -193,6 +194,8 @@ const MarkerStyleDemo: React.FC = () => {
         <TableSection tableHeaders={tableHeaders} tableRows={tableRows} />
         <MessagesSection />
         <IconographySection />
+        <TooltipsSection />
+        <DropdownSection dropdownOptions={dropdownOptions} />
       </div>
 
       {/* Ready-to-Use Components */}
@@ -200,11 +203,9 @@ const MarkerStyleDemo: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <ChartsSection barChartData={barChartData} chartData={chartData} />
         <PaginationSection />
-        <TooltipsSection />
         <ModalDrawerSection />
         <ProgressBarsSection />
         <BadgesTagsSection />
-        <DropdownSection dropdownOptions={dropdownOptions} />
         <NotificationBadgesSection />
         <StepsSection steps={steps} />
         <FileUploadSection />
