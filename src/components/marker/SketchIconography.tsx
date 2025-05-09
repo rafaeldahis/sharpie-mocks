@@ -68,54 +68,56 @@ const SketchIconography: React.FC<SketchIconographyProps> = ({
         position: 'relative'
       }}
     >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width={size} 
-        height={size} 
-        viewBox="0 0 24 24" 
+      <div 
         className="sketch-icon-svg absolute"
         style={{ 
+          width: size, 
+          height: size,
           transform: `rotate(${getRandomRotation()}deg)`,
-          opacity: 0.2
+          opacity: 0.2,
+          position: 'absolute',
+          top: 0,
+          left: 0
         }}
       >
-        <defs>
-          <filter id={filterId}>
-            <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
-          </filter>
-        </defs>
-        
+        {/* Skip using SVG filter which might be causing rendering issues */}
         {/* Add some random dots to make it look more hand-drawn */}
-        {Array.from({ length: 3 }).map((_, i) => (
-          <circle 
-            key={i}
-            cx={12 + Math.random() * 8 - 4}
-            cy={12 + Math.random() * 8 - 4}
-            r={0.5}
-            fill={color}
-            opacity={0.3}
-          />
-        ))}
-        
-        {/* Add some random short lines */}
-        {Array.from({ length: 2 }).map((_, i) => {
-          const x1 = 12 + Math.random() * 6 - 3;
-          const y1 = 12 + Math.random() * 6 - 3;
-          return (
-            <line
-              key={`line-${i}`}
-              x1={x1}
-              y1={y1}
-              x2={x1 + Math.random() * 2 - 1}
-              y2={y1 + Math.random() * 2 - 1}
-              stroke={color}
-              strokeWidth="0.5"
-              opacity="0.3"
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width={size} 
+          height={size} 
+          viewBox="0 0 24 24" 
+        >
+          {Array.from({ length: 3 }).map((_, i) => (
+            <circle 
+              key={i}
+              cx={12 + Math.random() * 8 - 4}
+              cy={12 + Math.random() * 8 - 4}
+              r={0.5}
+              fill={color}
+              opacity={0.3}
             />
-          );
-        })}
-      </svg>
+          ))}
+          
+          {/* Add some random short lines */}
+          {Array.from({ length: 2 }).map((_, i) => {
+            const x1 = 12 + Math.random() * 6 - 3;
+            const y1 = 12 + Math.random() * 6 - 3;
+            return (
+              <line
+                key={`line-${i}`}
+                x1={x1}
+                y1={y1}
+                x2={x1 + Math.random() * 2 - 1}
+                y2={y1 + Math.random() * 2 - 1}
+                stroke={color}
+                strokeWidth="0.5"
+                opacity="0.3"
+              />
+            );
+          })}
+        </svg>
+      </div>
       
       {/* Render the actual icon on top */}
       <div 
