@@ -2,8 +2,20 @@
 import React from 'react';
 import { SketchCard, SketchTimeline } from '../marker';
 
-const TimelineSection: React.FC = () => {
-  const timelineItems = [
+interface TimelineItem {
+  title: string;
+  date: string;
+  content: string;
+  icon?: React.ReactNode;
+}
+
+interface TimelineSectionProps {
+  timelineItems?: TimelineItem[];
+}
+
+const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
+  // Use the provided timelineItems or fall back to default items
+  const items = timelineItems || [
     {
       title: "Project Started",
       date: "January 2023",
@@ -36,7 +48,7 @@ const TimelineSection: React.FC = () => {
       <div className="space-y-4">
         <p className="mb-4 font-medium">Visualize events over time:</p>
         <div className="sketch-border bg-white p-4 transform rotate-0.5">
-          <SketchTimeline items={timelineItems} />
+          <SketchTimeline items={items} />
         </div>
       </div>
     </SketchCard>
