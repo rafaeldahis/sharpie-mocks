@@ -1923,3 +1923,34 @@
 .sketch-social-card-action-active {
   color: #FF5733;
 }
+
+/* Bar Chart Styles */
+.sketch-bar-chart {
+  font-family: 'Comic Neue', cursive;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.sketch-bar-chart .sketch-border {
+  border: 2px solid black;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+/* Add slight irregularity to bar borders */
+.sketch-bar-chart .sketch-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: translate(1px, 1px);
+  z-index: -1;
+  opacity: 0.3;
+}

@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { SketchTooltip } from './index';
 
 interface SliceData {
   value: number;
@@ -18,6 +19,8 @@ const SketchPieChart: React.FC<SketchPieChartProps> = ({
   size = 200, 
   className = '' 
 }) => {
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  
   // Calculate total for percentages
   const total = data.reduce((sum, slice) => sum + slice.value, 0);
   
@@ -58,15 +61,24 @@ const SketchPieChart: React.FC<SketchPieChartProps> = ({
       
       // Update current angle for next slice
       currentAngle += sliceAngle;
+
+      const tooltipContent = slice.label ? `${slice.label}: ${slice.value}` : `${slice.value}`;
       
       return (
-        <path
-          key={index}
-          d={path}
-          fill={slice.color}
-          stroke="#000"
-          strokeWidth="2"
-        />
+        <SketchTooltip key={index} content={tooltipContent}>
+          <path
+            d={path}
+            fill={slice.color}
+            stroke="#000"
+            strokeWidth="2"
+            style={{ 
+              cursor: 'pointer',
+              transform: hoverIndex === index ? `translate(${Math.cos((startAngle + endAngle) / 2 * Math.PI / 180) * 5}px, ${Math.sin((startAngle + endAngle) / 2 * Math.PI / 180) * 5}px)` : 'none'
+            }}
+            onMouseEnter={() => setHoverIndex(index)}
+            onMouseLeave={() => setHoverIndex(null)}
+          />
+        </SketchTooltip>
       );
     });
   };

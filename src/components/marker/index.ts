@@ -1,4 +1,3 @@
-
 import SketchButton from './SketchButton';
 import SketchCard from './SketchCard';
 import SketchCheckbox from './SketchCheckbox';
@@ -26,6 +25,9 @@ import SketchCalendar from './SketchCalendar';
 import SketchSocialCard from './SketchSocialCard';
 import SketchPricingTable from './SketchPricingTable';
 import SketchTestimonialCard from './SketchTestimonialCard';
+
+// Make sure SketchBarChart is exported
+export { default as SketchBarChart } from './SketchBarChart';
 
 export {
   SketchButton,
