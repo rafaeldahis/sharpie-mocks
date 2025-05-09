@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { SketchCard, SketchTable } from '../marker';
+import type { TableRow } from '../marker/SketchTable';
 
 interface TableSectionProps {
   tableHeaders: string[];
@@ -9,7 +10,7 @@ interface TableSectionProps {
 
 const TableSection: React.FC<TableSectionProps> = ({ tableHeaders, tableRows }) => {
   // Sample data for the enhanced table with status and actions
-  const enhancedTableData = [
+  const enhancedTableData: TableRow[] = [
     {
       cells: ["John Smith", "john@example.com", "Admin"],
       status: { text: "Active", variant: "success" },

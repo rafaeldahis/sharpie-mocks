@@ -8,7 +8,7 @@ interface TableActionButton {
   onClick: () => void;
 }
 
-interface TableRow {
+export interface TableRow {
   cells: React.ReactNode[];
   status?: {
     text: string;
@@ -40,10 +40,10 @@ const SketchTable: React.FC<SketchTableProps> = ({
     <td className="font-comic">{cell}</td>
   );
 
-  const renderStatus = (status: { text: string; variant: string }) => (
+  const renderStatus = (status: { text: string; variant: 'default' | 'primary' | 'success' | 'warning' | 'danger' }) => (
     <td className="font-comic">
       <SketchBadge 
-        variant={status.variant as any} 
+        variant={status.variant} 
         className="inline-block"
       >
         {status.text}
@@ -84,8 +84,8 @@ const SketchTable: React.FC<SketchTableProps> = ({
       </thead>
       <tbody>
         {isStructuredFormat ? (
-          // Render structured format rows
-          rows.map((row: TableRow, rowIndex) => (
+          // Render structured format rows (using TableRow interface)
+          (rows as TableRow[]).map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.cells.map((cell, cellIndex) => (
                 <td key={cellIndex} className="font-comic">
@@ -98,7 +98,7 @@ const SketchTable: React.FC<SketchTableProps> = ({
           ))
         ) : (
           // Render simple array format rows
-          rows.map((row: any[], rowIndex) => (
+          (rows as any[][]).map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <td key={cellIndex} className="font-comic">
