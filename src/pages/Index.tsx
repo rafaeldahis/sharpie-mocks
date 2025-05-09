@@ -64,15 +64,39 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <p className="font-bold">Copy the CSS styles:</p>
               <ol className="list-decimal pl-6 mt-2">
-                <li>Ask your AI tool to "Copy the CSS styles for marker/sketch styles from this page"</li>
-                <li>Then say: "Apply these sketch styles to my UI components"</li>
-                <li>Or try: "Create a hand-drawn version of my interface using these sketch styles"</li>
+                <li>Visit the GitHub project at <a href="https://github.com/rafaeldahis/sharpie-mocks" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 sketch-underline">github.com/rafaeldahis/sharpie-mocks</a></li>
+                <li>Ask your AI tool: "Apply these sketch styles to my UI components"</li>
               </ol>
             </div>
             
             <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
-              <p className="font-bold">Quick implementation:</p>
-              <p className="mt-2 italic">"Add these marker-style CSS classes to my project and create a hand-drawn sketch interface with wobbly borders and Comic Sans font"</p>
+              <p className="font-bold">Quick implementation examples:</p>
+              <div className="mt-2 space-y-3">
+                {/* B2C Example */}
+                <div className="p-2 border-l-2 border-blue-400">
+                  <p className="italic">"Create a hand-drawn e-commerce product page with sketch styles showing a product image, pricing, reviews, and an 'Add to Cart' button"</p>
+                </div>
+                
+                {/* B2B Example */}
+                <div className="p-2 border-l-2 border-green-400">
+                  <p className="italic">"Design a sketch-style dashboard for a B2B analytics platform with wobbly charts, key metrics cards, and a hand-drawn navigation sidebar"</p>
+                </div>
+                
+                {/* Marketplace Example */}
+                <div className="p-2 border-l-2 border-purple-400">
+                  <p className="italic">"Make a sketch wireframe of a marketplace app with listing cards, filters, search bar, and a map view using marker styles"</p>
+                </div>
+                
+                {/* Internal Tool Example */}
+                <div className="p-2 border-l-2 border-orange-400">
+                  <p className="italic">"Create a hand-drawn admin panel for managing user permissions with a sketch-style table, action buttons, and filter controls"</p>
+                </div>
+                
+                {/* Productivity App Example */}
+                <div className="p-2 border-l-2 border-red-400">
+                  <p className="italic">"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers"</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
