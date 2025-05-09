@@ -42,7 +42,7 @@ const Index = () => {
     }
   ];
 
-  const copyToClipboard = (text: string) => {
+  const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text)
       .then(() => {
         toast({

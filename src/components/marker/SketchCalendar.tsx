@@ -90,10 +90,6 @@ const SketchCalendar: React.FC<SketchCalendarProps> = ({
           "p-3 pointer-events-auto border-2 border-black rounded-md transform",
           "sketch-border"
         )}
-        styles={{
-          day_selected: { backgroundColor: '#2179FF' },
-          day_today: { backgroundColor: '#f0f8ff', fontWeight: 'bold' }
-        }}
         modifiersStyles={{
           selected: { backgroundColor: '#2179FF', color: 'white' },
           today: { backgroundColor: '#f0f8ff', fontWeight: 'bold' }
