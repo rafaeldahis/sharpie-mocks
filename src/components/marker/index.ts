@@ -1,14 +1,57 @@
 
-// Export all marker components
-export { default as SketchButton } from './SketchButton';
-export { default as SketchInput } from './SketchInput';
-export { default as SketchCheckbox } from './SketchCheckbox';
-export { default as SketchRadio } from './SketchRadio';
-export { default as SketchCard } from './SketchCard';
-export { default as SketchToggle } from './SketchToggle';
-export { default as SketchPieChart } from './SketchPieChart';
-export { default as SketchTable } from './SketchTable';
-export { default as SketchLoader } from './SketchLoader';
-export { default as SketchPagination } from './SketchPagination';
-export { default as SketchTooltip } from './SketchTooltip';
-export { default as SketchIconography } from './SketchIconography';
+import SketchButton from './SketchButton';
+import SketchCard from './SketchCard';
+import SketchCheckbox from './SketchCheckbox';
+import SketchIconography from './SketchIconography';
+import SketchInput from './SketchInput';
+import SketchLoader from './SketchLoader';
+import SketchPagination from './SketchPagination';
+import SketchPieChart from './SketchPieChart';
+import SketchRadio from './SketchRadio';
+import SketchTable from './SketchTable';
+import SketchToggle from './SketchToggle';
+import SketchTooltip from './SketchTooltip';
+
+// New components
+import SketchProgressBar from './SketchProgressBar';
+import SketchBadge from './SketchBadge';
+import SketchTag from './SketchTag';
+import SketchDropdown from './SketchDropdown';
+import SketchNotificationBadge from './SketchNotificationBadge';
+import SketchSteps from './SketchSteps';
+import SketchFileUpload from './SketchFileUpload';
+import SketchImageGallery from './SketchImageGallery';
+import SketchTimeline from './SketchTimeline';
+import SketchCalendar from './SketchCalendar';
+import SketchSocialCard from './SketchSocialCard';
+import SketchPricingTable from './SketchPricingTable';
+import SketchTestimonialCard from './SketchTestimonialCard';
+
+export {
+  SketchButton,
+  SketchCard,
+  SketchCheckbox,
+  SketchIconography,
+  SketchInput,
+  SketchLoader,
+  SketchPagination,
+  SketchPieChart,
+  SketchRadio,
+  SketchTable,
+  SketchToggle,
+  SketchTooltip,
+  // New exports
+  SketchProgressBar,
+  SketchBadge,
+  SketchTag,
+  SketchDropdown,
+  SketchNotificationBadge,
+  SketchSteps,
+  SketchFileUpload,
+  SketchImageGallery,
+  SketchTimeline,
+  SketchCalendar,
+  SketchSocialCard,
+  SketchPricingTable,
+  SketchTestimonialCard
+};

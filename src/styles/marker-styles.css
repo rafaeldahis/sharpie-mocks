@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
@@ -684,4 +685,1017 @@
   --sketch-space-4: 12px;
   --sketch-space-5: 16px;
   --sketch-space-6: 24px;
+}
+
+/* NEW COMPONENTS STYLES BEGIN HERE */
+
+/* Sketchy Progress Bar */
+.sketch-progress-container {
+  width: 100%;
+  height: 16px;
+  background-color: #f3f3f3;
+  border: 2px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transform: rotate(-0.4deg);
+}
+
+.sketch-progress-bar {
+  height: 100%;
+  border-right: 2px dashed #000;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+/* Sketchy Badge */
+.sketch-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 2px solid #000;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  transform: rotate(-0.5deg);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-badge-default {
+  background-color: white;
+  color: #333;
+}
+
+.sketch-badge-primary {
+  background-color: #2179FF;
+  color: white;
+}
+
+.sketch-badge-success {
+  background-color: #33CC66;
+  color: white;
+}
+
+.sketch-badge-warning {
+  background-color: #FFA500;
+  color: white;
+}
+
+.sketch-badge-danger {
+  background-color: #FF5733;
+  color: white;
+}
+
+/* Sketchy Tag */
+.sketch-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  transform: rotate(0.3deg);
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.sketch-tag-remove {
+  margin-left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transform: rotate(-1deg);
+}
+
+.sketch-tag-remove:hover {
+  background-color: #FF5733;
+  color: white;
+}
+
+/* Sketchy Dropdown */
+.sketch-dropdown-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  font-family: 'Playpen Sans', cursive;
+}
+
+.sketch-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: rotate(-0.3deg);
+  text-align: left;
+}
+
+.sketch-dropdown-icon {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.sketch-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 4px;
+  z-index: 100;
+  transform: rotate(0.2deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-dropdown-option {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sketch-dropdown-option:hover {
+  background-color: #f3f3f3;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-dropdown-option:not(:last-child) {
+  border-bottom: 1px dashed #000;
+}
+
+/* Sketchy Notification Badge */
+.sketch-notification-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.sketch-notification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: white;
+  transform: rotate(-0.2deg);
+}
+
+.sketch-notification-badge {
+  position: absolute;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background-color: #2179FF;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  transform: rotate(0.5deg);
+}
+
+.sketch-notification-badge-top-right {
+  top: -6px;
+  right: -6px;
+}
+
+.sketch-notification-badge-top-left {
+  top: -6px;
+  left: -6px;
+}
+
+.sketch-notification-badge-bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+
+.sketch-notification-badge-bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.sketch-notification-badge-blue {
+  background-color: #2179FF;
+}
+
+.sketch-notification-badge-red {
+  background-color: #FF5733;
+}
+
+.sketch-notification-badge-green {
+  background-color: #33CC66;
+}
+
+.sketch-notification-badge-yellow {
+  background-color: #FFC107;
+}
+
+.sketch-notification-badge-orange {
+  background-color: #FF9800;
+}
+
+/* Sketchy Steps */
+.sketch-steps-container {
+  position: relative;
+  width: 100%;
+  padding: 16px 0;
+  margin: 16px 0;
+}
+
+.sketch-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.sketch-steps-line {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  z-index: 0;
+}
+
+.sketch-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.sketch-step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-step-active .sketch-step-circle {
+  background-color: #2179FF;
+  color: white;
+  transform: rotate(0.5deg);
+}
+
+.sketch-step-completed .sketch-step-circle {
+  background-color: #33CC66;
+  color: white;
+}
+
+.sketch-step-label {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Sketchy File Upload */
+.sketch-file-upload-container {
+  width: 100%;
+}
+
+.sketch-file-upload-dropzone {
+  width: 100%;
+  min-height: 120px;
+  border: 2px dashed #000;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #f9f9f9;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-0.3deg);
+  transition: all 0.2s ease;
+}
+
+.sketch-file-upload-active {
+  background-color: #f0f8ff;
+  transform: rotate(0.3deg);
+  border-style: solid;
+}
+
+.sketch-file-upload-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sketch-file-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sketch-file-upload-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.sketch-file-upload-text {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.sketch-file-upload-subtext {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.sketch-file-upload-button {
+  margin-top: 8px;
+}
+
+.sketch-file-upload-files {
+  margin-top: 16px;
+}
+
+.sketch-file-upload-file {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: white;
+  transform: rotate(0.2deg);
+}
+
+.sketch-file-upload-file-icon {
+  margin-right: 8px;
+}
+
+.sketch-file-upload-file-info {
+  flex: 1;
+}
+
+.sketch-file-upload-file-name {
+  font-weight: bold;
+}
+
+.sketch-file-upload-file-size {
+  font-size: 12px;
+  color: #666;
+}
+
+.sketch-file-upload-file-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.sketch-file-upload-file-remove:hover {
+  color: #FF5733;
+}
+
+/* Sketchy Image Gallery */
+.sketch-gallery-container {
+  width: 100%;
+}
+
+.sketch-gallery-grid {
+  display: grid;
+  grid-gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sketch-gallery-columns-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.sketch-gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sketch-gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sketch-gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sketch-gallery-item {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #000;
+  transform: rotate(0.3deg);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.sketch-gallery-item:hover {
+  transform: rotate(-0.3deg) scale(1.02);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sketch-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px;
+  font-size: 12px;
+  transform: rotate(-0.2deg);
+}
+
+.sketch-gallery-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.sketch-gallery-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: white;
+  border: 2px solid #000;
+  padding: 16px;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-gallery-lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+  transform: rotate(0.5deg);
+}
+
+.sketch-gallery-lightbox-prev,
+.sketch-gallery-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.sketch-gallery-lightbox-prev {
+  left: -20px;
+}
+
+.sketch-gallery-lightbox-next {
+  right: -20px;
+}
+
+.sketch-gallery-lightbox-image-container {
+  position: relative;
+}
+
+.sketch-gallery-lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.sketch-gallery-lightbox-caption {
+  text-align: center;
+  padding: 8px 0;
+  color: #000;
+}
+
+/* Sketchy Timeline */
+.sketch-timeline-container {
+  position: relative;
+  padding: 16px 0;
+}
+
+.sketch-timeline-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 24px;
+}
+
+.sketch-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  bottom: -24px;
+  width: 1px;
+  background-color: #000;
+  border-right: 1px dashed #000;
+}
+
+.sketch-timeline-item:last-child::before {
+  display: none;
+}
+
+.sketch-timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transform: rotate(-1deg);
+}
+
+.sketch-timeline-default-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #2179FF;
+}
+
+.sketch-timeline-content {
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: white;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-timeline-content-alt {
+  transform: rotate(0.5deg);
+}
+
+.sketch-timeline-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.sketch-timeline-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.sketch-timeline-description {
+  font-size: 14px;
+}
+
+/* Sketchy Calendar */
+.sketch-calendar-container {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: white;
+  transform: rotate(-0.4deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 2px solid #000;
+  transform: rotate(0.1deg);
+}
+
+.sketch-calendar-title {
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.sketch-calendar-nav-btn {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sketch-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 2px solid #000;
+}
+
+.sketch-calendar-weekday {
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sketch-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.sketch-calendar-day {
+  height: 40px;
+  padding: 4px;
+  text-align: center;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
+  position: relative;
+}
+
+.sketch-calendar-day-outside {
+  color: #ccc;
+}
+
+.sketch-calendar-day-today {
+  background-color: #f0f8ff;
+  font-weight: bold;
+}
+
+.sketch-calendar-day-selected {
+  background-color: #2179FF;
+  color: white;
+  transform: rotate(0.3deg);
+  z-index: 1;
+}
+
+.sketch-calendar-day-has-events::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #FF5733;
+}
+
+.sketch-calendar-day-events {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.sketch-calendar-day-event-indicator {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+/* Sketchy Social Card */
+.sketch-social-card {
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: white;
+  transform: rotate(-0.6deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-social-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sketch-social-card-avatar {
+  margin-right: 12px;
+}
+
+.sketch-social-card-avatar-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  font-weight: bold;
+  font-size: 20px;
+  overflow: hidden;
+  transform: rotate(1deg);
+}
+
+.sketch-social-card-avatar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sketch-social-card-meta {
+  flex: 1;
+}
+
+.sketch-social-card-name {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.sketch-social-card-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.sketch-social-card-content {
+  margin-bottom: 16px;
+}
+
+.sketch-social-card-actions {
+  display: flex;
+  border-top: 1px dashed #000;
+  padding-top: 12px;
+}
+
+.sketch-social-card-action {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.sketch-social-card-action-active {
+  color: #FF5733;
+}
+
+.sketch-social-card-action:hover {
+  background-color: #f3f3f3;
+  transform: rotate(-0.5deg);
+}
+
+/* Sketchy Pricing Table */
+.sketch-pricing-container {
+  width: 100%;
+}
+
+.sketch-pricing-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.sketch-pricing-tier {
+  flex: 1;
+  min-width: 240px;
+  max-width: 320px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-0.3deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-pricing-tier-highlighted {
+  transform: rotate(0.3deg) scale(1.05);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-width: 3px;
+}
+
+.sketch-pricing-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.sketch-pricing-name {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.sketch-pricing-price {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.sketch-pricing-period {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+}
+
+.sketch-pricing-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.sketch-pricing-features {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.sketch-pricing-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.sketch-pricing-feature svg {
+  margin-right: 8px;
+}
+
+.sketch-pricing-feature-excluded {
+  color: #999;
+}
+
+.sketch-pricing-footer {
+  text-align: center;
+}
+
+/* Sketchy Testimonial Card */
+.sketch-testimonial-card {
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: white;
+  transform: rotate(-0.4deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sketch-testimonial-quote {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+
+.sketch-testimonial-quote-mark {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  color: #ddd;
+  transform: scale(0.5);
+}
+
+.sketch-testimonial-text {
+  font-style: italic;
+}
+
+.sketch-testimonial-rating {
+  display: flex;
+  margin-bottom: 12px;
+  color: #FFC107;
+}
+
+.sketch-testimonial-star {
+  width: 20px;
+  height: 20px;
+}
+
+.sketch-testimonial-star-empty {
+  color: #ddd;
+}
+
+.sketch-testimonial-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+  margin: 12px 0;
+}
+
+.sketch-testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.sketch-testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-right: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  transform: rotate(1deg);
+}
+
+.sketch-testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sketch-testimonial-avatar-initials {
+  font-weight: bold;
+}
+
+.sketch-testimonial-info {
+  flex: 1;
+}
+
+.sketch-testimonial-name {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.sketch-testimonial-role {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Media query for responsive gallery grid */
+@media (max-width: 768px) {
+  .sketch-gallery-columns-3,
+  .sketch-gallery-columns-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sketch-pricing-tier {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sketch-gallery-columns-2,
+  .sketch-gallery-columns-3,
+  .sketch-gallery-columns-4 {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

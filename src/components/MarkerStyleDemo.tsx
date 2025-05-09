@@ -11,7 +11,20 @@ import {
   SketchLoader,
   SketchPagination,
   SketchTooltip,
-  SketchIconography
+  SketchIconography,
+  SketchProgressBar,
+  SketchBadge,
+  SketchTag,
+  SketchDropdown,
+  SketchNotificationBadge,
+  SketchSteps,
+  SketchFileUpload,
+  SketchImageGallery,
+  SketchTimeline,
+  SketchCalendar,
+  SketchSocialCard,
+  SketchPricingTable,
+  SketchTestimonialCard
 } from './marker';
 
 const MarkerStyleDemo: React.FC = () => {
@@ -22,6 +35,7 @@ const MarkerStyleDemo: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedTags, setSelectedTags] = useState<string[]>(['JavaScript', 'React']);
 
   const handleButtonClick = () => {
     setIsLoading(true);
@@ -41,6 +55,108 @@ const MarkerStyleDemo: React.FC = () => {
     ['John Doe', 'Developer', 'Active'],
     ['Jane Smith', 'Designer', 'Away'],
     ['Bob Johnson', 'Manager', 'Busy']
+  ];
+  
+  const removeTag = (tag: string) => {
+    setSelectedTags(selectedTags.filter(t => t !== tag));
+  };
+  
+  const dropdownOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  
+  const steps = [
+    { label: 'Step 1', completed: true, active: false },
+    { label: 'Step 2', completed: true, active: false },
+    { label: 'Step 3', completed: false, active: true },
+    { label: 'Step 4', completed: false, active: false },
+  ];
+  
+  const galleryImages = [
+    { src: 'https://images.unsplash.com/photo-1518770660439-4636190af475', alt: 'Image 1', caption: 'Circuit Board' },
+    { src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d', alt: 'Image 2', caption: 'Person using MacBook' },
+    { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05', alt: 'Image 3', caption: 'Foggy mountains' },
+    { src: 'https://images.unsplash.com/photo-1506744140801-50d01698950b', alt: 'Image 4', caption: 'Serene lake' },
+    { src: 'https://images.unsplash.com/photo-1501854140801-50d01698950b', alt: 'Image 5', caption: 'Mountains aerial view' },
+    { src: 'https://images.unsplash.com/photo-1615729947596-a598e5de0ab3', alt: 'Image 6', caption: 'Rocky mountain' },
+  ];
+  
+  const timelineItems = [
+    { 
+      title: 'Project Started', 
+      date: 'January 2023', 
+      content: 'Initial concept and planning phase began.' 
+    },
+    { 
+      title: 'Design Phase', 
+      date: 'March 2023', 
+      content: 'Created wireframes and design mockups.' 
+    },
+    { 
+      title: 'Development', 
+      date: 'May 2023', 
+      content: 'Started the development process with React and TypeScript.' 
+    },
+    { 
+      title: 'Beta Testing', 
+      date: 'August 2023', 
+      content: 'Initial testing with beta users.' 
+    },
+    { 
+      title: 'Launch', 
+      date: 'October 2023', 
+      content: 'Official product launch.' 
+    },
+  ];
+  
+  const calendarEvents = [
+    { date: new Date(2025, 4, 10), title: 'Meeting', color: '#2179FF' },
+    { date: new Date(2025, 4, 15), title: 'Conference', color: '#2179FF' },
+    { date: new Date(2025, 4, 16), title: 'Deadline', color: '#FF5733' },
+  ];
+  
+  const pricingTiers = [
+    {
+      name: 'Basic',
+      price: 0,
+      period: 'month',
+      description: 'Perfect for getting started',
+      features: [
+        { name: 'Up to 5 projects', included: true },
+        { name: 'Basic components', included: true },
+        { name: 'Community support', included: true },
+        { name: 'Custom domains', included: false },
+        { name: 'Advanced analytics', included: false },
+      ],
+      buttonText: 'Start for Free',
+    },
+    {
+      name: 'Pro',
+      price: 29,
+      period: 'month',
+      description: 'Everything you need for a growing business',
+      features: [
+        { name: 'Unlimited projects', included: true },
+        { name: 'All components', included: true },
+        { name: 'Priority support', included: true },
+        { name: 'Custom domains', included: true },
+        { name: 'Advanced analytics', included: false },
+      ],
+      buttonText: 'Upgrade to Pro',
+      highlight: true,
+    },
+    {
+      name: 'Enterprise',
+      price: 99,
+      period: 'month',
+      description: 'Advanced features for large teams',
+      features: [
+        { name: 'Unlimited projects', included: true },
+        { name: 'All components', included: true },
+        { name: 'Dedicated support', included: true },
+        { name: 'Custom domains', included: true },
+        { name: 'Advanced analytics', included: true },
+      ],
+      buttonText: 'Contact Sales',
+    },
   ];
 
   return (
@@ -457,6 +573,162 @@ const MarkerStyleDemo: React.FC = () => {
                 Toggle Drawer Demo
               </SketchButton>
             </div>
+          </div>
+        </SketchCard>
+        
+        {/* Progress Bars */}
+        <SketchCard title="Progress Bars" className="mb-6">
+          <div className="space-y-4">
+            <div>
+              <SketchProgressBar value={50} className="mb-2" color="#2179FF" />
+              <p className="text-sm text-gray-500">50% Complete (blue)</p>
+            </div>
+            <div>
+              <SketchProgressBar value={75} className="mb-2" color="#33CC66" />
+              <p className="text-sm text-gray-500">75% Complete (green)</p>
+            </div>
+            <div>
+              <SketchProgressBar value={90} className="mb-2" color="#FF5733" />
+              <p className="text-sm text-gray-500">90% Complete (red)</p>
+            </div>
+          </div>
+        </SketchCard>
+        
+        {/* Badges and Tags */}
+        <SketchCard title="Badges & Tags" className="mb-6">
+          <div className="mb-4">
+            <p className="mb-2">Badges:</p>
+            <div className="flex flex-wrap gap-2">
+              <SketchBadge variant="default">Default</SketchBadge>
+              <SketchBadge variant="primary">Primary</SketchBadge>
+              <SketchBadge variant="success">Success</SketchBadge>
+              <SketchBadge variant="warning">Warning</SketchBadge>
+              <SketchBadge variant="danger">Danger</SketchBadge>
+            </div>
+          </div>
+          
+          <div>
+            <p className="mb-2">Tags:</p>
+            <div className="flex flex-wrap gap-2">
+              {selectedTags.map((tag, index) => (
+                <SketchTag key={index} onRemove={() => removeTag(tag)}>
+                  {tag}
+                </SketchTag>
+              ))}
+              <SketchTag>CSS</SketchTag>
+              <SketchTag>HTML</SketchTag>
+            </div>
+          </div>
+        </SketchCard>
+        
+        {/* Dropdown Menu */}
+        <SketchCard title="Dropdown Menu" className="mb-6">
+          <div className="space-y-4">
+            <p>Hand-drawn dropdown menu:</p>
+            <SketchDropdown 
+              options={dropdownOptions}
+              placeholder="Select an option"
+              onSelect={(option) => console.log(`Selected: ${option}`)}
+            />
+          </div>
+        </SketchCard>
+        
+        {/* Notification Badges */}
+        <SketchCard title="Notification Badges" className="mb-6">
+          <div className="space-y-4">
+            <p>Notification badges for different elements:</p>
+            <div className="flex space-x-8 justify-center">
+              <SketchNotificationBadge count={3} color="blue" />
+              <SketchNotificationBadge count={12} color="red" icon="message" />
+              <SketchNotificationBadge count={5} color="yellow" icon="clock" />
+            </div>
+          </div>
+        </SketchCard>
+        
+        {/* Steps */}
+        <SketchCard title="Steps" className="mb-6">
+          <div className="space-y-4">
+            <p>Progress steps for multi-stage processes:</p>
+            <SketchSteps steps={steps} />
+          </div>
+        </SketchCard>
+        
+        {/* File Upload */}
+        <SketchCard title="File Upload" className="mb-6">
+          <div className="space-y-4">
+            <p>Drag and drop file upload:</p>
+            <SketchFileUpload 
+              accept=".jpg,.png,.pdf"
+              multiple
+              onFileChange={(files) => console.log(`Uploaded ${files.length} files`)}
+            />
+          </div>
+        </SketchCard>
+        
+        {/* Image Gallery */}
+        <SketchCard title="Image Gallery" className="mb-6">
+          <div className="space-y-4">
+            <p>Responsive image gallery with captions:</p>
+            <SketchImageGallery 
+              images={galleryImages}
+              columns={3}
+            />
+          </div>
+        </SketchCard>
+        
+        {/* Timeline */}
+        <SketchCard title="Timeline" className="mb-6">
+          <div className="space-y-4">
+            <p>Visualize events over time:</p>
+            <SketchTimeline items={timelineItems} />
+          </div>
+        </SketchCard>
+        
+        {/* Calendar */}
+        <SketchCard title="Calendar" className="mb-6">
+          <div className="space-y-4">
+            <p>Interactive calendar with event indicators:</p>
+            <SketchCalendar 
+              events={calendarEvents}
+              onDateClick={(date) => console.log(`Selected date: ${date.toDateString()}`)}
+            />
+          </div>
+        </SketchCard>
+        
+        {/* Social Message Card */}
+        <SketchCard title="Social Message Card" className="mb-6">
+          <div className="space-y-4">
+            <p>Interactive social media post card:</p>
+            <SketchSocialCard 
+              avatar="JD"
+              name="John Doodle"
+              time="Posted 2 hours ago"
+              content="Just finished my latest sketch! What do you think of these wobbly marker-style UI elements?"
+              initialLikes={12}
+              initialComments={3}
+            />
+          </div>
+        </SketchCard>
+        
+        {/* Pricing Table */}
+        <SketchCard title="Pricing Table" className="mb-6 col-span-1 md:col-span-2">
+          <div className="space-y-4">
+            <p>Pricing comparison table:</p>
+            <SketchPricingTable tiers={pricingTiers} />
+          </div>
+        </SketchCard>
+        
+        {/* Testimonial Card */}
+        <SketchCard title="Testimonial Card" className="mb-6">
+          <div className="space-y-4">
+            <p>Customer testimonial card with rating:</p>
+            <SketchTestimonialCard 
+              quote="This sketch UI kit is amazing! It gives my projects a unique hand-drawn feel that stands out from the typical flat designs everyone is using."
+              name="Jane Smith"
+              role="UX Designer"
+              avatar="JS"
+              rating={5}
+            />
           </div>
         </SketchCard>
       </div>
