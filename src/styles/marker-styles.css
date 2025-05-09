@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 /* Base marker styles */
 .marker-font {
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
 }
 
 .marker-heading {
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
   font-weight: bold;
 }
 
 .marker-text {
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
 }
 
 .marker-caption {
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
   font-size: 12px;
 }
 
@@ -211,7 +211,7 @@
   border-radius: 4px 4px 0 0;
   margin-right: 4px;
   transform: rotate(0.5deg);
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
   background: white;
 }
 
@@ -445,7 +445,7 @@
   justify-content: center;
   gap: 8px;
   margin: 16px 0;
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
 }
 
 .sketch-pagination-pages {
@@ -522,7 +522,7 @@
   border: 2px solid #000;
   border-radius: 4px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
   font-size: 14px;
   max-width: 200px;
   text-align: center;
@@ -607,7 +607,7 @@
 
 .sketch-icon-label {
   margin-top: 0.5rem;
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
   font-size: 0.875rem;
 }
 

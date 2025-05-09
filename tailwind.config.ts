@@ -105,8 +105,8 @@ export default {
 				'spin-loader': 'spin-loader 1.5s linear infinite'
 			},
 			fontFamily: {
-				'comic': ['Shantell Sans', 'cursive'],
-				'heading': ['Shantell Sans', 'cursive']
+				'comic': ['Playpen Sans', 'cursive'],
+				'heading': ['Playpen Sans', 'cursive']
 			},
 			fontSize: {
 				'heading': '18px',
