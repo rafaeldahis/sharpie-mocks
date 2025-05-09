@@ -33,6 +33,9 @@ const SketchIconography: React.FC<SketchIconographyProps> = ({
   color = 'currentColor',
   className = ''
 }) => {
+  // Generate a unique ID for the filter
+  const filterId = `sketch-filter-${icon}-${Math.random().toString(36).substring(2, 9)}`;
+  
   // Add randomness to the path for a hand-drawn effect
   const getWobblyPath = (path: string) => {
     // Simple implementation with some random jitter
@@ -69,19 +72,18 @@ const SketchIconography: React.FC<SketchIconographyProps> = ({
         className="sketch-icon-svg"
         style={{ 
           transform: `rotate(${getRandomRotation()}deg)`,
-          filter: 'url(#sketch-filter)'
         }}
       >
         {/* Add a subtle filter for the sketch effect */}
         <defs>
-          <filter id={`sketch-filter-${icon}`}>
+          <filter id={filterId}>
             <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
           </filter>
         </defs>
         
         {/* Use the wobbly path for the icon */}
-        <path d={getWobblyPath(iconPaths[icon])} filter={`url(#sketch-filter-${icon})`} />
+        <path d={getWobblyPath(iconPaths[icon])} filter={`url(#${filterId})`} />
         
         {/* Add some random dots to make it look more hand-drawn */}
         {Array.from({ length: 3 }).map((_, i) => (
