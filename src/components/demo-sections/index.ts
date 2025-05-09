@@ -7,17 +7,15 @@ import ChartsSection from './ChartsSection';
 import NavigationElementsSection from './NavigationElementsSection';
 import MessagesSection from './MessagesSection';
 import TableSection from './TableSection';
-import PaginationSection from './PaginationSection';
 import TooltipsSection from './TooltipsSection';
 import IconographySection from './IconographySection';
 import ColorPaletteSection from './ColorPaletteSection';
 import GridSpacingSection from './GridSpacingSection';
 import ModalDrawerSection from './ModalDrawerSection';
-import ProgressBarsSection from './ProgressBarsSection';
 import BadgesTagsSection from './BadgesTagsSection';
 import DropdownSection from './DropdownSection';
 import NotificationBadgesSection from './NotificationBadgesSection';
-import StepsSection from './StepsSection';
+import ProgressSection from './ProgressSection';
 import FileUploadSection from './FileUploadSection';
 import ImageGallerySection from './ImageGallerySection';
 import TimelineSection from './TimelineSection';
@@ -35,17 +33,15 @@ export {
   NavigationElementsSection,
   MessagesSection,
   TableSection,
-  PaginationSection,
   TooltipsSection,
   IconographySection,
   ColorPaletteSection,
   GridSpacingSection,
   ModalDrawerSection,
-  ProgressBarsSection,
   BadgesTagsSection,
   DropdownSection,
   NotificationBadgesSection,
-  StepsSection,
+  ProgressSection,
   FileUploadSection,
   ImageGallerySection,
   TimelineSection,

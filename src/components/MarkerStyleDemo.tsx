@@ -12,16 +12,14 @@ import {
   IconographySection,
   ColorPaletteSection,
   GridSpacingSection,
-  TooltipsSection,      // Moved to Core Design System
+  TooltipsSection,      
   
   // Ready-to-Use Components
   ChartsSection,
-  PaginationSection,
   ModalDrawerSection,
-  ProgressBarsSection,
   BadgesTagsSection,
   NotificationBadgesSection,
-  StepsSection,
+  ProgressSection,
   FileUploadSection,
   ImageGallerySection,
   TimelineSection,
@@ -199,12 +197,10 @@ const MarkerStyleDemo: React.FC = () => {
       <h2 className="text-3xl font-bold mb-6 sketch-heading sketch-underline">2. Ready-to-Use Components</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <ChartsSection barChartData={barChartData} chartData={chartData} />
-        <PaginationSection />
         <ModalDrawerSection />
-        <ProgressBarsSection />
+        <ProgressSection steps={steps} />
         <BadgesTagsSection />
         <NotificationBadgesSection />
-        <StepsSection steps={steps} />
         <FileUploadSection />
         <ImageGallerySection galleryImages={galleryImages} />
         <TimelineSection timelineItems={timelineItems} />
