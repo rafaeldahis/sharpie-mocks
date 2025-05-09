@@ -484,4 +484,29 @@
     color: #999;
     overflow: hidden;
   }
+  
+  /* Sketchy button */
+  .sketch-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    transform: rotate(-0.5deg);
+    transition: all 0.2s ease;
+  }
+  
+  .sketch-btn-icon:hover {
+    transform: rotate(-1deg) translate(1px, 1px);
+    background-color: #f0f0f0;
+  }
+  
+  .sketch-btn-icon:active {
+    transform: translate(2px, 2px) rotate(-0.5deg);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
 }
