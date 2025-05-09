@@ -42,7 +42,7 @@
 .sketch-btn {
   position: relative;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 16px;
   background: #2179FF;
   color: white;
   font-weight: bold;
@@ -837,7 +837,7 @@
 .sketch-notification-container {
   position: relative;
   display: inline-block;
-  margin: 0 8px;
+  margin: 0 12px;
 }
 
 .sketch-notification-icon {
@@ -849,7 +849,8 @@
   border: 2px solid #000;
   border-radius: 50%;
   background-color: white;
-  transform: rotate(-0.2deg);
+  transform: rotate(-0.5deg);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .sketch-notification-badge {
@@ -858,15 +859,15 @@
   height: 20px;
   padding: 0 6px;
   border-radius: 10px;
-  background-color: #2179FF;
   color: white;
   font-size: 12px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #000;
+  border: 1.5px solid #000;
   transform: rotate(0.5deg);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .sketch-notification-badge-top-right {
@@ -991,6 +992,7 @@
   cursor: pointer;
   transform: rotate(-0.3deg);
   transition: all 0.2s ease;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .sketch-file-upload-active {
@@ -1417,10 +1419,25 @@
 .sketch-social-card {
   border: 2px solid #000;
   border-radius: 4px;
-  padding: 16px;
+  padding: 18px;
   background-color: white;
   transform: rotate(-0.6deg);
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.sketch-social-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transform: rotate(-0.3deg);
+  z-index: -1;
+  opacity: 0.2;
 }
 
 .sketch-social-card-header {
@@ -1430,76 +1447,86 @@
 }
 
 .sketch-social-card-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
   margin-right: 12px;
-}
-
-.sketch-social-card-avatar-image {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f3f3f3;
   font-weight: bold;
-  font-size: 20px;
-  overflow: hidden;
-  transform: rotate(1deg);
+  background: #f0f0f0;
+  position: relative;
 }
 
-.sketch-social-card-avatar-image img {
+.sketch-social-card-avatar::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-social-card-avatar-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .sketch-social-card-meta {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .sketch-social-card-name {
   font-weight: bold;
-  margin-bottom: 2px;
+  font-size: 1.1rem;
 }
 
 .sketch-social-card-time {
-  font-size: 12px;
+  font-size: 0.9rem;
   color: #666;
 }
 
 .sketch-social-card-content {
   margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 16px;
 }
 
 .sketch-social-card-actions {
   display: flex;
-  border-top: 1px dashed #000;
-  padding-top: 12px;
+  justify-content: space-between;
 }
 
 .sketch-social-card-action {
-  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
-  padding: 6px;
-  background: none;
+  padding: 6px 12px;
   border: none;
+  background: none;
   cursor: pointer;
-  color: #333;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s;
+}
+
+.sketch-social-card-action:hover {
+  background-color: #f5f5f5;
 }
 
 .sketch-social-card-action-active {
   color: #FF5733;
-}
-
-.sketch-social-card-action:hover {
-  background-color: #f3f3f3;
-  transform: rotate(-0.5deg);
 }
 
 /* Sketchy Pricing Table */
@@ -1591,10 +1618,25 @@
 .sketch-testimonial-card {
   border: 2px solid #000;
   border-radius: 4px;
-  padding: 16px;
+  padding: 18px;
   background-color: white;
   transform: rotate(-0.4deg);
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.sketch-testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transform: rotate(0.3deg);
+  z-index: -1;
+  opacity: 0.2;
 }
 
 .sketch-testimonial-quote {
@@ -1953,4 +1995,13 @@
   transform: translate(1px, 1px);
   z-index: -1;
   opacity: 0.3;
+}
+
+/* Ensure Empty State label is readable */
+.sketch-empty-state-label {
+  font-family: 'Playpen Sans', cursive;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
 }

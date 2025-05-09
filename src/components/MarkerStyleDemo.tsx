@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -29,7 +30,6 @@ import {
   PricingTableSection,
   TestimonialSection,
   FAQSection,
-  PasswordFieldSection,
   AvatarSection,
   EmptyStateSection,
   MiniTrendSection
@@ -213,16 +213,13 @@ const MarkerStyleDemo: React.FC = () => {
         <TimelineSection timelineItems={timelineItems} />
         <CalendarSection calendarEvents={calendarEvents} />
         <FAQSection />
-        <PasswordFieldSection />
         <AvatarSection />
         <EmptyStateSection />
         <MiniTrendSection />
         {/* Make SocialMedia and Testimonial sections appear side by side */}
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="w-full md:w-1/2">
+        <div className="col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SocialMediaSection renderStars={renderStars} />
-          </div>
-          <div className="w-full md:w-1/2">
             <TestimonialSection />
           </div>
         </div>
