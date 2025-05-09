@@ -102,7 +102,7 @@ const Index = () => {
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <p>
-                Copy and paste this exact string: <span className="font-medium text-blue-600">"Apply the sketch CSS styles from github.com/rafaeldahis/sharpie-mocks to create a hand-drawn UI with wobbly elements and marker aesthetics"</span>
+                Copy and paste this exact string: <span className="font-medium text-blue-600">"Apply the sketch CSS styles from this file (link: https://github.com/rafaeldahis/sharpie-mocks/blob/main/src/styles/marker-styles.css) to create a hand-drawn UI with wobbly elements and marker aesthetics"</span>
               </p>
             </div>
             
