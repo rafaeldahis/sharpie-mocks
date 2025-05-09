@@ -4,6 +4,7 @@ import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Copy } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import markerStylesCSS from "@/styles/marker-styles.css?raw";
 
 const Index = () => {
   const [api, setApi] = useState<any>(null);
@@ -64,7 +65,11 @@ const Index = () => {
       });
   };
 
-  const cssInstructionText = "Apply the sketch CSS styles from this file (link: https://github.com/rafaeldahis/sharpie-mocks/blob/main/src/styles/marker-styles.css) to create a hand-drawn UI with wobbly elements and marker aesthetics";
+  const copyCSSFile = () => {
+    copyToClipboard(markerStylesCSS);
+  };
+
+  const instructionText = "Apply the sketch CSS styles attached to create a hand-drawn UI with wobbly elements and marker aesthetics";
 
   return (
     <div className="container mx-auto p-4">
@@ -128,11 +133,24 @@ const Index = () => {
               <div className="flex items-center gap-2">
                 <Copy 
                   className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" 
-                  onClick={() => copyToClipboard(`"${cssInstructionText}"`)}
-                  aria-label="Copy to clipboard"
+                  onClick={copyCSSFile}
+                  aria-label="Copy CSS file contents"
                 />
                 <p>
-                  <span className="font-medium text-blue-600">"{cssInstructionText}"</span>
+                  <span className="font-medium text-blue-600">1 - "Copy this CSS file and paste or attach it to your prompt"</span>
+                </p>
+              </div>
+            </div>
+            
+            <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
+              <div className="flex items-center gap-2">
+                <Copy 
+                  className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" 
+                  onClick={() => copyToClipboard(`"${instructionText}"`)}
+                  aria-label="Copy instruction text"
+                />
+                <p>
+                  <span className="font-medium text-blue-600">2 - "{instructionText}"</span>
                 </p>
               </div>
             </div>
