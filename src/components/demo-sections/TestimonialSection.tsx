@@ -5,8 +5,8 @@ import { SketchCard, SketchTestimonialCard } from '../marker';
 const TestimonialSection: React.FC = () => {
   const testimonials = [
     {
-      text: "This sketch UI kit is absolutely amazing! It's exactly what I needed for my project.",
-      author: "Jane Cooper",
+      quote: "This sketch UI kit is absolutely amazing! It's exactly what I needed for my project.",
+      name: "Jane Cooper",
       role: "Product Designer",
       rating: 5,
       avatar: "J"
@@ -21,8 +21,8 @@ const TestimonialSection: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <SketchTestimonialCard
               key={index}
-              text={testimonial.text}
-              author={testimonial.author}
+              quote={testimonial.quote}
+              name={testimonial.name}
               role={testimonial.role}
               rating={testimonial.rating}
               avatar={testimonial.avatar}

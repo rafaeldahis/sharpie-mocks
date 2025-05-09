@@ -45,10 +45,9 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
             name="John Doe"
             time="5 hours ago"
             content="Just launched my new design portfolio using the sketchy UI kit! Check it out and let me know what you think."
-            onLike={handleLike}
-            likes={likeCount}
-            comments={8}
-            liked={liked}
+            initialLikes={likeCount}
+            initialComments={8}
+            className=""
           />
         </div>
       </div>
