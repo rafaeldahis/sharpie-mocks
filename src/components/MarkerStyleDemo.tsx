@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -181,8 +180,6 @@ const MarkerStyleDemo: React.FC = () => {
   
   return (
     <div className="container mx-auto p-4 font-comic">
-      <p className="mb-8 text-center text-lg">All marker style components on a single page.</p>
-
       {/* Core Design System */}
       <h2 className="text-3xl font-bold mb-6 sketch-heading sketch-underline">1. Core Design System</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
