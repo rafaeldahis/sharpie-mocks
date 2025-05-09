@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
@@ -1427,7 +1426,7 @@
 .sketch-social-card-header {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .sketch-social-card-avatar {
@@ -1698,4 +1697,229 @@
   .sketch-gallery-columns-4 {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+/* Social Media Components */
+.sketch-social-share-button {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: white;
+  color: black;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.sketch-social-share-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid black;
+  border-radius: 6px;
+  transform: rotate(-0.5deg);
+  z-index: -1;
+}
+
+.sketch-social-share-button:hover {
+  transform: translateY(-2px);
+}
+
+.sketch-social-share-button.twitter {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+.sketch-social-share-button.facebook {
+  background-color: #4267B2;
+  color: white;
+}
+
+.sketch-social-share-button.linkedin {
+  background-color: #0077B5;
+  color: white;
+}
+
+.sketch-social-share-button.pinterest {
+  background-color: #E60023;
+  color: white;
+}
+
+.sketch-social-share-button.share {
+  background-color: #f5f5f5;
+}
+
+.sketch-review-card {
+  position: relative;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+}
+
+.sketch-review-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid black;
+  border-radius: 10px;
+  transform: rotate(-0.5deg);
+  z-index: -1;
+}
+
+.sketch-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.sketch-rating-star {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sketch-rating-star:hover {
+  transform: scale(1.15);
+}
+
+.sketch-rating-star.active {
+  color: #FFC107;
+}
+
+.sketch-review-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.sketch-review-header {
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+/* Social card additional styles */
+.sketch-social-card {
+  position: relative;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.sketch-social-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid black;
+  border-radius: 10px;
+  transform: rotate(-0.4deg);
+  z-index: -1;
+}
+
+.sketch-social-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sketch-social-card-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background: #f0f0f0;
+  position: relative;
+}
+
+.sketch-social-card-avatar::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: rotate(-0.5deg);
+}
+
+.sketch-social-card-avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sketch-social-card-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.sketch-social-card-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.sketch-social-card-time {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.sketch-social-card-content {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 16px;
+}
+
+.sketch-social-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sketch-social-card-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.sketch-social-card-action:hover {
+  background-color: #f5f5f5;
+}
+
+.sketch-social-card-action-active {
+  color: #FF5733;
 }
