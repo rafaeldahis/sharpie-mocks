@@ -1,6 +1,7 @@
 
 import React from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
   return (
@@ -62,40 +63,55 @@ const Index = () => {
           </p>
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
-              <p className="font-bold">Copy the CSS styles:</p>
-              <ol className="list-decimal pl-6 mt-2">
-                <li>Mention the GitHub project: <span className="font-medium text-blue-600">github.com/rafaeldahis/sharpie-mocks</span></li>
-                <li>Ask your AI tool: "Apply these sketch CSS styles to my UI components"</li>
-              </ol>
+              <p className="font-bold">Using the CSS styles:</p>
+              <p className="pl-6 mt-2">
+                Simply tell your AI tool: "Apply the sketch CSS styles from <span className="font-medium text-blue-600">github.com/rafaeldahis/sharpie-mocks</span> to my UI components"
+              </p>
             </div>
             
             <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
               <p className="font-bold">Quick implementation examples:</p>
-              <div className="mt-2 space-y-3">
-                {/* B2C Example */}
-                <div className="p-2 border-l-2 border-blue-400">
-                  <p className="italic">"Create a hand-drawn e-commerce product page with sketch styles showing a product image, pricing, reviews, and an 'Add to Cart' button"</p>
-                </div>
-                
-                {/* B2B Example */}
-                <div className="p-2 border-l-2 border-green-400">
-                  <p className="italic">"Design a sketch-style dashboard for a B2B analytics platform with wobbly charts, key metrics cards, and a hand-drawn navigation sidebar"</p>
-                </div>
-                
-                {/* Marketplace Example */}
-                <div className="p-2 border-l-2 border-purple-400">
-                  <p className="italic">"Make a sketch wireframe of a marketplace app with listing cards, filters, search bar, and a map view using marker styles"</p>
-                </div>
-                
-                {/* Internal Tool Example */}
-                <div className="p-2 border-l-2 border-orange-400">
-                  <p className="italic">"Create a hand-drawn admin panel for managing user permissions with a sketch-style table, action buttons, and filter controls"</p>
-                </div>
-                
-                {/* Productivity App Example */}
-                <div className="p-2 border-l-2 border-red-400">
-                  <p className="italic">"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers"</p>
-                </div>
+              <div className="mt-2">
+                <Carousel className="w-full max-w-md mx-auto">
+                  <CarouselContent>
+                    {/* B2C Example */}
+                    <CarouselItem>
+                      <div className="p-2 border-l-2 border-blue-400">
+                        <p className="italic">"Create a hand-drawn e-commerce product page with sketch styles showing a product image, pricing, reviews, and an 'Add to Cart' button"</p>
+                      </div>
+                    </CarouselItem>
+                    
+                    {/* B2B Example */}
+                    <CarouselItem>
+                      <div className="p-2 border-l-2 border-green-400">
+                        <p className="italic">"Design a sketch-style dashboard for a B2B analytics platform with wobbly charts, key metrics cards, and a hand-drawn navigation sidebar"</p>
+                      </div>
+                    </CarouselItem>
+                    
+                    {/* Marketplace Example */}
+                    <CarouselItem>
+                      <div className="p-2 border-l-2 border-purple-400">
+                        <p className="italic">"Make a sketch wireframe of a marketplace app with listing cards, filters, search bar, and a map view using marker styles"</p>
+                      </div>
+                    </CarouselItem>
+                    
+                    {/* Internal Tool Example */}
+                    <CarouselItem>
+                      <div className="p-2 border-l-2 border-orange-400">
+                        <p className="italic">"Create a hand-drawn admin panel for managing user permissions with a sketch-style table, action buttons, and filter controls"</p>
+                      </div>
+                    </CarouselItem>
+                    
+                    {/* Productivity App Example */}
+                    <CarouselItem>
+                      <div className="p-2 border-l-2 border-red-400">
+                        <p className="italic">"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers"</p>
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-0 bg-white sketch-border border border-black" />
+                  <CarouselNext className="absolute right-0 bg-white sketch-border border border-black" />
+                </Carousel>
               </div>
             </div>
           </div>
