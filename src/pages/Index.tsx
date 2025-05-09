@@ -64,8 +64,8 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <p className="font-bold">Copy the CSS styles:</p>
               <ol className="list-decimal pl-6 mt-2">
-                <li>Visit the GitHub project at <a href="https://github.com/rafaeldahis/sharpie-mocks" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 sketch-underline">github.com/rafaeldahis/sharpie-mocks</a></li>
-                <li>Ask your AI tool: "Apply these sketch styles to my UI components"</li>
+                <li>Mention the GitHub project: <span className="font-medium text-blue-600">github.com/rafaeldahis/sharpie-mocks</span></li>
+                <li>Ask your AI tool: "Apply these sketch CSS styles to my UI components"</li>
               </ol>
             </div>
             
