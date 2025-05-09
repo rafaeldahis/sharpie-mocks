@@ -128,7 +128,8 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <div className="flex items-center gap-2">
                 <Copy 
-                  className="h-5 w-5 cursor-pointer text-gray-500 hover:text-blue-600" 
+                  size={20}  
+                  className="cursor-pointer text-gray-500 hover:text-blue-600" 
                   onClick={copyCSSFile}
                   aria-label="Copy CSS file contents"
                 />
@@ -141,7 +142,8 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
               <div className="flex items-center gap-2">
                 <Copy 
-                  className="h-5 w-5 cursor-pointer text-gray-500 hover:text-blue-600" 
+                  size={20}
+                  className="cursor-pointer text-gray-500 hover:text-blue-600" 
                   onClick={() => copyToClipboard(instructionText)}
                   aria-label="Copy instruction text"
                 />
