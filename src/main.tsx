@@ -1,5 +1,6 @@
 
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
 
@@ -11,7 +12,11 @@ if (!rootElement) {
 } else {
   console.log("main.tsx: Root element found, creating React root");
   const root = createRoot(rootElement);
-  console.log("main.tsx: Root created, rendering App");
-  root.render(<App />);
-  console.log("main.tsx: App rendered");
+  console.log("main.tsx: Root created, rendering App with BrowserRouter");
+  root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+  console.log("main.tsx: App rendered with BrowserRouter");
 }
