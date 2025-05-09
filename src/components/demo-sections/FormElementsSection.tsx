@@ -1,11 +1,21 @@
 
 import React, { useState } from 'react';
-import { SketchCard, SketchInput, SketchCheckbox, SketchRadio, SketchToggle } from '../marker';
+import { SketchCard, SketchInput, SketchCheckbox, SketchRadio, SketchToggle, SketchDropdown } from '../marker';
 
-const FormElementsSection: React.FC = () => {
+interface FormElementsSectionProps {
+  dropdownOptions?: string[];
+}
+
+const FormElementsSection: React.FC<FormElementsSectionProps> = ({ dropdownOptions = [] }) => {
   const [rememberMe, setRememberMe] = useState(false);
   const [selectedOption, setSelectedOption] = useState('option1');
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [selectedDropdownOption, setSelectedDropdownOption] = useState<string | null>(null);
+
+  const handleDropdownSelect = (option: string) => {
+    setSelectedDropdownOption(option);
+    console.log(`Selected: ${option}`);
+  };
 
   return (
     <SketchCard title="Form Elements" className="mb-6">
@@ -37,6 +47,18 @@ const FormElementsSection: React.FC = () => {
           checked={selectedOption === 'option2'}
           onChange={() => setSelectedOption('option2')}
         />
+      </div>
+
+      <div className="mb-4">
+        <div className="mb-2">Dropdown menu:</div>
+        <SketchDropdown 
+          options={dropdownOptions}
+          placeholder="Select an option"
+          onSelect={handleDropdownSelect}
+        />
+        {selectedDropdownOption && (
+          <div className="mt-2 text-sm">Selected: {selectedDropdownOption}</div>
+        )}
       </div>
 
       <SketchToggle 

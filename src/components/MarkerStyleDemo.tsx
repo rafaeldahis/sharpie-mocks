@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -14,7 +13,6 @@ import {
   ColorPaletteSection,
   GridSpacingSection,
   TooltipsSection,      // Moved to Core Design System
-  DropdownSection,      // Moved to Core Design System
   
   // Ready-to-Use Components
   ChartsSection,
@@ -188,14 +186,13 @@ const MarkerStyleDemo: React.FC = () => {
         <ColorPaletteSection />
         <ButtonsSection />
         <GridSpacingSection />
-        <FormElementsSection />
+        <FormElementsSection dropdownOptions={dropdownOptions} />
         <LoadingStatesSection />
         <NavigationElementsSection />
         <TableSection tableHeaders={tableHeaders} tableRows={tableRows} />
         <MessagesSection />
         <IconographySection />
         <TooltipsSection />
-        <DropdownSection dropdownOptions={dropdownOptions} />
       </div>
 
       {/* Ready-to-Use Components */}
