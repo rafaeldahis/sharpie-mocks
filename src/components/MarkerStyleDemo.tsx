@@ -2,19 +2,22 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
+  // Core Design System
   TypographySection,
   ButtonsSection,
   FormElementsSection,
   LoadingStatesSection,
-  ChartsSection,
   NavigationElementsSection,
   MessagesSection,
   TableSection,
-  PaginationSection,
-  TooltipsSection,
   IconographySection,
   ColorPaletteSection,
   GridSpacingSection,
+  
+  // Ready-to-Use Components
+  ChartsSection,
+  PaginationSection,
+  TooltipsSection,
   ModalDrawerSection,
   ProgressBarsSection,
   BadgesTagsSection,
@@ -180,20 +183,27 @@ const MarkerStyleDemo: React.FC = () => {
     <div className="container mx-auto p-4 font-comic">
       <p className="mb-8 text-center text-lg">All marker style components on a single page.</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Core Design System */}
+      <h2 className="text-3xl font-bold mb-6 sketch-heading sketch-underline">1. Core Design System</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <TypographySection />
+        <ColorPaletteSection />
         <ButtonsSection />
+        <GridSpacingSection />
         <FormElementsSection />
         <LoadingStatesSection />
-        <ChartsSection barChartData={barChartData} chartData={chartData} />
         <NavigationElementsSection />
-        <MessagesSection />
         <TableSection tableHeaders={tableHeaders} tableRows={tableRows} />
+        <MessagesSection />
+        <IconographySection />
+      </div>
+
+      {/* Ready-to-Use Components */}
+      <h2 className="text-3xl font-bold mb-6 sketch-heading sketch-underline">2. Ready-to-Use Components</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ChartsSection barChartData={barChartData} chartData={chartData} />
         <PaginationSection />
         <TooltipsSection />
-        <IconographySection />
-        <ColorPaletteSection />
-        <GridSpacingSection />
         <ModalDrawerSection />
         <ProgressBarsSection />
         <BadgesTagsSection />

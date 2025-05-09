@@ -14,7 +14,7 @@ const Index = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentItem((prev) => (prev + 1) % 5); // We have 5 examples
-    }, 3000); // 3 seconds interval
+    }, 5000); // 5 seconds interval
     
     return () => clearInterval(intervalId);
   }, []);
@@ -128,13 +128,13 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <div className="flex items-center gap-2">
                 <Copy 
-                  size={20}  
+                  size={24}  
                   className="cursor-pointer text-gray-500 hover:text-blue-600" 
                   onClick={copyCSSFile}
                   aria-label="Copy CSS file contents"
                 />
-                <p>
-                  <span className="font-medium text-black">1 - Copy this CSS file and attach it to your prompt</span>
+                <p className="text-black">
+                  <span className="font-medium">1 - Copy this CSS file and attach it to your prompt</span>
                 </p>
               </div>
             </div>
@@ -142,13 +142,13 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
               <div className="flex items-center gap-2">
                 <Copy 
-                  size={20}
+                  size={24}
                   className="cursor-pointer text-gray-500 hover:text-blue-600" 
                   onClick={() => copyToClipboard(instructionText)}
                   aria-label="Copy instruction text"
                 />
-                <p>
-                  <span className="font-medium text-black">2 - Add to your prompt: "{instructionText}"</span>
+                <p className="text-black">
+                  <span className="font-medium">2 - Add to your prompt: "{instructionText}"</span>
                 </p>
               </div>
             </div>
