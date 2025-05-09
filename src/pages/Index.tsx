@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Copy } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [api, setApi] = useState<any>(null);
@@ -42,6 +43,28 @@ const Index = () => {
       text: "\"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers\""
     }
   ];
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        toast({
+          title: "Copied!",
+          description: "Text copied to clipboard",
+          duration: 2000,
+        });
+      })
+      .catch((err) => {
+        console.error('Failed to copy: ', err);
+        toast({
+          title: "Failed to copy",
+          description: "Please try again",
+          variant: "destructive",
+          duration: 2000,
+        });
+      });
+  };
+
+  const cssInstructionText = "Apply the sketch CSS styles from this file (link: https://github.com/rafaeldahis/sharpie-mocks/blob/main/src/styles/marker-styles.css) to create a hand-drawn UI with wobbly elements and marker aesthetics";
 
   return (
     <div className="container mx-auto p-4">
@@ -103,9 +126,13 @@ const Index = () => {
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <div className="flex items-center gap-2">
-                <Copy className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" />
+                <Copy 
+                  className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" 
+                  onClick={() => copyToClipboard(`"${cssInstructionText}"`)}
+                  aria-label="Copy to clipboard"
+                />
                 <p>
-                  <span className="font-medium text-blue-600">"Apply the sketch CSS styles from this file (link: https://github.com/rafaeldahis/sharpie-mocks/blob/main/src/styles/marker-styles.css) to create a hand-drawn UI with wobbly elements and marker aesthetics"</span>
+                  <span className="font-medium text-blue-600">"{cssInstructionText}"</span>
                 </p>
               </div>
             </div>
