@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -104,7 +105,7 @@ export default {
 				'spin-loader': 'spin-loader 1.5s linear infinite'
 			},
 			fontFamily: {
-				'comic': ['"Comic Neue"', '"Comic Sans MS"', 'cursive']
+				'comic': ['"Patrick Hand"', 'cursive']
 			},
 			fontSize: {
 				'heading': '18px',

@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 /* Base marker styles */
 .marker-font {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .marker-heading {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Patrick Hand', cursive;
   font-weight: bold;
 }
 
 .marker-text {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .marker-caption {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Patrick Hand', cursive;
   font-size: 12px;
 }
 
@@ -209,7 +210,7 @@
   border-radius: 4px 4px 0 0;
   margin-right: 4px;
   transform: rotate(0.5deg);
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Patrick Hand', cursive;
   background: white;
 }
 

@@ -23,7 +23,7 @@ const markerTailwindConfig = {
         }
       },
       fontFamily: {
-        'comic': ['"Comic Sans MS"', 'cursive']
+        'comic': ['"Patrick Hand"', 'cursive']
       },
       fontSize: {
         'heading': '18px',
