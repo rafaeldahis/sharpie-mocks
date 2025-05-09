@@ -24,12 +24,24 @@ const SketchBarChart: React.FC<SketchBarChartProps> = ({
   // Find the maximum value in the data for scaling
   const maxValue = Math.max(...data.map(item => item.value));
   
+  // Generate random values if data is empty
+  const displayData = data.length > 0 ? data : [
+    { label: 'Jan', value: Math.floor(Math.random() * 80) + 20, color: '#FF5733' },
+    { label: 'Feb', value: Math.floor(Math.random() * 80) + 20, color: '#33FF57' },
+    { label: 'Mar', value: Math.floor(Math.random() * 80) + 20, color: '#3357FF' },
+    { label: 'Apr', value: Math.floor(Math.random() * 80) + 20, color: '#F3C13A' },
+    { label: 'May', value: Math.floor(Math.random() * 80) + 20, color: '#9B59B6' }
+  ];
+  
+  // Recalculate max value if using random data
+  const displayMaxValue = Math.max(...displayData.map(item => item.value));
+  
   return (
     <div className={`sketch-bar-chart ${className}`} style={{ height }}>
       <div className="flex h-full items-end space-x-2">
-        {data.map((bar, index) => {
+        {displayData.map((bar, index) => {
           // Calculate height as percentage of max value
-          const barHeight = `${(bar.value / maxValue) * 100}%`;
+          const barHeight = `${(bar.value / displayMaxValue) * 100}%`;
           
           return (
             <div key={index} className="flex flex-col items-center flex-1">

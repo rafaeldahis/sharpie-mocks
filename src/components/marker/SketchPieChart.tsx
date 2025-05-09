@@ -20,15 +20,22 @@ const SketchPieChart: React.FC<SketchPieChartProps> = ({
   className = '' 
 }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
+  // Generate random values if data is empty
+  const displayData = data.length > 0 ? data : [
+    { value: 35, color: '#FF5733', label: 'Red' },
+    { value: 40, color: '#33FF57', label: 'Green' },
+    { value: 25, color: '#3357FF', label: 'Blue' }
+  ];
   
   // Calculate total for percentages
-  const total = data.reduce((sum, slice) => sum + slice.value, 0);
+  const total = displayData.reduce((sum, slice) => sum + slice.value, 0);
   
   // Generate SVG paths for pie slices
   const generatePieSlices = () => {
     let currentAngle = 0;
     
-    return data.map((slice, index) => {
+    return displayData.map((slice, index) => {
       // Calculate the angle for this slice
       const sliceAngle = (slice.value / total) * 360;
       
@@ -62,7 +69,11 @@ const SketchPieChart: React.FC<SketchPieChartProps> = ({
       // Update current angle for next slice
       currentAngle += sliceAngle;
 
-      const tooltipContent = slice.label ? `${slice.label}: ${slice.value}` : `${slice.value}`;
+      // Format the tooltip content to include percentage
+      const percentage = ((slice.value / total) * 100).toFixed(1);
+      const tooltipContent = slice.label 
+        ? `${slice.label}: ${slice.value} (${percentage}%)` 
+        : `${slice.value} (${percentage}%)`;
       
       return (
         <SketchTooltip key={index} content={tooltipContent}>
