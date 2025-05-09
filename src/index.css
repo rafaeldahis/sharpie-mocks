@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 @tailwind base;
@@ -382,7 +381,7 @@
     border-radius: 4px 4px 0 0;
     margin-right: 4px;
     transform: rotate(0.5deg);
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Itim', cursive;
     background: white;
   }
   
