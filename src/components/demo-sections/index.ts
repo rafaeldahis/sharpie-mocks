@@ -23,6 +23,12 @@ import CalendarSection from './CalendarSection';
 import SocialMediaSection from './SocialMediaSection';
 import PricingTableSection from './PricingTableSection';
 import TestimonialSection from './TestimonialSection';
+import NumericStepperSection from './NumericStepperSection';
+import FAQSection from './FAQSection';
+import PasswordFieldSection from './PasswordFieldSection';
+import AvatarSection from './AvatarSection';
+import EmptyStateSection from './EmptyStateSection';
+import MiniTrendSection from './MiniTrendSection';
 
 export {
   TypographySection,
@@ -48,5 +54,11 @@ export {
   CalendarSection,
   SocialMediaSection,
   PricingTableSection,
-  TestimonialSection
+  TestimonialSection,
+  NumericStepperSection,
+  FAQSection,
+  PasswordFieldSection,
+  AvatarSection,
+  EmptyStateSection,
+  MiniTrendSection
 };

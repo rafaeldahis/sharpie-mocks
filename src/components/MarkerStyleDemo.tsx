@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -13,7 +12,8 @@ import {
   IconographySection,
   ColorPaletteSection,
   GridSpacingSection,
-  TooltipsSection,      
+  TooltipsSection,
+  NumericStepperSection,
   
   // Ready-to-Use Components
   ChartsSection,
@@ -27,7 +27,12 @@ import {
   CalendarSection,
   SocialMediaSection,
   PricingTableSection,
-  TestimonialSection
+  TestimonialSection,
+  FAQSection,
+  PasswordFieldSection,
+  AvatarSection,
+  EmptyStateSection,
+  MiniTrendSection
 } from './demo-sections';
 
 const MarkerStyleDemo: React.FC = () => {
@@ -192,6 +197,7 @@ const MarkerStyleDemo: React.FC = () => {
         <MessagesSection />
         <IconographySection />
         <TooltipsSection />
+        <NumericStepperSection />
       </div>
 
       {/* Ready-to-Use Components */}
@@ -206,6 +212,11 @@ const MarkerStyleDemo: React.FC = () => {
         <ImageGallerySection galleryImages={galleryImages} />
         <TimelineSection timelineItems={timelineItems} />
         <CalendarSection calendarEvents={calendarEvents} />
+        <FAQSection />
+        <PasswordFieldSection />
+        <AvatarSection />
+        <EmptyStateSection />
+        <MiniTrendSection />
         {/* Make SocialMedia and Testimonial sections appear side by side */}
         <div className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/2">

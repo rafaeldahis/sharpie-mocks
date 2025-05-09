@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { SketchButton, SketchCard, SketchLoader } from '../marker';
+import { Trash } from 'lucide-react';
 
 const ButtonsSection: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,6 +23,10 @@ const ButtonsSection: React.FC = () => {
           <SketchButton variant="primary">Primary</SketchButton>
           <SketchButton variant="secondary">Secondary</SketchButton>
           <SketchButton variant="outline">Outline</SketchButton>
+          <SketchButton variant="primary" className="bg-red-500">
+            <Trash size={16} className="mr-1" />
+            Delete
+          </SketchButton>
         </div>
         <SketchButton disabled className="w-full">Disabled Button</SketchButton>
       </div>
