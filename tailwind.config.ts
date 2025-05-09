@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -104,8 +105,8 @@ export default {
 				'spin-loader': 'spin-loader 1.5s linear infinite'
 			},
 			fontFamily: {
-				'comic': ['Itim', 'cursive'],
-				'heading': ['Itim', 'cursive']
+				'comic': ['Shantell Sans', 'cursive'],
+				'heading': ['Shantell Sans', 'cursive']
 			},
 			fontSize: {
 				'heading': '18px',

@@ -23,8 +23,8 @@ const markerTailwindConfig = {
         }
       },
       fontFamily: {
-        'comic': ['Itim', 'cursive'],
-        'heading': ['Itim', 'cursive']
+        'comic': ['Shantell Sans', 'cursive'],
+        'heading': ['Shantell Sans', 'cursive']
       },
       fontSize: {
         'heading': '18px',
