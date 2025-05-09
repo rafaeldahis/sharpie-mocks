@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Star } from 'lucide-react';
 import {
   TypographySection,
@@ -32,13 +32,6 @@ import {
 
 const MarkerStyleDemo: React.FC = () => {
   console.log("MarkerStyleDemo component rendering");
-  
-  useEffect(() => {
-    console.log("MarkerStyleDemo mounted");
-    return () => {
-      console.log("MarkerStyleDemo unmounted");
-    };
-  }, []);
   
   // Data for the components
   const barChartData = [
@@ -160,7 +153,7 @@ const MarkerStyleDemo: React.FC = () => {
     },
   ];
 
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = React.useState(0);
 
   const handleRatingChange = (value: number) => {
     setRating(value);

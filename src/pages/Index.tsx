@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Copy } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import markerStylesCSS from "@/styles/marker-styles.css?raw";
@@ -9,20 +8,16 @@ import markerStylesCSS from "@/styles/marker-styles.css?raw";
 const Index = () => {
   console.log("Index component rendering");
   
-  const [api, setApi] = useState<any>(null);
   const [currentItem, setCurrentItem] = useState(0);
   
   // Set up auto-scrolling of the carousel
   useEffect(() => {
-    if (!api) return;
-    
     const intervalId = setInterval(() => {
-      api.scrollNext();
       setCurrentItem((prev) => (prev + 1) % 5); // We have 5 examples
     }, 1000); // 1 second interval
     
     return () => clearInterval(intervalId);
-  }, [api]);
+  }, []);
 
   const examples = [
     {
