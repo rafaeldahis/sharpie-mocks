@@ -1,6 +1,6 @@
 
 import React, { useState, useRef } from 'react';
-import { FileUpload, X } from 'lucide-react';
+import { Upload, X } from 'lucide-react';
 
 interface FileItem {
   name: string;
@@ -121,7 +121,7 @@ const SketchFileUpload: React.FC<SketchFileUploadProps> = ({
         />
         
         <div className="sketch-file-upload-content">
-          <FileUpload className="sketch-file-upload-icon" />
+          <Upload className="sketch-file-upload-icon" />
           <p className="sketch-file-upload-text">Drag and drop files here</p>
           <p className="sketch-file-upload-subtext">or click to browse</p>
           <button 
