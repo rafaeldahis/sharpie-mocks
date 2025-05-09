@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -50,7 +51,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-comic font-bold text-heading;
+    @apply font-heading font-bold text-heading;
   }
   
   p {

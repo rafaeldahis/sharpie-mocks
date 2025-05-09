@@ -105,7 +105,8 @@ export default {
 				'spin-loader': 'spin-loader 1.5s linear infinite'
 			},
 			fontFamily: {
-				'comic': ['"Patrick Hand"', 'cursive']
+				'comic': ['"Comic Neue"', 'cursive'],
+				'heading': ['"Patrick Hand"', 'cursive']
 			},
 			fontSize: {
 				'heading': '18px',

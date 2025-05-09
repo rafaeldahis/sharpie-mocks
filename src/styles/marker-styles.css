@@ -1,9 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 /* Base marker styles */
 .marker-font {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Comic Neue', cursive;
 }
 
 .marker-heading {
@@ -12,11 +12,11 @@
 }
 
 .marker-text {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Comic Neue', cursive;
 }
 
 .marker-caption {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Comic Neue', cursive;
   font-size: 12px;
 }
 
@@ -205,6 +205,7 @@
   transform: rotate(0.5deg);
 }
 
+/* Sketchy tab styling for shadcn UI tabs */
 .sketch-tab-trigger {
   border: 2px solid #000;
   border-radius: 4px 4px 0 0;
