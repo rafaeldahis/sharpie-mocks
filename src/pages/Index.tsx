@@ -41,7 +41,19 @@ const Index = () => {
       </div>
       
       {/* AI Prototyping Instructions */}
-      <div className="mb-12 p-4 sketch-card bg-[#F6F6F7]">
+      <div className="mb-12 p-4 relative bg-[#F6F6F7]" style={{
+        border: 'none',
+        boxShadow: 'none',
+        clipPath: "polygon(0% 5%, 2% 0%, 98% 3%, 100% 2%, 99% 98%, 96% 100%, 4% 97%, 0% 95%)"
+      }}>
+        <div className="absolute inset-0 -z-10" style={{
+          border: '3px solid black',
+          borderRadius: '2px',
+          transform: 'rotate(-0.3deg)',
+          clipPath: "polygon(0% 5%, 3% 0%, 98% 3%, 100% 2%, 99% 98%, 96% 100%, 4% 97%, 0% 95%)",
+          backgroundColor: '#F6F6F7',
+        }}></div>
+        
         <h2 className="text-2xl font-bold marker-heading mb-4">Using with AI Prototyping Tools</h2>
         <div className="space-y-4">
           <p className="marker-text">
