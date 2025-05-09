@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { List, Tree, Info, ChevronDown, ChevronUp, ChevronRight, LayoutGrid, LayoutList, Menu, Sparkles, Search } from 'lucide-react';
+import { List, Info, ChevronDown, ChevronUp, ChevronRight, LayoutGrid, LayoutList, Menu, Sparkles, Search, FolderTree } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const DataDisplay = () => {
@@ -281,7 +280,7 @@ export const DataDisplay = () => {
         <h3 className="text-xl font-bold sketch-heading">Tree-view / Nested List</h3>
         <div className="border sketch-border p-4">
           <div className="mb-2 font-medium flex items-center gap-2">
-            <Tree size={16} />
+            <FolderTree size={16} />
             <span>Project File Structure</span>
           </div>
           <div className="p-2 border sketch-border rounded-md">

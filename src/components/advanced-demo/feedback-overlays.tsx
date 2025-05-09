@@ -11,13 +11,14 @@ import {
   DialogTrigger
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { toast } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 
 export const FeedbackOverlays = () => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [toastCount, setToastCount] = useState(0);
+  const { toast } = useToast();
   
   const showToast = () => {
     setToastCount(prev => prev + 1);

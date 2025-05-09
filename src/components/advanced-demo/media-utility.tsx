@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Video, AudioLines, MapPin, Upload, Sun, Moon, Walkthrough } from 'lucide-react';
+import { Video, AudioLines, MapPin, Upload, Sun, Moon, HelpCircle } from 'lucide-react';
 
 export const MediaUtility = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -303,7 +302,7 @@ export const MediaUtility = () => {
             
             <div className="flex items-center justify-center">
               <button className="sketch-btn flex items-center gap-2">
-                <Walkthrough size={16} />
+                <HelpCircle size={16} />
                 Start Walkthrough Again
               </button>
             </div>
