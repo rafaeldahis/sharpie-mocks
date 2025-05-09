@@ -7,6 +7,8 @@ import { toast } from "@/hooks/use-toast";
 import markerStylesCSS from "@/styles/marker-styles.css?raw";
 
 const Index = () => {
+  console.log("Index component rendering");
+  
   const [api, setApi] = useState<any>(null);
   const [currentItem, setCurrentItem] = useState(0);
   
@@ -70,6 +72,8 @@ const Index = () => {
   };
 
   const instructionText = "Apply the sketch CSS styles attached to create a hand-drawn UI with wobbly elements and marker aesthetics";
+
+  console.log("Index component about to render JSX");
 
   return (
     <div className="container mx-auto p-4">

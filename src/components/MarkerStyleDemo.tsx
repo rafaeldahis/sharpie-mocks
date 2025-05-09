@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SketchButton,
   SketchInput,
@@ -28,6 +28,15 @@ import {
 } from './marker';
 
 const MarkerStyleDemo: React.FC = () => {
+  console.log("MarkerStyleDemo component rendering");
+  
+  useEffect(() => {
+    console.log("MarkerStyleDemo mounted");
+    return () => {
+      console.log("MarkerStyleDemo unmounted");
+    };
+  }, []);
+  
   const [rememberMe, setRememberMe] = useState(false);
   const [selectedOption, setSelectedOption] = useState('option1');
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -159,6 +168,8 @@ const MarkerStyleDemo: React.FC = () => {
     },
   ];
 
+  console.log("MarkerStyleDemo about to render JSX");
+  
   return (
     <div className="container mx-auto p-4 font-comic">
       <p className="mb-8 text-center text-lg">All marker style components on a single page.</p>
