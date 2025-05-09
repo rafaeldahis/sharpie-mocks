@@ -1,9 +1,22 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
+  const [api, setApi] = useState<any>(null);
+  
+  // Set up auto-scrolling of the carousel
+  useEffect(() => {
+    if (!api) return;
+    
+    const intervalId = setInterval(() => {
+      api.scrollNext();
+    }, 3000); // 3 seconds interval
+    
+    return () => clearInterval(intervalId);
+  }, [api]);
+
   return (
     <div className="container mx-auto p-4">
       <div className="text-center mb-8">
@@ -63,8 +76,7 @@ const Index = () => {
           </p>
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
-              <p className="font-bold">Using the CSS styles:</p>
-              <p className="pl-6 mt-2">
+              <p>
                 Simply tell your AI tool: "Apply the sketch CSS styles from <span className="font-medium text-blue-600">github.com/rafaeldahis/sharpie-mocks</span> to my UI components"
               </p>
             </div>
@@ -72,7 +84,7 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
               <p className="font-bold">Quick implementation examples:</p>
               <div className="mt-2">
-                <Carousel className="w-full max-w-md mx-auto">
+                <Carousel className="w-full max-w-md mx-auto" setApi={setApi}>
                   <CarouselContent>
                     {/* B2C Example */}
                     <CarouselItem>
