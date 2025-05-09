@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const Index = () => {
   const [api, setApi] = useState<any>(null);
+  const [currentItem, setCurrentItem] = useState(0);
   
   // Set up auto-scrolling of the carousel
   useEffect(() => {
@@ -12,10 +13,34 @@ const Index = () => {
     
     const intervalId = setInterval(() => {
       api.scrollNext();
-    }, 3000); // 3 seconds interval
+      setCurrentItem((prev) => (prev + 1) % 5); // We have 5 examples
+    }, 1000); // 1 second interval
     
     return () => clearInterval(intervalId);
   }, [api]);
+
+  const examples = [
+    {
+      border: "border-l-2 border-blue-400",
+      text: "\"Create a hand-drawn e-commerce product page with sketch styles showing a product image, pricing, reviews, and an 'Add to Cart' button\""
+    },
+    {
+      border: "border-l-2 border-green-400",
+      text: "\"Design a sketch-style dashboard for a B2B analytics platform with wobbly charts, key metrics cards, and a hand-drawn navigation sidebar\""
+    },
+    {
+      border: "border-l-2 border-purple-400",
+      text: "\"Make a sketch wireframe of a marketplace app with listing cards, filters, search bar, and a map view using marker styles\""
+    },
+    {
+      border: "border-l-2 border-orange-400",
+      text: "\"Create a hand-drawn admin panel for managing user permissions with a sketch-style table, action buttons, and filter controls\""
+    },
+    {
+      border: "border-l-2 border-red-400",
+      text: "\"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers\""
+    }
+  ];
 
   return (
     <div className="container mx-auto p-4">
@@ -83,47 +108,10 @@ const Index = () => {
             
             <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
               <p className="font-bold">Quick implementation examples:</p>
-              <div className="mt-2">
-                <Carousel className="w-full max-w-md mx-auto" setApi={setApi}>
-                  <CarouselContent>
-                    {/* B2C Example */}
-                    <CarouselItem>
-                      <div className="p-2 border-l-2 border-blue-400">
-                        <p className="italic">"Create a hand-drawn e-commerce product page with sketch styles showing a product image, pricing, reviews, and an 'Add to Cart' button"</p>
-                      </div>
-                    </CarouselItem>
-                    
-                    {/* B2B Example */}
-                    <CarouselItem>
-                      <div className="p-2 border-l-2 border-green-400">
-                        <p className="italic">"Design a sketch-style dashboard for a B2B analytics platform with wobbly charts, key metrics cards, and a hand-drawn navigation sidebar"</p>
-                      </div>
-                    </CarouselItem>
-                    
-                    {/* Marketplace Example */}
-                    <CarouselItem>
-                      <div className="p-2 border-l-2 border-purple-400">
-                        <p className="italic">"Make a sketch wireframe of a marketplace app with listing cards, filters, search bar, and a map view using marker styles"</p>
-                      </div>
-                    </CarouselItem>
-                    
-                    {/* Internal Tool Example */}
-                    <CarouselItem>
-                      <div className="p-2 border-l-2 border-orange-400">
-                        <p className="italic">"Create a hand-drawn admin panel for managing user permissions with a sketch-style table, action buttons, and filter controls"</p>
-                      </div>
-                    </CarouselItem>
-                    
-                    {/* Productivity App Example */}
-                    <CarouselItem>
-                      <div className="p-2 border-l-2 border-red-400">
-                        <p className="italic">"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers"</p>
-                      </div>
-                    </CarouselItem>
-                  </CarouselContent>
-                  <CarouselPrevious className="absolute left-0 bg-white sketch-border border border-black" />
-                  <CarouselNext className="absolute right-0 bg-white sketch-border border border-black" />
-                </Carousel>
+              <div className="mt-2 w-full overflow-hidden">
+                <div className={`p-2 ${examples[currentItem].border} animate-fade-in`} key={currentItem}>
+                  <p className="italic">{examples[currentItem].text}</p>
+                </div>
               </div>
             </div>
           </div>
