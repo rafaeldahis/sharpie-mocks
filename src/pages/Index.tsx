@@ -14,7 +14,7 @@ const Index = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentItem((prev) => (prev + 1) % 5); // We have 5 examples
-    }, 1000); // 1 second interval
+    }, 3000); // 3 seconds interval
     
     return () => clearInterval(intervalId);
   }, []);
@@ -124,19 +124,16 @@ const Index = () => {
         
         <h2 className="text-2xl font-bold marker-heading mb-4">Using with AI Prototyping Tools</h2>
         <div className="space-y-4">
-          <p className="marker-text">
-            To add these sketch-style elements to your project in any AI prototyping tool:
-          </p>
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <div className="flex items-center gap-2">
                 <Copy 
-                  className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" 
+                  className="h-5 w-5 cursor-pointer text-gray-500 hover:text-blue-600" 
                   onClick={copyCSSFile}
                   aria-label="Copy CSS file contents"
                 />
                 <p>
-                  <span className="font-medium text-blue-600">1 - Copy this CSS file and attach it to your prompt</span>
+                  <span className="font-medium text-black">1 - Copy this CSS file and attach it to your prompt</span>
                 </p>
               </div>
             </div>
@@ -144,12 +141,12 @@ const Index = () => {
             <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
               <div className="flex items-center gap-2">
                 <Copy 
-                  className="h-4 w-4 cursor-pointer text-gray-500 hover:text-blue-600" 
+                  className="h-5 w-5 cursor-pointer text-gray-500 hover:text-blue-600" 
                   onClick={() => copyToClipboard(instructionText)}
                   aria-label="Copy instruction text"
                 />
                 <p>
-                  <span className="font-medium text-blue-600">2 - Add to your prompt: "{instructionText}"</span>
+                  <span className="font-medium text-black">2 - Add to your prompt: "{instructionText}"</span>
                 </p>
               </div>
             </div>
