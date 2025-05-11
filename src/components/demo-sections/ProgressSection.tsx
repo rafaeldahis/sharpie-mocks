@@ -36,7 +36,7 @@ const ProgressSection: React.FC<ProgressSectionProps> = ({ steps }) => {
         <div>
           <h3 className="text-xl font-bold mb-2">Steps</h3>
           <p className="mb-6 text-gray-600">Progress steps for multi-stage processes:</p>
-          {steps && <SketchSteps steps={steps} />}
+          {steps && <SketchSteps steps={steps} className="mt-8 px-6" />}
         </div>
       </div>
     </SketchCard>
