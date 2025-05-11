@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -215,13 +214,13 @@ const MarkerStyleDemo: React.FC = () => {
         <EmptyStateSection />
         <MiniTrendSection />
         {/* Make SocialMedia and Testimonial sections appear side by side */}
-        <div className="col-span-2">
+        <div className="col-span-1 md:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SocialMediaSection renderStars={renderStars} />
             <TestimonialSection />
           </div>
         </div>
-        <PricingTableSection pricingTiers={pricingTiers} />
+        <PricingTableSection pricingTiers={pricingTiers} className="col-span-1 md:col-span-2" />
       </div>
     </div>
   );

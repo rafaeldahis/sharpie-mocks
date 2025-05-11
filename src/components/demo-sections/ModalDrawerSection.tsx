@@ -16,7 +16,7 @@ const ModalDrawerSection: React.FC = () => {
         <div className="space-y-4">
           <p className="text-xs xs:text-sm sm:text-base mb-2">Click the buttons below to toggle the modal or drawer:</p>
           
-          <div className="grid grid-cols-1 gap-3 xs:gap-4">
+          <div className="flex flex-col gap-3 xs:gap-4">
             <button 
               className="w-full bg-blue-500 text-white px-4 py-2 rounded uppercase font-semibold transform hover:scale-105 transition-transform border-2 border-black sketch-border"
               onClick={() => setShowModal(true)}

@@ -12,7 +12,7 @@ const GridSpacingSection: React.FC = () => {
         <p className="text-xs xs:text-sm sm:text-base">Grid layout and spacing guidelines:</p>
         
         <h4 className="font-bold mt-1.5 xs:mt-2 sm:mt-3 text-xs xs:text-sm sm:text-base">Grid Example</h4>
-        <div className="sketch-grid mb-3 xs:mb-4 sm:mb-6 grid grid-cols-2 sm:grid-cols-4 gap-1 xs:gap-2 sm:gap-4">
+        <div className="sketch-grid mb-3 xs:mb-4 sm:mb-6 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-1 xs:gap-2 sm:gap-4">
           <div className="sketch-grid-item h-6 xs:h-8 sm:h-12 bg-gray-100 border border-black"></div>
           <div className="sketch-grid-item h-6 xs:h-8 sm:h-12 bg-gray-100 border border-black"></div>
           <div className="sketch-grid-item h-6 xs:h-8 sm:h-12 bg-gray-100 border border-black"></div>
