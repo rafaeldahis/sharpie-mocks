@@ -13,11 +13,12 @@ interface PricingTableSectionProps {
     buttonText: string;
     highlight?: boolean;
   }>;
+  className?: string; // Added className prop to the interface
 }
 
-const PricingTableSection: React.FC<PricingTableSectionProps> = ({ pricingTiers }) => {
+const PricingTableSection: React.FC<PricingTableSectionProps> = ({ pricingTiers, className = '' }) => {
   return (
-    <SketchCard title="Pricing Table" className="mb-6 col-span-1 md:col-span-2">
+    <SketchCard title="Pricing Table" className={`mb-6 ${className}`}>
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {pricingTiers.map((tier, index) => (
