@@ -1,46 +1,49 @@
 
 import React from 'react';
 import { SketchCard } from '../marker';
+import { useIsMobile } from '../../hooks/use-mobile';
 
 const GridSpacingSection: React.FC = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <SketchCard title="Grid System & Spacing" className="mb-6">
       <div className="space-y-4">
-        <p>Grid layout and spacing guidelines:</p>
+        <p className="text-sm sm:text-base">Grid layout and spacing guidelines:</p>
         
-        <h4 className="font-bold mt-3">Grid Example</h4>
-        <div className="sketch-grid mb-6">
-          <div className="sketch-grid-item"></div>
-          <div className="sketch-grid-item"></div>
-          <div className="sketch-grid-item"></div>
-          <div className="sketch-grid-item"></div>
+        <h4 className="font-bold mt-3 text-sm sm:text-base">Grid Example</h4>
+        <div className="sketch-grid mb-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
+          <div className="sketch-grid-item h-8 sm:h-12 bg-gray-100 border border-black"></div>
+          <div className="sketch-grid-item h-8 sm:h-12 bg-gray-100 border border-black"></div>
+          <div className="sketch-grid-item h-8 sm:h-12 bg-gray-100 border border-black"></div>
+          <div className="sketch-grid-item h-8 sm:h-12 bg-gray-100 border border-black"></div>
         </div>
         
-        <h4 className="font-bold mt-3">Spacing Scale</h4>
-        <div className="flex flex-wrap items-end gap-2">
+        <h4 className="font-bold mt-3 text-sm sm:text-base">Spacing Scale</h4>
+        <div className="flex flex-wrap items-end gap-1 sm:gap-2">
           <div className="flex flex-col items-center">
             <div className="h-2 w-2 bg-sketch-accentBlue sketch-border"></div>
-            <span className="text-xs mt-1">2px</span>
+            <span className="text-[10px] sm:text-xs mt-1">2px</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="h-4 w-4 bg-sketch-accentBlue sketch-border"></div>
-            <span className="text-xs mt-1">4px</span>
+            <div className="h-3 w-3 sm:h-4 sm:w-4 bg-sketch-accentBlue sketch-border"></div>
+            <span className="text-[10px] sm:text-xs mt-1">4px</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="h-6 w-6 bg-sketch-accentBlue sketch-border"></div>
-            <span className="text-xs mt-1">8px</span>
+            <div className="h-4 w-4 sm:h-6 sm:w-6 bg-sketch-accentBlue sketch-border"></div>
+            <span className="text-[10px] sm:text-xs mt-1">8px</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="h-8 w-8 bg-sketch-accentBlue sketch-border"></div>
-            <span className="text-xs mt-1">12px</span>
+            <div className="h-6 w-6 sm:h-8 sm:w-8 bg-sketch-accentBlue sketch-border"></div>
+            <span className="text-[10px] sm:text-xs mt-1">12px</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="h-12 w-12 bg-sketch-accentBlue sketch-border"></div>
-            <span className="text-xs mt-1">16px</span>
+            <div className="h-8 w-8 sm:h-12 sm:w-12 bg-sketch-accentBlue sketch-border"></div>
+            <span className="text-[10px] sm:text-xs mt-1">16px</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="h-16 w-16 bg-sketch-accentBlue sketch-border"></div>
-            <span className="text-xs mt-1">24px</span>
+            <div className="h-12 w-12 sm:h-16 sm:w-16 bg-sketch-accentBlue sketch-border"></div>
+            <span className="text-[10px] sm:text-xs mt-1">24px</span>
           </div>
         </div>
       </div>

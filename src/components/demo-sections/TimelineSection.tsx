@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { SketchCard, SketchTimeline } from '../marker';
+import { useIsMobile } from '../../hooks/use-mobile';
 
 interface TimelineItem {
   title: string;
@@ -14,6 +15,8 @@ interface TimelineSectionProps {
 }
 
 const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
+  const isMobile = useIsMobile();
+  
   // Use the provided timelineItems or fall back to default items
   const items = timelineItems || [
     {
@@ -47,8 +50,8 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
     <SketchCard title="Timeline" className="mb-6">
       <div className="space-y-4">
         <p className="mb-4 font-medium">Visualize events over time:</p>
-        <div className="sketch-border bg-white p-4 transform rotate-0.5">
-          <SketchTimeline items={items} className="p-4" />
+        <div className="sketch-border bg-white p-2 sm:p-4 transform rotate-0.5 overflow-hidden">
+          <SketchTimeline items={items} className={isMobile ? "p-2" : "p-4"} />
         </div>
       </div>
     </SketchCard>

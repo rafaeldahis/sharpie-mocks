@@ -13,10 +13,21 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',
+				sm: '2rem'
+			},
 			screens: {
 				'2xl': '1400px'
 			}
+		},
+		screens: {
+			'xs': '480px',
+			'sm': '640px',
+			'md': '768px',
+			'lg': '1024px',
+			'xl': '1280px',
+			'2xl': '1536px',
 		},
 		extend: {
 			colors: {
@@ -112,7 +123,15 @@ export default {
 				'heading': '18px',
 				'body': '14px',
 				'caption': '12px',
-				'large-metric': '28px'
+				'large-metric': '28px',
+				'xs': '0.75rem',      // 12px
+				'sm': '0.875rem',     // 14px
+				'base': '1rem',       // 16px
+				'lg': '1.125rem',     // 18px
+				'xl': '1.25rem',      // 20px
+				'2xl': '1.5rem',      // 24px
+				'3xl': '1.875rem',    // 30px
+				'4xl': '2.25rem',     // 36px
 			},
 			spacing: {
 				'marker-sm': '12px',  // Basic rhythm
