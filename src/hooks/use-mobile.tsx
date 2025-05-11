@@ -19,7 +19,7 @@ interface ScreenState {
   height: number;
 }
 
-export function useIsMobile() {
+export function useIsMobile(): ScreenState {
   const [screenState, setScreenState] = React.useState<ScreenState>({
     isMobile: false,
     screenSize: 'lg',
