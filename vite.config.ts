@@ -12,8 +12,8 @@ export default defineConfig({
   plugins: [
     react(),
     rawPlugin({
-      include: '**/*.md',
-      exclude: ['index.html', 'node_modules/**']
+      include: /\.md$/,
+      exclude: /node_modules/
     })
   ],
   resolve: {
