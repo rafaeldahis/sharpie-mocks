@@ -45,53 +45,83 @@ const SketchSocialCard: React.FC<SketchSocialCardProps> = ({
   };
   
   return (
-    <div className={`sketch-social-card p-4 sketch-border border-2 border-black bg-white shadow-md transform -rotate-0.5 ${className}`}>
-      <div className="sketch-social-card-header flex items-center mb-3">
-        <div className="sketch-social-card-avatar w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center border-2 border-black mr-3 sketch-border">
+    <div className="rounded-lg p-4 bg-white" style={{
+      border: '2px solid black',
+      boxShadow: '3px 3px 0 rgba(0, 0, 0, 0.15)',
+      transform: 'rotate(-0.5deg)',
+      position: 'relative'
+    }}>
+      {/* Header with avatar and user info */}
+      <div className="flex items-center mb-3">
+        <div className="mr-3" style={{
+          position: 'relative',
+          width: '48px',
+          height: '48px'
+        }}>
           {typeof avatar === 'string' ? (
-            <div className="sketch-social-card-avatar-image font-comic font-bold">
-              {avatar.length === 2 ? (
-                avatar
-              ) : (
-                <img src={avatar} alt={`${name}'s avatar`} className="rounded-full" />
-              )}
-            </div>
+            avatar.length === 2 ? (
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-gray-200 text-gray-700 font-bold border-2 border-black" style={{
+                transform: 'rotate(0.5deg)'
+              }}>
+                {avatar}
+              </div>
+            ) : (
+              <img 
+                src={avatar} 
+                alt={`${name}'s avatar`} 
+                className="w-12 h-12 rounded-full object-cover border-2 border-black" 
+                style={{ transform: 'rotate(0.5deg)' }}
+              />
+            )
           ) : (
-            avatar
+            <div className="w-12 h-12 rounded-full flex items-center justify-center border-2 border-black bg-gray-200">
+              {avatar}
+            </div>
           )}
         </div>
-        <div className="sketch-social-card-meta">
-          <div className="sketch-social-card-name font-comic font-bold">{name}</div>
-          <div className="sketch-social-card-time text-sm text-gray-500">{time}</div>
+        <div>
+          <div className="font-bold text-lg">{name}</div>
+          <div className="text-gray-500 text-sm">{time}</div>
         </div>
       </div>
       
-      <div className="sketch-social-card-content mb-4 py-2 text-gray-700">
+      {/* Content */}
+      <div className="my-4 py-2" style={{
+        borderTop: '1px dashed #ddd',
+        borderBottom: '1px dashed #ddd'
+      }}>
         {content}
       </div>
       
-      <div className="sketch-social-card-actions flex border-t-2 border-black sketch-border pt-3">
+      {/* Action buttons */}
+      <div className="flex items-center pt-1">
         <button 
-          className={`sketch-social-card-action flex items-center space-x-1 mr-4 ${liked ? 'text-red-500' : 'text-gray-600'} hover:text-red-500`}
           onClick={handleLike}
+          className="flex items-center mr-4 focus:outline-none"
+          style={{ color: liked ? '#e53e3e' : 'inherit' }}
         >
-          <Heart size={18} fill={liked ? "currentColor" : "none"} />
-          <span>Like{likes > 0 ? ` (${likes})` : ''}</span>
+          <Heart 
+            size={20} 
+            className="mr-1" 
+            fill={liked ? "currentColor" : "none"}
+            style={{ transform: 'rotate(-1deg)' }}
+          />
+          <span>Like {likes > 0 ? `(${likes})` : ''}</span>
         </button>
         
         <button 
-          className="sketch-social-card-action flex items-center space-x-1 mr-4 text-gray-600 hover:text-blue-500"
           onClick={handleComment}
+          className="flex items-center mr-4 focus:outline-none"
         >
-          <MessageSquare size={18} />
-          <span>Comment{comments > 0 ? ` (${comments})` : ''}</span>
+          <MessageSquare size={20} className="mr-1" style={{ transform: 'rotate(1deg)' }} />
+          <span>Comment {comments > 0 ? `(${comments})` : ''}</span>
         </button>
         
         <button 
-          className="sketch-social-card-action flex items-center space-x-1 text-gray-600 hover:text-green-500"
           onClick={handleShare}
+          className="flex items-center focus:outline-none"
         >
-          <Share size={18} />
+          <Share size={20} className="mr-1" style={{ transform: 'rotate(-0.5deg)' }} />
           <span>Share</span>
         </button>
       </div>

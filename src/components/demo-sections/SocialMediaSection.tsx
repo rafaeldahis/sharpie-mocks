@@ -52,18 +52,16 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
           </div>
         </div>
         
-        {/* Social card */}
-        <div className="sketch-border bg-white p-4 transform -rotate-0.5">
-          <SketchSocialCard 
-            avatar="JD"
-            name="John Doodle"
-            time="Posted 2 hours ago"
-            content="Just finished my latest sketch! What do you think of these wobbly marker-style UI elements?"
-            initialLikes={12}
-            initialComments={3}
-            className=""
-          />
-        </div>
+        {/* Social card - now matching the image reference */}
+        <SketchSocialCard 
+          avatar="JD"
+          name="John Doodle"
+          time="Posted 2 hours ago"
+          content="Just finished my latest sketch! What do you think of these wobbly marker-style UI elements?"
+          initialLikes={12}
+          initialComments={3}
+          className="transform -rotate-0.5"
+        />
       </div>
     </SketchCard>
   );
