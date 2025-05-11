@@ -12,20 +12,20 @@ const ModalDrawerSection: React.FC = () => {
         <div className="space-y-4">
           <p>Click the buttons below to toggle the modal or drawer:</p>
           
-          <div className="flex flex-wrap gap-2">
-            <SketchButton 
-              variant="primary"
+          <div className="flex flex-wrap gap-4 mt-4">
+            <button 
+              className="bg-blue-500 text-white px-6 py-2 rounded uppercase font-semibold transform hover:scale-105 transition-transform border-2 border-black"
               onClick={() => setShowModal(true)}
             >
-              Show Modal Demo
-            </SketchButton>
+              SHOW MODAL DEMO
+            </button>
             
-            <SketchButton 
-              variant="secondary"
+            <button 
+              className="bg-gray-400 text-white px-6 py-2 rounded uppercase font-semibold transform hover:scale-105 transition-transform border-2 border-black"
               onClick={() => setDrawerOpen(!drawerOpen)}
             >
-              Toggle Drawer Demo
-            </SketchButton>
+              TOGGLE DRAWER DEMO
+            </button>
           </div>
         </div>
       </SketchCard>
