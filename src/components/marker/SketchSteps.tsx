@@ -28,7 +28,7 @@ const SketchSteps: React.FC<SketchStepsProps> = ({
           >
             <div className="sketch-step-circle">
               {step.completed ? (
-                <Check size={16} strokeWidth={3} />
+                <Check size={16} strokeWidth={3} color="white" />
               ) : (
                 <span>{index + 1}</span>
               )}
