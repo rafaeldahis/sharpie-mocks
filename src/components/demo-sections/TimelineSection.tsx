@@ -48,7 +48,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
       <div className="space-y-4">
         <p className="mb-4 font-medium">Visualize events over time:</p>
         <div className="sketch-border bg-white p-4 transform rotate-0.5">
-          <SketchTimeline items={items} />
+          <SketchTimeline items={items} className="p-4" />
         </div>
       </div>
     </SketchCard>
