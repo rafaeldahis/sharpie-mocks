@@ -7,13 +7,16 @@ const BREAKPOINTS = {
   sm: 640,
   md: 768,
   lg: 1024,
-  xl: 1280
+  xl: 1280,
+  '2xl': 1536
 }
 
-export type ScreenSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type ScreenSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
 export interface ScreenState {
   isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
   screenSize: ScreenSize;
   width: number;
   height: number;
@@ -22,6 +25,8 @@ export interface ScreenState {
 export function useIsMobile(): ScreenState {
   const [screenState, setScreenState] = React.useState<ScreenState>({
     isMobile: false,
+    isTablet: false,
+    isDesktop: true,
     screenSize: 'lg',
     width: typeof window !== 'undefined' ? window.innerWidth : 1024,
     height: typeof window !== 'undefined' ? window.innerHeight : 768
@@ -41,10 +46,16 @@ export function useIsMobile(): ScreenState {
       const width = window.innerWidth
       const height = window.innerHeight
       const screenSize = getScreenSize(width)
-      const isMobile = width < BREAKPOINTS.md // Consider mobile up to md breakpoint
+      
+      // Define device types
+      const isMobile = width < BREAKPOINTS.md // Mobile: xs to sm breakpoints
+      const isTablet = width >= BREAKPOINTS.md && width < BREAKPOINTS.lg // Tablet: md breakpoint
+      const isDesktop = width >= BREAKPOINTS.lg // Desktop: lg and above
       
       setScreenState({
         isMobile,
+        isTablet,
+        isDesktop,
         screenSize,
         width,
         height
@@ -54,11 +65,24 @@ export function useIsMobile(): ScreenState {
     // Set initial state
     updateScreenSize()
     
+    // Throttle resize events for better performance
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        updateScreenSize();
+      }, 100);
+    };
+    
     // Add event listener
-    window.addEventListener('resize', updateScreenSize)
+    window.addEventListener('resize', handleResize)
     
     // Cleanup
-    return () => window.removeEventListener('resize', updateScreenSize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      clearTimeout(resizeTimer);
+    }
   }, [])
 
   return screenState
