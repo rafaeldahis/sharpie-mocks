@@ -23,7 +23,7 @@ const ButtonsSection: React.FC = () => {
           <SketchButton variant="primary">Primary</SketchButton>
           <SketchButton variant="secondary">Secondary</SketchButton>
           <SketchButton variant="outline">Outline</SketchButton>
-          <SketchButton variant="primary" className="bg-red-500">
+          <SketchButton variant="primary" className="bg-[#ea384c]">
             <Trash size={16} className="mr-1" />
             Delete
           </SketchButton>

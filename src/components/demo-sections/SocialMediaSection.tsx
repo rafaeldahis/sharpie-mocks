@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { SketchCard, SketchSocialCard } from '../marker';
 import { Heart, MessageCircle, Share } from 'lucide-react';
 import { useIsMobile } from '../../hooks/use-mobile';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface SocialMediaSectionProps {
   renderStars?: (count: number) => React.ReactNode;
@@ -22,39 +23,12 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
     setLiked(!liked);
   };
 
-  // Default renderStars function if none is provided
-  const defaultRenderStars = (count: number) => {
-    return [1, 2, 3, 4, 5].map((star) => (
-      <button key={star} className={`sketch-rating-star ${star <= count ? 'active' : ''}`}>
-        <svg width={isMobile ? "16" : "20"} height={isMobile ? "16" : "20"} viewBox="0 0 24 24" fill={star <= count ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-      </button>
-    ));
-  };
-
-  // Use the provided renderStars or fall back to the default
-  const starsRenderer = renderStars || defaultRenderStars;
-
   return (
-    <SketchCard title="Social Media" className="mb-6">
+    <SketchCard title="Social" className="mb-6">
       <div className="space-y-4">
         <p className="mb-4 font-medium text-sm sm:text-base">Interactive social components:</p>
         
-        {/* Review component */}
-        <div className="sketch-border bg-white p-3 sm:p-4 mb-4 transform rotate-0.5">
-          <div className="sketch-review-card">
-            <div className="sketch-review-header">
-              <h3 className="font-bold text-base sm:text-lg">Rate this product</h3>
-            </div>
-            <div className="sketch-review-stars mt-3 mb-3">
-              {starsRenderer(4)}
-            </div>
-            <div className="sketch-review-label text-xs sm:text-sm">Your rating: 4/5 stars</div>
-          </div>
-        </div>
-        
-        {/* Social card - now matching the image reference */}
+        {/* Social card */}
         <SketchSocialCard 
           avatar="JD"
           name="John Doodle"
@@ -64,6 +38,46 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({ renderStars }) 
           initialComments={3}
           className="transform -rotate-0.5"
         />
+        
+        {/* Avatar section (moved from AvatarSection) */}
+        <div className="sketch-border bg-white p-3 sm:p-4 transform rotate-0.5">
+          <h3 className="font-bold text-base sm:text-lg mb-3">Avatars</h3>
+          
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <Avatar className="sketch-border border">
+                <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+              <Avatar className="sketch-border border">
+                <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" />
+                <AvatarFallback>AS</AvatarFallback>
+              </Avatar>
+              <Avatar className="sketch-border border">
+                <AvatarFallback>MK</AvatarFallback>
+              </Avatar>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="flex -space-x-3">
+                <Avatar className="border-2 border-white sketch-border">
+                  <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" />
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+                <Avatar className="border-2 border-white sketch-border">
+                  <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" />
+                  <AvatarFallback>AS</AvatarFallback>
+                </Avatar>
+                <Avatar className="border-2 border-white sketch-border">
+                  <AvatarFallback>MK</AvatarFallback>
+                </Avatar>
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 border-2 border-white sketch-border">
+                  <span className="text-xs font-medium">+3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </SketchCard>
   );

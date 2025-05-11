@@ -17,8 +17,8 @@ interface TimelineSectionProps {
 const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
   const isMobile = useIsMobile();
   
-  // Use the provided timelineItems or fall back to default items
-  const items = timelineItems || [
+  // Use the provided timelineItems or fall back to default items - but limit to 3
+  const allItems = timelineItems || [
     {
       title: "Project Started",
       date: "January 2023",
@@ -45,6 +45,9 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
       content: "Official product launch."
     }
   ];
+  
+  // Only show 3 items
+  const items = allItems.slice(0, 3);
 
   return (
     <SketchCard title="Timeline" className="mb-6">

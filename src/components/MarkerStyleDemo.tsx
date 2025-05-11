@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Star } from 'lucide-react';
 import {
@@ -29,7 +30,6 @@ import {
   PricingTableSection,
   TestimonialSection,
   FAQSection,
-  AvatarSection,
   EmptyStateSection,
   MiniTrendSection
 } from './demo-sections';
@@ -212,7 +212,6 @@ const MarkerStyleDemo: React.FC = () => {
         <TimelineSection timelineItems={timelineItems} />
         <CalendarSection calendarEvents={calendarEvents} />
         <FAQSection />
-        <AvatarSection />
         <EmptyStateSection />
         <MiniTrendSection />
         {/* Make SocialMedia and Testimonial sections appear side by side */}
