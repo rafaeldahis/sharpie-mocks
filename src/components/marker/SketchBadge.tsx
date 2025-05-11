@@ -17,20 +17,23 @@ const SketchBadge: React.FC<SketchBadgeProps> = ({
   const getVariantClasses = () => {
     switch(variant) {
       case 'primary':
-        return 'sketch-badge-primary';
+        return 'bg-blue-500 text-white';
       case 'success':
-        return 'sketch-badge-success';
+        return 'bg-green-500 text-white';
       case 'warning':
-        return 'sketch-badge-warning';
+        return 'bg-yellow-500 text-white';
       case 'danger':
-        return 'sketch-badge-danger';
+        return 'bg-red-500 text-white';
       default:
-        return 'sketch-badge-default';
+        return 'bg-gray-100 text-gray-800';
     }
   };
   
   return (
-    <div className={`sketch-badge ${getVariantClasses()} ${className}`}>
+    <div className={`inline-flex items-center px-3 py-1 text-sm font-medium border-2 border-black rounded-full ${getVariantClasses()} ${className}`} style={{
+      boxShadow: '1px 1px 0px rgba(0, 0, 0, 0.15)',
+      transform: `rotate(${Math.random() * 2 - 1}deg)`
+    }}>
       {children}
     </div>
   );
