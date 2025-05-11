@@ -69,6 +69,26 @@ const Index = () => {
     });
   };
 
+  const downloadPNG = () => {
+    // Create an anchor element
+    const a = document.createElement('a');
+    a.href = '/sharpie-style-reference.png';
+    a.download = 'sharpie-style-reference.png';
+    
+    // Trigger a click on the anchor to start the download
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up
+    document.body.removeChild(a);
+    
+    toast({
+      title: "Downloaded!",
+      description: "Style reference PNG downloaded successfully",
+      duration: 2000,
+    });
+  };
+
   const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics. Make sure to use the specified fonts and styling.";
 
   console.log("Index component about to render JSX");
@@ -137,7 +157,7 @@ const Index = () => {
                   aria-label="Download markdown design system file"
                 />
                 <p className="text-black">
-                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt</span>
+                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={downloadPNG}>download a .png file instead</span>)</span>
                 </p>
               </div>
             </div>

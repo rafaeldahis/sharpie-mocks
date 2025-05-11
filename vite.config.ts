@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [
     react(),
     rawPlugin({
-      include: ['**/*.md', '**/*.css']
+      include: ['**/*.md', '**/*.css', '**/*.png']
     })
   ],
   resolve: {
@@ -23,4 +23,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ['@lordicon/react'],
   },
+  server: {
+    port: 8080
+  }
 });
