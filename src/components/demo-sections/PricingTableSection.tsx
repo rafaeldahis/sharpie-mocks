@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SketchCard, SketchPricingTable } from '../marker';
+import { SketchCard, SketchPricingTable, SketchButton } from '../marker';
 import { Check, X } from 'lucide-react';
 
 interface PricingTableSectionProps {
@@ -12,8 +12,9 @@ interface PricingTableSectionProps {
     features: Array<{ name: string; included: boolean }>;
     buttonText: string;
     highlight?: boolean;
+    isDeleteButton?: boolean;
   }>;
-  className?: string; // Added className prop to the interface
+  className?: string;
 }
 
 const PricingTableSection: React.FC<PricingTableSectionProps> = ({ pricingTiers, className = '' }) => {
@@ -53,11 +54,12 @@ const PricingTableSection: React.FC<PricingTableSectionProps> = ({ pricingTiers,
                 </ul>
               </div>
               
-              <button 
-                className={`sketch-btn ${tier.highlight ? 'bg-sketch-accentBlue text-white' : 'bg-sketch-midGrey text-white'}`}
+              <SketchButton 
+                variant={tier.isDeleteButton ? 'outline' : tier.highlight ? 'primary' : 'secondary'}
+                className={tier.isDeleteButton ? 'bg-red-500 hover:bg-red-600 text-white' : ''}
               >
                 {tier.buttonText}
-              </button>
+              </SketchButton>
             </div>
           ))}
         </div>

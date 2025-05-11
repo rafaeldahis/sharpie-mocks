@@ -58,11 +58,11 @@ const SketchTable: React.FC<SketchTableProps> = ({
           <button 
             key={index}
             onClick={action.onClick}
-            className="sketch-btn-icon"
+            className={`sketch-btn-icon ${action.icon === 'delete' ? 'bg-red-500 hover:bg-red-600' : ''}`}
           >
             {action.icon === 'edit' ? 
               <Edit size={18} className="text-blue-500" /> : 
-              <Trash2 size={18} className="text-red-500" />}
+              <Trash2 size={18} className="text-white" />}
           </button>
         ))}
       </div>

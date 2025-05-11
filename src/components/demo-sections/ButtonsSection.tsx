@@ -25,7 +25,7 @@ const ButtonsSection: React.FC = () => {
           <SketchButton variant="primary" className="text-xs xs:text-sm">Primary</SketchButton>
           <SketchButton variant="secondary" className="text-xs xs:text-sm">Secondary</SketchButton>
           <SketchButton variant="outline" className="text-xs xs:text-sm">Outline</SketchButton>
-          <SketchButton variant="primary" className="bg-red-500 hover:bg-red-600 text-xs xs:text-sm">
+          <SketchButton variant="primary" className="bg-red-500 hover:bg-red-600 text-white text-xs xs:text-sm">
             <Trash size={isMobile ? 12 : 16} className="mr-1" />
             Delete
           </SketchButton>
