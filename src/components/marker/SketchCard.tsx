@@ -15,12 +15,15 @@ const SketchCard: React.FC<SketchCardProps> = ({
 }) => {
   const { isMobile, screenSize } = useIsMobile();
   
+  const headingSize = isMobile ? 'text-lg' : 'text-heading';
+  const contentSize = isMobile ? 'text-sm' : 'text-sm sm:text-body';
+  
   return (
-    <div className={`sketch-card border sketch-border p-2 xs:p-3 sm:p-4 rounded-md overflow-hidden ${className}`}>
+    <div className={`sketch-card border sketch-border p-3 sm:p-4 rounded-md overflow-hidden ${className}`}>
       {title && (
-        <div className={`font-comic ${isMobile ? 'text-base' : 'text-heading'} font-bold mb-2 sketch-heading`}>{title}</div>
+        <div className={`font-comic ${headingSize} font-bold mb-2 sm:mb-3 sketch-heading`}>{title}</div>
       )}
-      <div className={`font-comic ${isMobile ? 'text-xs' : 'text-sm sm:text-body'} overflow-x-hidden`}>
+      <div className={`font-comic ${contentSize} overflow-x-hidden`}>
         {children}
       </div>
     </div>

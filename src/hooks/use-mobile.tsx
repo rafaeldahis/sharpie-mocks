@@ -12,7 +12,7 @@ const BREAKPOINTS = {
 
 export type ScreenSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-interface ScreenState {
+export interface ScreenState {
   isMobile: boolean;
   screenSize: ScreenSize;
   width: number;
@@ -30,7 +30,7 @@ export function useIsMobile(): ScreenState {
   React.useEffect(() => {
     const getScreenSize = (width: number): ScreenSize => {
       if (width < BREAKPOINTS.xs) return 'xs'
-      if (width < BREAKPOINTS.sm) return 'xs'
+      if (width < BREAKPOINTS.sm) return 'xs' 
       if (width < BREAKPOINTS.md) return 'sm'
       if (width < BREAKPOINTS.lg) return 'md'
       if (width < BREAKPOINTS.xl) return 'lg'
@@ -41,7 +41,7 @@ export function useIsMobile(): ScreenState {
       const width = window.innerWidth
       const height = window.innerHeight
       const screenSize = getScreenSize(width)
-      const isMobile = width < BREAKPOINTS.sm
+      const isMobile = width < BREAKPOINTS.md // Consider mobile up to md breakpoint
       
       setScreenState({
         isMobile,
