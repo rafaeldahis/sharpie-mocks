@@ -1,4 +1,10 @@
 
 declare module 'vite-plugin-raw' {
-  export default function(options?: { include?: string[] }): any;
+  interface RawPluginOptions {
+    include?: string[] | RegExp[];
+    exclude?: string[] | RegExp[];
+  }
+  
+  function rawPlugin(options?: RawPluginOptions): any;
+  export default rawPlugin;
 }
