@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Check } from 'lucide-react';
 
 interface Step {
   label: string;
@@ -27,9 +28,7 @@ const SketchSteps: React.FC<SketchStepsProps> = ({
           >
             <div className="sketch-step-circle">
               {step.completed ? (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+                <Check size={16} strokeWidth={3} />
               ) : (
                 <span>{index + 1}</span>
               )}
