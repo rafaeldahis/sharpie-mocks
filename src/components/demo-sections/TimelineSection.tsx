@@ -15,7 +15,7 @@ interface TimelineSectionProps {
 }
 
 const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   
   // Use the provided timelineItems or fall back to default items
   const allItems = timelineItems || [
@@ -50,11 +50,13 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
   const items = allItems.slice(0, 3);
 
   return (
-    <SketchCard title="Timeline" className="mb-6">
-      <div className="space-y-4">
-        <p className={`mb-4 font-medium text-sm ${isMobile ? '' : 'sm:text-base'}`}>Visualize events over time:</p>
-        <div className="sketch-border bg-white p-2 sm:p-4 transform rotate-0.5 overflow-hidden rounded-md">
-          <SketchTimeline items={items} className={isMobile ? "p-2" : "p-4"} />
+    <SketchCard title="Timeline" className="mb-4 sm:mb-6">
+      <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+        <p className={`mb-2 xs:mb-3 sm:mb-4 font-medium text-xs xs:text-sm ${isMobile ? '' : 'sm:text-base'}`}>
+          Visualize events over time:
+        </p>
+        <div className="sketch-border bg-white p-1 xs:p-2 sm:p-4 transform rotate-0.5 overflow-hidden rounded-md">
+          <SketchTimeline items={items} className={isMobile ? "p-1 xs:p-2" : "p-4"} />
         </div>
       </div>
     </SketchCard>
