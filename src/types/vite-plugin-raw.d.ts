@@ -1,15 +1,12 @@
 
 declare module 'vite-plugin-raw' {
+  type FilterPattern = string | RegExp | (string | RegExp)[];
+  
   interface RawPluginOptions {
-    include?: string | RegExp | Array<string | RegExp>;
-    exclude?: string | RegExp | Array<string | RegExp>;
+    include?: FilterPattern;
+    exclude?: FilterPattern;
   }
   
-  /**
-   * Vite plugin for importing files as raw text
-   * @param options - Configuration options for the plugin
-   * @returns Vite plugin
-   */
   function rawPlugin(options?: RawPluginOptions): {
     name: string;
     transform: (code: string, id: string) => { code: string } | undefined;
