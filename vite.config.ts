@@ -11,10 +11,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     react(),
-    // Apply vite-plugin-raw with explicit include/exclude patterns
+    // Use rawPlugin only for markdown files with correct regex pattern
     rawPlugin({
-      include: ['**/*.md'],
-      exclude: ['**/node_modules/**', '**/index.html'] // Explicitly exclude index.html and node_modules
+      include: [/\.md$/], // Use regex pattern instead of glob
+      exclude: [/node_modules/, /index\.html$/] // Use regex patterns for exclusions
     })
   ],
   resolve: {
