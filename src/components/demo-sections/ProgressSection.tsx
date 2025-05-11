@@ -1,8 +1,18 @@
 
 import React from 'react';
-import { SketchCard, SketchProgressBar } from '../marker';
+import { SketchCard, SketchProgressBar, SketchSteps } from '../marker';
 
-const ProgressSection: React.FC = () => {
+interface Step {
+  label: string;
+  completed?: boolean;
+  active?: boolean;
+}
+
+interface ProgressSectionProps {
+  steps?: Step[];
+}
+
+const ProgressSection: React.FC<ProgressSectionProps> = ({ steps }) => {
   return (
     <SketchCard title="Progress Bars" className="mb-6">
       <div className="space-y-8">
@@ -22,6 +32,13 @@ const ProgressSection: React.FC = () => {
             <p className="text-sm text-gray-600 mt-2">90% Complete (red)</p>
           </div>
         </div>
+        
+        {steps && (
+          <div className="mt-8">
+            <h3 className="font-medium mb-4">Progress Steps</h3>
+            <SketchSteps steps={steps} />
+          </div>
+        )}
       </div>
     </SketchCard>
   );
