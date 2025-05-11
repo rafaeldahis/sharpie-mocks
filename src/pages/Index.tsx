@@ -1,9 +1,9 @@
 
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
-import { Copy } from "lucide-react";
+import { Download } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import markerStylesCSS from "@/styles/marker-styles.css?raw";
+import markdownContent from "@/sharpie-mocks.md?raw";
 
 const Index = () => {
   console.log("Index component rendering");
@@ -42,31 +42,34 @@ const Index = () => {
     }
   ];
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        toast({
-          title: "Copied!",
-          description: "Text copied to clipboard",
-          duration: 2000,
-        });
-      })
-      .catch((err) => {
-        console.error('Failed to copy: ', err);
-        toast({
-          title: "Failed to copy",
-          description: "Please try again",
-          variant: "destructive",
-          duration: 2000,
-        });
-      });
+  const downloadMarkdown = () => {
+    // Create a blob with the markdown content
+    const blob = new Blob([markdownContent], { type: 'text/markdown' });
+    
+    // Create a URL for the blob
+    const url = URL.createObjectURL(blob);
+    
+    // Create an anchor element
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'sharpie-mocks.md';
+    
+    // Trigger a click on the anchor to start the download
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    toast({
+      title: "Downloaded!",
+      description: "Markdown file downloaded successfully",
+      duration: 2000,
+    });
   };
 
-  const copyCSSFile = () => {
-    copyToClipboard(markerStylesCSS);
-  };
-
-  const instructionText = "Apply the sketch CSS styles attached to create a hand-drawn UI with wobbly elements and marker aesthetics. Check the fonts used and make sure your HTML header tag preconnecs and loads them.";
+  const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics. Make sure to use the specified fonts and styling.";
 
   console.log("Index component about to render JSX");
 
@@ -127,25 +130,46 @@ const Index = () => {
           <div className="space-y-4 marker-text">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <div className="flex items-center gap-2">
-                <Copy 
+                <Download 
                   size={24}  
                   className="cursor-pointer text-gray-500 hover:text-blue-600" 
-                  onClick={copyCSSFile}
-                  aria-label="Copy CSS file contents"
+                  onClick={downloadMarkdown}
+                  aria-label="Download markdown design system file"
                 />
                 <p className="text-black">
-                  <span className="font-medium">1 - Copy this CSS file and attach it to your prompt</span>
+                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt</span>
                 </p>
               </div>
             </div>
             
             <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
               <div className="flex items-center gap-2">
-                <Copy 
+                <Download 
                   size={24}
                   className="cursor-pointer text-gray-500 hover:text-blue-600" 
-                  onClick={() => copyToClipboard(instructionText)}
-                  aria-label="Copy instruction text"
+                  onClick={() => {
+                    // Create a blob with the instruction text
+                    const blob = new Blob([instructionText], { type: 'text/plain' });
+                    // Create a URL for the blob
+                    const url = URL.createObjectURL(blob);
+                    // Create an anchor element
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'instructions.txt';
+                    // Trigger a click on the anchor to start the download
+                    document.body.appendChild(a);
+                    a.click();
+                    // Clean up
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    toast({
+                      title: "Downloaded!",
+                      description: "Instructions downloaded successfully",
+                      duration: 2000,
+                    });
+                  }}
+                  aria-label="Download instruction text"
                 />
                 <p className="text-black">
                   <span className="font-medium">2 - Add to your prompt: "{instructionText}"</span>
