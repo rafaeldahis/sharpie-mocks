@@ -11,10 +11,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     react(),
-    // Configure vite-plugin-raw to avoid processing index.html
     rawPlugin({
       include: /\.md$/,
-      exclude: /node_modules/
+      exclude: /index\.html|node_modules/
     })
   ],
   resolve: {

@@ -1,8 +1,8 @@
 
 declare module 'vite-plugin-raw' {
   interface RawPluginOptions {
-    include?: string | RegExp | (string | RegExp)[];
-    exclude?: string | RegExp | (string | RegExp)[];
+    include?: string | RegExp | Array<string | RegExp>;
+    exclude?: string | RegExp | Array<string | RegExp>;
   }
   
   /**
