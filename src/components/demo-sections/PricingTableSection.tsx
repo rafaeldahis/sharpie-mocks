@@ -55,8 +55,7 @@ const PricingTableSection: React.FC<PricingTableSectionProps> = ({ pricingTiers,
               </div>
               
               <SketchButton 
-                variant={tier.isDeleteButton ? 'outline' : tier.highlight ? 'primary' : 'secondary'}
-                className={tier.isDeleteButton ? 'bg-red-500 hover:bg-red-600 text-white' : ''}
+                variant={tier.isDeleteButton ? 'delete' : tier.highlight ? 'primary' : 'secondary'}
               >
                 {tier.buttonText}
               </SketchButton>

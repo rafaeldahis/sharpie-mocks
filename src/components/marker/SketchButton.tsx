@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface SketchButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'delete';
   disabled?: boolean;
 }
 
@@ -24,6 +24,9 @@ const SketchButton: React.FC<SketchButtonProps> = ({
       break;
     case 'outline':
       variantClasses = 'bg-transparent text-sketch-black border-2 border-sketch-black';
+      break;
+    case 'delete':
+      variantClasses = 'bg-red-500 hover:bg-red-600 text-white';
       break;
     default:
       variantClasses = 'bg-sketch-accentBlue text-white';
