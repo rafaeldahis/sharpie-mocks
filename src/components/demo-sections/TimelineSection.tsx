@@ -17,7 +17,7 @@ interface TimelineSectionProps {
 const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
   const isMobile = useIsMobile();
   
-  // Use the provided timelineItems or fall back to default items - but limit to 3
+  // Use the provided timelineItems or fall back to default items
   const allItems = timelineItems || [
     {
       title: "Project Started",
@@ -52,8 +52,8 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ timelineItems }) => {
   return (
     <SketchCard title="Timeline" className="mb-6">
       <div className="space-y-4">
-        <p className="mb-4 font-medium">Visualize events over time:</p>
-        <div className="sketch-border bg-white p-2 sm:p-4 transform rotate-0.5 overflow-hidden">
+        <p className={`mb-4 font-medium text-sm ${isMobile ? '' : 'sm:text-base'}`}>Visualize events over time:</p>
+        <div className="sketch-border bg-white p-2 sm:p-4 transform rotate-0.5 overflow-hidden rounded-md">
           <SketchTimeline items={items} className={isMobile ? "p-2" : "p-4"} />
         </div>
       </div>
