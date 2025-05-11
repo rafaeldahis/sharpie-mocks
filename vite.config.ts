@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [
     react(),
     rawPlugin({
-      include: ['**/*.md', '**/*.css', '**/*.png']
+      include: ['**/*.md'] // We're only including markdown files, removing CSS and PNG which might be causing issues
     })
   ],
   resolve: {

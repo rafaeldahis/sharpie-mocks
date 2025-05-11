@@ -1,4 +1,4 @@
 
 declare module 'vite-plugin-raw' {
-  export default function(options: { include: string[] }): any;
+  export default function(options?: { include?: string[] }): any;
 }
