@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
-import { Download } from "lucide-react";
+import { Download, Copy } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import markdownContent from "@/sharpie-mocks.md?raw";
 import StyleReferenceModal from "@/components/StyleReferenceModal";
@@ -8,40 +9,7 @@ import StyleReferenceModal from "@/components/StyleReferenceModal";
 const Index = () => {
   console.log("Index component rendering");
   
-  const [currentItem, setCurrentItem] = useState(0);
   const [showReferenceModal, setShowReferenceModal] = useState(false);
-  
-  // Set up auto-scrolling of the carousel
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentItem((prev) => (prev + 1) % 5); // We have 5 examples
-    }, 5000); // 5 seconds interval
-    
-    return () => clearInterval(intervalId);
-  }, []);
-
-  const examples = [
-    {
-      border: "border-l-2 border-blue-400",
-      text: "\"Create a hand-drawn e-commerce product page with sketch styles showing a product image, pricing, reviews, and an 'Add to Cart' button\""
-    },
-    {
-      border: "border-l-2 border-green-400",
-      text: "\"Design a sketch-style dashboard for a B2B analytics platform with wobbly charts, key metrics cards, and a hand-drawn navigation sidebar\""
-    },
-    {
-      border: "border-l-2 border-purple-400",
-      text: "\"Make a sketch wireframe of a marketplace app with listing cards, filters, search bar, and a map view using marker styles\""
-    },
-    {
-      border: "border-l-2 border-orange-400",
-      text: "\"Create a hand-drawn admin panel for managing user permissions with a sketch-style table, action buttons, and filter controls\""
-    },
-    {
-      border: "border-l-2 border-red-400",
-      text: "\"Design a sketch wireframe for a task management app with a calendar view, task cards, priority indicators, and status markers\""
-    }
-  ];
 
   const downloadMarkdown = () => {
     // Create a blob with the markdown content
@@ -131,7 +99,28 @@ const Index = () => {
     });
   };
 
-  const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics. Make sure to use the specified fonts and styling.";
+  // Shortened instruction text
+  const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics.";
+
+  // Function to copy text to clipboard
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        toast({
+          title: "Copied!",
+          description: "Instructions copied to clipboard",
+          duration: 2000,
+        });
+      })
+      .catch(err => {
+        toast({
+          title: "Copy failed",
+          description: "Could not copy text to clipboard",
+          duration: 3000,
+        });
+        console.error("Copy error:", err);
+      });
+  };
 
   console.log("Index component about to render JSX");
 
@@ -206,45 +195,15 @@ const Index = () => {
             
             <div className="p-3 bg-white rounded-md border border-gray-200 transform -rotate-0.5deg">
               <div className="flex items-center gap-2">
-                <Download 
+                <Copy 
                   size={24}
                   className="cursor-pointer text-gray-500 hover:text-blue-600" 
-                  onClick={() => {
-                    // Create a blob with the instruction text
-                    const blob = new Blob([instructionText], { type: 'text/plain' });
-                    // Create a URL for the blob
-                    const url = URL.createObjectURL(blob);
-                    // Create an anchor element
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'instructions.txt';
-                    // Trigger a click on the anchor to start the download
-                    document.body.appendChild(a);
-                    a.click();
-                    // Clean up
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    
-                    toast({
-                      title: "Downloaded!",
-                      description: "Instructions downloaded successfully",
-                      duration: 2000,
-                    });
-                  }}
-                  aria-label="Download instruction text"
+                  onClick={() => copyToClipboard(instructionText)}
+                  aria-label="Copy instruction text"
                 />
                 <p className="text-black">
                   <span className="font-medium">2 - Add to your prompt: "{instructionText}"</span>
                 </p>
-              </div>
-            </div>
-            
-            <div className="p-3 bg-white rounded-md border border-gray-200 mt-2 transform -rotate-0.5deg">
-              <p className="font-bold">Quick implementation examples:</p>
-              <div className="mt-2 w-full overflow-hidden">
-                <div className={`p-2 ${examples[currentItem].border} animate-fade-in`} key={currentItem}>
-                  <p className="italic">{examples[currentItem].text}</p>
-                </div>
               </div>
             </div>
           </div>
