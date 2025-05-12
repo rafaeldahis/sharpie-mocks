@@ -25,4 +25,4 @@ export { default as PricingTableSection } from './PricingTableSection';
 export { default as TestimonialSection } from './TestimonialSection';
 export { default as FAQSection } from './FAQSection';
 export { default as EmptyStateSection } from './EmptyStateSection';
-export { default as MiniTrendSection } from './MiniTrendSection';
+export { default as MetricsSection } from './MetricsSection';

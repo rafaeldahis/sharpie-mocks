@@ -30,7 +30,7 @@ import {
   TestimonialSection,
   FAQSection,
   EmptyStateSection,
-  MiniTrendSection
+  MetricsSection
 } from './demo-sections';
 
 const MarkerStyleDemo: React.FC = () => {
@@ -212,7 +212,7 @@ const MarkerStyleDemo: React.FC = () => {
         <CalendarSection calendarEvents={calendarEvents} />
         <FAQSection />
         <EmptyStateSection />
-        <MiniTrendSection />
+        <MetricsSection />
         {/* Make SocialMedia and Testimonial sections appear side by side */}
         <div className="col-span-1 md:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
