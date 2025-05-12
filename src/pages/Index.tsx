@@ -70,23 +70,46 @@ const Index = () => {
   };
 
   const downloadPNG = () => {
-    // Create an anchor element
-    const a = document.createElement('a');
-    a.href = '/sharpie-style-reference.png';
-    a.download = 'sharpie-style-reference.png';
-    
-    // Trigger a click on the anchor to start the download
-    document.body.appendChild(a);
-    a.click();
-    
-    // Clean up
-    document.body.removeChild(a);
-    
-    toast({
-      title: "Downloaded!",
-      description: "Style reference PNG downloaded successfully",
-      duration: 2000,
-    });
+    // Instead of trying to access the PNG via import, we'll create a fetch request
+    fetch('/sharpie-style-reference.png')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        // Create a URL for the blob
+        const url = URL.createObjectURL(blob);
+        
+        // Create an anchor element
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'sharpie-style-reference.png';
+        
+        // Trigger a click on the anchor to start the download
+        document.body.appendChild(a);
+        a.click();
+        
+        // Clean up
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        toast({
+          title: "Downloaded!",
+          description: "Style reference PNG downloaded successfully",
+          duration: 2000,
+        });
+      })
+      .catch(error => {
+        console.error('Error downloading PNG:', error);
+        toast({
+          title: "Download Failed",
+          description: "Could not download the PNG file. Please try again later.",
+          variant: "destructive",
+          duration: 3000,
+        });
+      });
   };
 
   const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics. Make sure to use the specified fonts and styling.";
