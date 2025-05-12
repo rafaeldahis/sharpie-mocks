@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
-import { Download, Image, Maximize, Screenshot } from 'lucide-react';
+import { Download, Image, Maximize } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import html2canvas from 'html2canvas';
 
@@ -211,7 +210,7 @@ const StyleReferenceModal = ({ isOpen, onClose }: StyleReferenceModalProps) => {
                 onClick={takeScreenshot}
                 disabled={takingScreenshot}
               >
-                <Screenshot className="mr-2 h-4 w-4" /> 
+                <Image className="mr-2 h-4 w-4" /> 
                 {takingScreenshot ? 'Capturing...' : 'Take Page Screenshot'}
               </Button>
             </div>
