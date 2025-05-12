@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Download } from "lucide-react";
@@ -69,6 +68,57 @@ const Index = () => {
       description: "Markdown file downloaded successfully",
       duration: 2000,
     });
+  };
+
+  // Function to take a screenshot without opening the modal
+  const takeScreenshot = async () => {
+    try {
+      toast({
+        title: "Taking screenshot...",
+        description: "Please wait while we capture the page",
+        duration: 2000,
+      });
+      
+      // Add a slight delay to allow the toast to show
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      // Import html2canvas dynamically to avoid SSR issues
+      const html2canvas = (await import('html2canvas')).default;
+      
+      // Capture the entire page
+      const canvas = await html2canvas(document.documentElement, {
+        allowTaint: true,
+        useCORS: true,
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: document.documentElement.offsetWidth,
+        windowHeight: document.documentElement.offsetHeight,
+      });
+      
+      // Convert to image data
+      const imageData = canvas.toDataURL("image/png");
+      
+      // Create a link to download the image
+      const link = document.createElement('a');
+      link.href = imageData;
+      link.download = 'sharpie-mocks-screenshot.png';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast({
+        title: "Screenshot captured!",
+        description: "Full page screenshot has been downloaded",
+        duration: 2000,
+      });
+    } catch (error) {
+      toast({
+        title: "Screenshot failed",
+        description: "There was an error capturing the screenshot. Please try again.",
+        duration: 3000,
+      });
+      console.error("Screenshot error:", error);
+    }
   };
 
   const openStyleReference = () => {
@@ -149,7 +199,7 @@ const Index = () => {
                   aria-label="Download markdown design system file"
                 />
                 <p className="text-black">
-                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={openStyleReference}>view style reference</span>)</span>
+                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={takeScreenshot}>download png</span>)</span>
                 </p>
               </div>
             </div>
