@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
-import { Download, Image, Maximize } from 'lucide-react';
+import { Download, Image, Maximize, Screenshot } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
+import html2canvas from 'html2canvas';
 
 interface StyleReferenceModalProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ const BASE64_PREFIX = "data:image/png;base64,";
 const StyleReferenceModal = ({ isOpen, onClose }: StyleReferenceModalProps) => {
   // Get the base64 content from the file that's already in the project
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [takingScreenshot, setTakingScreenshot] = useState(false);
   
   // Function to download the image using the base64 data
   const downloadStyleImage = () => {
@@ -98,6 +100,55 @@ const StyleReferenceModal = ({ isOpen, onClose }: StyleReferenceModalProps) => {
     }
   };
 
+  // Function to take a screenshot of the entire page
+  const takeScreenshot = async () => {
+    try {
+      setTakingScreenshot(true);
+      
+      // Close the modal first so it doesn't appear in the screenshot
+      onClose();
+      
+      // Wait a moment for the modal to close
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      // Capture the entire page
+      const canvas = await html2canvas(document.documentElement, {
+        allowTaint: true,
+        useCORS: true,
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: document.documentElement.offsetWidth,
+        windowHeight: document.documentElement.offsetHeight,
+      });
+      
+      // Convert to image data
+      const imageData = canvas.toDataURL("image/png");
+      
+      // Create a link to download the image
+      const link = document.createElement('a');
+      link.href = imageData;
+      link.download = 'sharpie-mocks-screenshot.png';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast({
+        title: "Screenshot captured!",
+        description: "Full page screenshot has been downloaded",
+        duration: 2000,
+      });
+    } catch (error) {
+      toast({
+        title: "Screenshot failed",
+        description: "There was an error capturing the screenshot. Please try again.",
+        duration: 3000,
+      });
+      console.error("Screenshot error:", error);
+    } finally {
+      setTakingScreenshot(false);
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-4xl w-full">
@@ -154,10 +205,19 @@ const StyleReferenceModal = ({ isOpen, onClose }: StyleReferenceModalProps) => {
               >
                 <Maximize className="mr-2 h-4 w-4" /> View Full Size
               </Button>
+              
+              <Button 
+                className="bg-green-500 text-white border-2 border-black hover:bg-green-600 transform hover:-translate-y-1 transition-transform"
+                onClick={takeScreenshot}
+                disabled={takingScreenshot}
+              >
+                <Screenshot className="mr-2 h-4 w-4" /> 
+                {takingScreenshot ? 'Capturing...' : 'Take Page Screenshot'}
+              </Button>
             </div>
             
             <p className="text-sm text-gray-500 mt-3 text-center">
-              Click the image to view in full size, or use the buttons above to download or open in a new tab
+              Click the image to view in full size, or use the buttons above to download, view in full size, or take a screenshot of the entire page
             </p>
           </div>
         </div>
