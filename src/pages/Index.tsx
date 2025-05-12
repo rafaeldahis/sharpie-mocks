@@ -69,63 +69,15 @@ const Index = () => {
     });
   };
 
-  const downloadPNG = () => {
-    // Create a link to the PNG file with proper content-type headers
-    const imageUrl = '/sharpie-style-reference.png';
+  const openPNGInNewTab = () => {
+    // Open the image in a new browser tab
+    window.open('/sharpie-style-reference.png', '_blank');
     
-    // Use XMLHttpRequest instead of fetch to handle binary data properly
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', imageUrl, true);
-    xhr.responseType = 'blob';
-    
-    xhr.onload = function() {
-      if (this.status === 200) {
-        // Create a proper PNG blob with the correct MIME type
-        const blob = new Blob([this.response], { type: 'image/png' });
-        
-        // Create a URL for the blob
-        const url = URL.createObjectURL(blob);
-        
-        // Create an anchor element
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'sharpie-style-reference.png';
-        
-        // Trigger a click on the anchor to start the download
-        document.body.appendChild(a);
-        a.click();
-        
-        // Clean up
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        
-        toast({
-          title: "Downloaded!",
-          description: "Style reference PNG downloaded successfully",
-          duration: 2000,
-        });
-      } else {
-        console.error('Error downloading PNG:', this.statusText);
-        toast({
-          title: "Download Failed",
-          description: "Could not download the PNG file. Please try again later.",
-          variant: "destructive",
-          duration: 3000,
-        });
-      }
-    };
-    
-    xhr.onerror = function() {
-      console.error('Error downloading PNG: Network error');
-      toast({
-        title: "Download Failed",
-        description: "Network error while downloading the PNG file. Please try again later.",
-        variant: "destructive",
-        duration: 3000,
-      });
-    };
-    
-    xhr.send();
+    toast({
+      title: "Opened in New Tab",
+      description: "Style reference PNG opened in a new browser tab",
+      duration: 2000,
+    });
   };
 
   const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics. Make sure to use the specified fonts and styling.";
@@ -196,7 +148,7 @@ const Index = () => {
                   aria-label="Download markdown design system file"
                 />
                 <p className="text-black">
-                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={downloadPNG}>download a .png file instead</span>)</span>
+                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={openPNGInNewTab}>view PNG version</span>)</span>
                 </p>
               </div>
             </div>
