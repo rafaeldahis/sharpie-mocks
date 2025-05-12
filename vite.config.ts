@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     rawPlugin({
+      // Use string patterns instead of RegExp to avoid the test() method error
       include: '**/*.md',
       exclude: '**/node_modules/**'
     })
