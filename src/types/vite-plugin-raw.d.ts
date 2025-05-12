@@ -1,10 +1,9 @@
 
 declare module 'vite-plugin-raw' {
-  type FilterPattern = string | RegExp | (string | RegExp)[];
-  
+  // Use simpler type definition that avoids RegExp test() method calls
   interface RawPluginOptions {
-    include?: FilterPattern;
-    exclude?: FilterPattern;
+    include?: string | string[];
+    exclude?: string | string[];
   }
   
   function rawPlugin(options?: RawPluginOptions): {
