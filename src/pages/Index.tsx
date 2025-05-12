@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Download, Copy } from "lucide-react";
@@ -130,7 +129,7 @@ const Index = () => {
         <h1 className="text-5xl md:text-6xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-[#FFFF00] text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
           Sharpie Mocks
         </h1>
-        <p className="text-xl mt-4 font-comic">A complete sketch-style design system to communicate product ideas</p>
+        <p className="text-xl mt-4 font-comic">A sketch-style design system to communicate product ideas</p>
         
         <div className="flex items-center justify-center gap-2 mt-4 font-comic">
           <a 
