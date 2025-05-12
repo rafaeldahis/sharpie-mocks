@@ -70,15 +70,19 @@ const Index = () => {
   };
 
   const downloadPNG = () => {
-    // Instead of trying to access the PNG via import, we'll create a fetch request
-    fetch('/sharpie-style-reference.png')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.blob();
-      })
-      .then(blob => {
+    // Create a link to the PNG file with proper content-type headers
+    const imageUrl = '/sharpie-style-reference.png';
+    
+    // Use XMLHttpRequest instead of fetch to handle binary data properly
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', imageUrl, true);
+    xhr.responseType = 'blob';
+    
+    xhr.onload = function() {
+      if (this.status === 200) {
+        // Create a proper PNG blob with the correct MIME type
+        const blob = new Blob([this.response], { type: 'image/png' });
+        
         // Create a URL for the blob
         const url = URL.createObjectURL(blob);
         
@@ -100,16 +104,28 @@ const Index = () => {
           description: "Style reference PNG downloaded successfully",
           duration: 2000,
         });
-      })
-      .catch(error => {
-        console.error('Error downloading PNG:', error);
+      } else {
+        console.error('Error downloading PNG:', this.statusText);
         toast({
           title: "Download Failed",
           description: "Could not download the PNG file. Please try again later.",
           variant: "destructive",
           duration: 3000,
         });
+      }
+    };
+    
+    xhr.onerror = function() {
+      console.error('Error downloading PNG: Network error');
+      toast({
+        title: "Download Failed",
+        description: "Network error while downloading the PNG file. Please try again later.",
+        variant: "destructive",
+        duration: 3000,
       });
+    };
+    
+    xhr.send();
   };
 
   const instructionText = "Apply this design system with your AI tool to create hand-drawn UIs with wobbly elements and marker aesthetics. Make sure to use the specified fonts and styling.";
