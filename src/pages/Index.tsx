@@ -4,11 +4,13 @@ import MarkerStyleDemo from "@/components/MarkerStyleDemo";
 import { Download } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import markdownContent from "@/sharpie-mocks.md?raw";
+import StyleReferenceModal from "@/components/StyleReferenceModal";
 
 const Index = () => {
   console.log("Index component rendering");
   
   const [currentItem, setCurrentItem] = useState(0);
+  const [showReferenceModal, setShowReferenceModal] = useState(false);
   
   // Set up auto-scrolling of the carousel
   useEffect(() => {
@@ -69,13 +71,12 @@ const Index = () => {
     });
   };
 
-  const openPNGInNewTab = () => {
-    // Open the image in a new browser tab
-    window.open('/sharpie-style-reference.png', '_blank');
+  const openStyleReference = () => {
+    setShowReferenceModal(true);
     
     toast({
-      title: "Opened in New Tab",
-      description: "Style reference PNG opened in a new browser tab",
+      title: "Opening Style Reference",
+      description: "Style reference guide is now displayed",
       duration: 2000,
     });
   };
@@ -148,7 +149,7 @@ const Index = () => {
                   aria-label="Download markdown design system file"
                 />
                 <p className="text-black">
-                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={openPNGInNewTab}>view PNG version</span>)</span>
+                  <span className="font-medium">1 - Download this markdown design system file and attach it to your prompt (issues? <span className="text-blue-600 cursor-pointer hover:underline" onClick={openStyleReference}>view style reference</span>)</span>
                 </p>
               </div>
             </div>
@@ -201,6 +202,12 @@ const Index = () => {
       </div>
       
       <MarkerStyleDemo />
+      
+      {/* Style Reference Modal */}
+      <StyleReferenceModal 
+        isOpen={showReferenceModal} 
+        onClose={() => setShowReferenceModal(false)} 
+      />
     </div>
   );
 };
