@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Check, LayoutDashboard, Star, Users, Zap, MessageSquare, Play, ChevronDown } from "lucide-react";
@@ -100,7 +99,7 @@ const DoodleLaunch = () => {
                 </li>
               ))}
               <li>
-                <SketchButton variant="default" className="transform rotate-1 py-1">
+                <SketchButton variant="primary" className="transform rotate-1 py-1">
                   Sign Up
                 </SketchButton>
               </li>
@@ -323,26 +322,30 @@ const DoodleLaunch = () => {
           
           <div className="max-w-3xl mx-auto">
             {faqs.map((faq, index) => (
-              <SketchCard 
+              <div 
                 key={index} 
-                className="mb-4 bg-white border-2 border-black transform hover:rotate-0.5 cursor-pointer transition-transform"
-                onClick={() => toggleFAQ(index)}
+                className="mb-4"
               >
-                <div className="p-4">
-                  <div className="flex justify-between items-center">
-                    <h3 className="font-bold text-lg">{faq.question}</h3>
-                    <ChevronDown 
-                      size={20} 
-                      className={`transition-transform ${showFAQ === index ? 'transform rotate-180' : ''}`} 
-                    />
-                  </div>
-                  {showFAQ === index && (
-                    <div className="mt-3 pt-3 border-t border-dashed border-gray-300">
-                      <p>{faq.answer}</p>
+                <SketchCard 
+                  className="bg-white border-2 border-black transform hover:rotate-0.5 cursor-pointer transition-transform"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <div className="p-4">
+                    <div className="flex justify-between items-center">
+                      <h3 className="font-bold text-lg">{faq.question}</h3>
+                      <ChevronDown 
+                        size={20} 
+                        className={`transition-transform ${showFAQ === index ? 'transform rotate-180' : ''}`} 
+                      />
                     </div>
-                  )}
-                </div>
-              </SketchCard>
+                    {showFAQ === index && (
+                      <div className="mt-3 pt-3 border-t border-dashed border-gray-300">
+                        <p>{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                </SketchCard>
+              </div>
             ))}
           </div>
         </div>

@@ -1,12 +1,11 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
   ArrowLeft, Heart, MessageSquare, Share2, Smartphone, 
   Bookmark, Home, Search, Plus, User, Settings, ChevronRight,
-  MoreHorizontal, Smile, Image, Send
+  MoreHorizontal, Smile, Image, Send, Check
 } from "lucide-react";
-import { SketchCard, SketchInput, SketchButton, SketchBadge } from "@/components/marker";
+import { SketchButton, SketchCard, SketchBadge, SketchInput } from "@/components/marker";
 
 const SketchGram = () => {
   const [liked, setLiked] = useState<number[]>([]);
@@ -353,7 +352,7 @@ const SketchGram = () => {
                 <div className="flex flex-wrap gap-2 mb-4">
                   {["#sketch", "#doodle", "#art", "#creative", "#drawing", "#design", "#handdrawn"].map((tag, i) => (
                     <div key={i} className="inline-block">
-                      <SketchBadge variant="outline" className="transform" style={{ transform: `rotate(${(i % 3) - 1}deg)` }}>
+                      <SketchBadge variant="primary" className="transform" style={{ transform: `rotate(${(i % 3) - 1}deg)` }}>
                         {tag}
                       </SketchBadge>
                     </div>

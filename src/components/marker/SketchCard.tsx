@@ -6,12 +6,14 @@ interface SketchCardProps {
   title?: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void; // Added onClick property
 }
 
 const SketchCard: React.FC<SketchCardProps> = ({ 
   title, 
   children, 
-  className = '' 
+  className = '',
+  onClick 
 }) => {
   const { isMobile, screenSize } = useIsMobile();
   
@@ -35,7 +37,10 @@ const SketchCard: React.FC<SketchCardProps> = ({
   };
   
   return (
-    <div className={`sketch-card border sketch-border ${getPadding()} rounded-md overflow-hidden ${className}`}>
+    <div 
+      className={`sketch-card border sketch-border ${getPadding()} rounded-md overflow-hidden ${className}`}
+      onClick={onClick} // Added onClick handler
+    >
       {title && (
         <div className={`font-comic ${getHeadingSize()} font-bold mb-2 sm:mb-3 sketch-heading`}>{title}</div>
       )}
