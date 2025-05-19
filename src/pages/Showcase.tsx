@@ -70,7 +70,7 @@ const Showcase = () => {
         </div>
         
         {/* Second banner - "Showcase" with black background and bright yellow font */}
-        <div className="inline-block transform rotate-1 bg-black text-yellow-300 px-6 py-2 border-2 border-yellow-300 shadow-lg relative z-20 -ml-4 mt-2">
+        <div className="inline-block transform rotate-1 bg-black text-[#FFFF00] px-6 py-2 shadow-lg relative z-20 -ml-4 mt-2">
           <h2 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
             Showcase
           </h2>
