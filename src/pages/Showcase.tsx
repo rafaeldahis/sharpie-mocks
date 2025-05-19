@@ -62,8 +62,8 @@ const Showcase = () => {
       </div>
 
       <div className="text-center mb-10 relative">
-        {/* First banner - "Sharpie Mocks" */}
-        <div className="inline-block transform -rotate-2 bg-[#FF9F43] text-black px-8 py-3 border-2 border-black shadow-lg relative z-10">
+        {/* First banner - "Sharpie Mocks" with yellow background */}
+        <div className="inline-block transform -rotate-2 bg-[#FFFF00] text-black px-8 py-3 border-2 border-black shadow-lg relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
             Sharpie Mocks
           </h1>
