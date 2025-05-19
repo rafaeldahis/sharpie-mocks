@@ -123,8 +123,8 @@ const Showcase = () => {
                     {/* Item 3: Buttons */}
                     <div className="p-2 bg-white border-2 border-black rounded-md col-span-2 transform rotate-0.5">
                       <div className="flex gap-2 justify-center">
-                        <SketchButton size="sm" variant="primary">Click Me</SketchButton>
-                        <SketchButton size="sm" variant="secondary">Cancel</SketchButton>
+                        <SketchButton variant="primary" className="text-xs py-1 px-2">Click Me</SketchButton>
+                        <SketchButton variant="secondary" className="text-xs py-1 px-2">Cancel</SketchButton>
                       </div>
                     </div>
                     
