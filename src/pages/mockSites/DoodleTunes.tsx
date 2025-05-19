@@ -109,7 +109,7 @@ const DoodleTunes = () => {
 
                 <div className="mb-4">
                   <SketchProgressBar 
-                    progress={isPlaying ? 45 : (currentSong.progress || 0)}
+                    value={isPlaying ? 45 : (currentSong.progress || 0)}
                     className="h-3 transform -rotate-0.5"
                   />
                   <div className="flex justify-between text-sm mt-1">
@@ -148,7 +148,7 @@ const DoodleTunes = () => {
                 <div className="flex items-center gap-2">
                   <Volume2 size={18} />
                   <SketchProgressBar 
-                    progress={75}
+                    value={75}
                     className="h-2 transform rotate-0.5"
                   />
                 </div>
