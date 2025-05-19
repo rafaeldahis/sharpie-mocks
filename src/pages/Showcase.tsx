@@ -12,7 +12,7 @@ const Showcase = () => {
       name: "SharpieShop",
       description: "An e-commerce platform with a hand-drawn aesthetic for unique products",
       icon: "shopping-cart",
-      link: "#",
+      link: "/mock/sharpie-shop",
       color: "bg-[#FFCF8B]"
     },
     {
@@ -20,7 +20,7 @@ const Showcase = () => {
       name: "DoodleLaunch",
       description: "A creative landing page for a design tool that embraces imperfection",
       icon: "layout-dashboard",
-      link: "#",
+      link: "/mock/doodle-launch",
       color: "bg-[#C1E1C5]"
     },
     {
@@ -28,7 +28,7 @@ const Showcase = () => {
       name: "SketchGram",
       description: "A social media feed focused on sharing hand-drawn art and doodles",
       icon: "smartphone",
-      link: "#",
+      link: "/mock/sketch-gram",
       color: "bg-[#FFB6B6]"
     },
     {
@@ -36,7 +36,7 @@ const Showcase = () => {
       name: "ScribbleDash",
       description: "An internal tool with a sketchy interface for managing user data",
       icon: "table",
-      link: "#",
+      link: "/mock/scribble-dash",
       color: "bg-[#BAD7F2]"
     },
     {
@@ -44,7 +44,7 @@ const Showcase = () => {
       name: "DoodleTunes",
       description: "A music player with playful controls and visualizations",
       icon: "music",
-      link: "#",
+      link: "/mock/doodle-tunes",
       color: "bg-[#FFE29F]"
     }
   ];
@@ -70,12 +70,10 @@ const Showcase = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {mockWebsites.map((site) => (
-          <a 
+          <Link 
             key={site.id}
-            href={site.link}
+            to={site.link}
             className="block transform transition-transform hover:-rotate-1 hover:scale-105"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <SketchCard className={`h-full ${site.color} border-2 border-black`}>
               <div className="flex flex-col h-full">
@@ -126,7 +124,7 @@ const Showcase = () => {
                 </div>
               </div>
             </SketchCard>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
