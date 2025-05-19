@@ -1,3 +1,7 @@
+<think>
+
+</think>
+
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
@@ -508,5 +512,16 @@
   .sketch-btn-icon:active {
     transform: translate(2px, 2px) rotate(-0.5deg);
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+@layer utilities {
+  .animate-spin-once {
+    animation: spin 1s ease-in-out;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }
