@@ -61,11 +61,22 @@ const Showcase = () => {
         </Link>
       </div>
 
-      <div className="text-center mb-10">
-        <h1 className="text-5xl md:text-6xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-[#FFFF00] text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
-          Sharpie Mocks Showcase
-        </h1>
-        <p className="text-xl mt-4 font-comic">Check out these example applications built with the Sharpie Mocks design system</p>
+      <div className="text-center mb-10 relative">
+        {/* First banner - "Sharpie Mocks" */}
+        <div className="inline-block transform -rotate-2 bg-[#FF9F43] text-black px-8 py-3 border-2 border-black shadow-lg relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
+            Sharpie Mocks
+          </h1>
+        </div>
+        
+        {/* Second banner - "Showcase" */}
+        <div className="inline-block transform rotate-1 bg-[#2179FF] text-white px-6 py-2 border-2 border-black shadow-lg relative z-20 -ml-4 mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
+            Showcase
+          </h2>
+        </div>
+        
+        <p className="text-xl mt-8 font-comic">Check out these example applications built with the Sharpie Mocks design system</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
