@@ -1,6 +1,8 @@
+
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
-import { Download, Copy } from "lucide-react";
+import { Download, Copy, ExternalLink } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import markdownContent from "@/sharpie-mocks.md?raw";
 import StyleReferenceModal from "@/components/StyleReferenceModal";
@@ -125,6 +127,16 @@ const Index = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <div className="flex justify-end mb-4">
+        <Link 
+          to="/showcase" 
+          className="flex items-center gap-1 text-blue-600 hover:text-blue-800 bg-white px-3 py-1 rounded-md border border-gray-300 sketch-border transform rotate-0.5 hover:rotate-0 transition-transform"
+        >
+          <ExternalLink size={18} className="transform rotate-1" />
+          <span>View Showcase</span>
+        </Link>
+      </div>
+      
       <div className="text-center mb-8">
         <h1 className="text-5xl md:text-6xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-[#FFFF00] text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
           Sharpie Mocks
