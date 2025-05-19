@@ -1,8 +1,9 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Grid3x3, Blocks, Box, Music, ShoppingCart, Smartphone, Table, LayoutDashboard } from "lucide-react";
 import SketchCard from "@/components/marker/SketchCard";
+import { SketchBadge, SketchButton, SketchToggle, SketchProgressBar, SketchNotificationBadge } from "@/components/marker";
 
 const Showcase = () => {
   // Mock websites data
@@ -46,6 +47,14 @@ const Showcase = () => {
       icon: "music",
       link: "/mock/doodle-tunes",
       color: "bg-[#FFE29F]"
+    },
+    {
+      id: 6,
+      name: "Random",
+      description: "A showcase of UI elements in a bento-box style layout",
+      icon: "blocks",
+      link: "/mock/random",
+      color: "bg-[#9b87f5]"
     }
   ];
 
@@ -86,55 +95,115 @@ const Showcase = () => {
             to={site.link}
             className="block transform transition-transform hover:-rotate-1 hover:scale-105"
           >
-            <SketchCard className={`h-full ${site.color} border-2 border-black`}>
-              <div className="flex flex-col h-full">
-                <div className="flex items-center mb-4">
-                  {site.icon === "shopping-cart" && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform rotate-2">
-                      <circle cx="8" cy="21" r="1"/>
-                      <circle cx="19" cy="21" r="1"/>
-                      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-                    </svg>
-                  )}
-                  {site.icon === "layout-dashboard" && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform -rotate-1">
-                      <rect width="7" height="9" x="3" y="3" rx="1"/>
-                      <rect width="7" height="5" x="14" y="3" rx="1"/>
-                      <rect width="7" height="9" x="14" y="12" rx="1"/>
-                      <rect width="7" height="5" x="3" y="16" rx="1"/>
-                    </svg>
-                  )}
-                  {site.icon === "smartphone" && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform rotate-1">
-                      <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
-                      <path d="M12 18h.01"/>
-                    </svg>
-                  )}
-                  {site.icon === "table" && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform -rotate-2">
-                      <path d="M12 3v18"/>
-                      <rect width="18" height="18" x="3" y="3" rx="2"/>
-                      <path d="M3 9h18"/>
-                      <path d="M3 15h18"/>
-                    </svg>
-                  )}
-                  {site.icon === "music" && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform rotate-2">
-                      <path d="M9 18V5l12-2v13"/>
-                      <circle cx="6" cy="18" r="3"/>
-                      <circle cx="18" cy="16" r="3"/>
-                    </svg>
-                  )}
-                  <h2 className="text-2xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>{site.name}</h2>
+            {site.name === "Random" ? (
+              <SketchCard className={`h-full ${site.color} border-2 border-black`}>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    <Blocks className="mr-2 transform rotate-2" size={30} />
+                    <h2 className="text-2xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>{site.name}</h2>
+                  </div>
+                  
+                  {/* Bento box grid layout */}
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {/* Item 1: Progress bar */}
+                    <div className="p-2 bg-white border-2 border-black rounded-md transform -rotate-1">
+                      <p className="text-xs mb-1 font-bold">Progress</p>
+                      <SketchProgressBar value={75} color="#FF5733" />
+                    </div>
+                    
+                    {/* Item 2: Toggle switches */}
+                    <div className="p-2 bg-white border-2 border-black rounded-md transform rotate-1">
+                      <p className="text-xs mb-1 font-bold">Toggles</p>
+                      <div className="flex gap-2 justify-around">
+                        <SketchToggle defaultChecked={true} />
+                        <SketchToggle defaultChecked={false} />
+                      </div>
+                    </div>
+                    
+                    {/* Item 3: Buttons */}
+                    <div className="p-2 bg-white border-2 border-black rounded-md col-span-2 transform rotate-0.5">
+                      <div className="flex gap-2 justify-center">
+                        <SketchButton size="sm" variant="primary">Click Me</SketchButton>
+                        <SketchButton size="sm" variant="secondary">Cancel</SketchButton>
+                      </div>
+                    </div>
+                    
+                    {/* Item 4: Badges */}
+                    <div className="p-2 bg-white border-2 border-black rounded-md transform -rotate-0.5">
+                      <div className="flex flex-wrap gap-1 justify-center">
+                        <SketchBadge variant="primary">New</SketchBadge>
+                        <SketchBadge variant="warning">Alert</SketchBadge>
+                      </div>
+                    </div>
+                    
+                    {/* Item 5: Notification */}
+                    <div className="p-2 bg-white border-2 border-black rounded-md flex justify-center items-center transform rotate-1">
+                      <div className="relative">
+                        <ShoppingCart size={24} />
+                        <SketchNotificationBadge count={3} position="top-right" color="red" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm mb-3">{site.description}</p>
+                  <div className="mt-auto pt-4 flex justify-end">
+                    <span className="inline-block px-3 py-1 border-2 border-black bg-white rounded-md transform rotate-1 text-sm font-bold">
+                      View Demo
+                    </span>
+                  </div>
                 </div>
-                <p className="text-lg">{site.description}</p>
-                <div className="mt-auto pt-4 flex justify-end">
-                  <span className="inline-block px-3 py-1 border-2 border-black bg-white rounded-md transform rotate-1 text-sm font-bold">
-                    View Demo
-                  </span>
+              </SketchCard>
+            ) : (
+              <SketchCard className={`h-full ${site.color} border-2 border-black`}>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    {site.icon === "shopping-cart" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform rotate-2">
+                        <circle cx="8" cy="21" r="1"/>
+                        <circle cx="19" cy="21" r="1"/>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                      </svg>
+                    )}
+                    {site.icon === "layout-dashboard" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform -rotate-1">
+                        <rect width="7" height="9" x="3" y="3" rx="1"/>
+                        <rect width="7" height="5" x="14" y="3" rx="1"/>
+                        <rect width="7" height="9" x="14" y="12" rx="1"/>
+                        <rect width="7" height="5" x="3" y="16" rx="1"/>
+                      </svg>
+                    )}
+                    {site.icon === "smartphone" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform rotate-1">
+                        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                        <path d="M12 18h.01"/>
+                      </svg>
+                    )}
+                    {site.icon === "table" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform -rotate-2">
+                        <path d="M12 3v18"/>
+                        <rect width="18" height="18" x="3" y="3" rx="2"/>
+                        <path d="M3 9h18"/>
+                        <path d="M3 15h18"/>
+                      </svg>
+                    )}
+                    {site.icon === "music" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 transform rotate-2">
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3"/>
+                        <circle cx="18" cy="16" r="3"/>
+                      </svg>
+                    )}
+                    <h2 className="text-2xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>{site.name}</h2>
+                  </div>
+                  <p className="text-lg">{site.description}</p>
+                  <div className="mt-auto pt-4 flex justify-end">
+                    <span className="inline-block px-3 py-1 border-2 border-black bg-white rounded-md transform rotate-1 text-sm font-bold">
+                      View Demo
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </SketchCard>
+              </SketchCard>
+            )}
           </Link>
         ))}
       </div>
