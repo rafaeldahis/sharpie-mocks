@@ -84,7 +84,7 @@ const SharpieShop = () => {
     : products.filter(product => product.category === selectedCategory);
 
   return (
-    <div className="bg-[#FFCF8B] min-h-screen p-4">
+    <div className="bg-white min-h-screen p-4">
       <div className="container mx-auto">
         <div className="mb-6 flex items-center justify-between">
           <Link 
@@ -116,7 +116,7 @@ const SharpieShop = () => {
         </div>
 
         <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-white text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
+          <h1 className="text-5xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-[#FFCF8B] text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
             SharpieShop
           </h1>
           <p className="text-xl mt-4 font-comic">An e-commerce platform with a hand-drawn aesthetic</p>
@@ -131,14 +131,14 @@ const SharpieShop = () => {
               </h2>
               <p className="text-lg">Get 20% off all art supplies this week</p>
             </div>
-            <SketchButton className="transform rotate-1 bg-white text-black">
+            <SketchButton className="transform rotate-1 bg-[#FFCF8B] text-black">
               Shop Now
             </SketchButton>
           </div>
         </div>
 
         {/* Filter and search bar */}
-        <div className="mb-8 p-4 bg-white sketch-border transform rotate-0.5">
+        <div className="mb-8 p-4 bg-[#FFCF8B]/10 sketch-border transform rotate-0.5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
               <span className="flex items-center font-bold">
@@ -224,7 +224,7 @@ const SharpieShop = () => {
                   </p>
                   
                   <div className="flex flex-col gap-2">
-                    <SketchButton className="w-full transform rotate-0.5" onClick={addToCart}>
+                    <SketchButton className="w-full transform rotate-0.5 bg-[#FFCF8B]" onClick={addToCart}>
                       Add to Cart
                     </SketchButton>
                     <button className="text-blue-600 hover:text-blue-800 sketch-underline text-sm text-center">
@@ -248,7 +248,7 @@ const SharpieShop = () => {
           ))}
         </div>
 
-        <div className="mt-8 p-4 bg-white sketch-border transform -rotate-0.5">
+        <div className="mt-8 p-4 bg-[#FFCF8B]/10 sketch-border transform -rotate-0.5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 className="font-bold text-lg" style={{ fontFamily: "'Shantell Sans', cursive" }}>Subscribe to our newsletter</h3>
@@ -259,7 +259,7 @@ const SharpieShop = () => {
                 placeholder="Your email address" 
                 className="w-full md:w-64 transform rotate-0.5"
               />
-              <SketchButton className="ml-2 transform -rotate-0.5">
+              <SketchButton className="ml-2 transform -rotate-0.5 bg-[#FFCF8B]">
                 Subscribe
               </SketchButton>
             </div>
