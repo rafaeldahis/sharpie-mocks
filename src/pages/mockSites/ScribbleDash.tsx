@@ -1,211 +1,223 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search, Table, UserPlus, Filter, Download, ChevronDown } from "lucide-react";
-import { SketchCard, SketchButton, SketchBadge, SketchInput } from "@/components/marker";
+import { ArrowLeft, Bell, ChevronDown, FileText, Grid, Home, Menu, MessageCircle, Search, Settings, User, Users } from "lucide-react";
+import SketchCard from "@/components/marker/SketchCard";
+import { SketchButton, SketchInput, SketchTable, SketchToggle } from "@/components/marker";
 
 const ScribbleDash = () => {
-  // Mock user data
-  const users = [
-    {
-      id: 1,
-      name: "Alex Johnson",
-      email: "alex@example.com",
-      role: "Admin",
-      status: "Active",
-      lastActive: "2h ago"
-    },
-    {
-      id: 2,
-      name: "Sam Williams",
-      email: "sam@example.com",
-      role: "Editor",
-      status: "Inactive",
-      lastActive: "1d ago"
-    },
-    {
-      id: 3,
-      name: "Jamie Smith",
-      email: "jamie@example.com",
-      role: "Viewer",
-      status: "Active",
-      lastActive: "5m ago"
-    },
-    {
-      id: 4,
-      name: "Casey Brown",
-      email: "casey@example.com",
-      role: "Editor",
-      status: "Active",
-      lastActive: "3h ago"
-    },
-    {
-      id: 5,
-      name: "Taylor Wilson",
-      email: "taylor@example.com",
-      role: "Admin",
-      status: "Active",
-      lastActive: "Just now"
-    }
-  ];
-
   return (
-    <div className="bg-[#BAD7F2] min-h-screen p-4">
-      <div className="container mx-auto">
-        <div className="mb-6 flex items-center">
+    <div className="bg-white min-h-screen flex">
+      {/* Sidebar */}
+      <div className="w-64 border-r-2 border-black p-4 flex flex-col h-screen">
+        <div className="flex items-center mb-8">
           <Link 
             to="/showcase" 
             className="flex items-center gap-1 text-blue-600 hover:text-blue-800 sketch-underline"
           >
             <ArrowLeft size={20} className="transform rotate-1" />
-            Back to Showcase
+            Back
           </Link>
         </div>
-
-        <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold sketch-border inline-block px-6 py-2 transform -rotate-1 bg-white text-black" style={{ fontFamily: "'Shantell Sans', cursive" }}>
-            ScribbleDash
-          </h1>
-          <p className="text-xl mt-4 font-comic">An internal tool with a sketchy interface for managing user data</p>
-        </div>
-
-        {/* Dashboard Layout */}
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Sidebar */}
-          <div className="lg:w-1/4">
-            <SketchCard className="h-full bg-white border-2 border-black p-0">
-              <div className="p-4 border-b-2 border-black">
-                <h2 className="text-xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
-                  Dashboard
-                </h2>
-              </div>
-              <div className="p-0">
-                {["Users", "Teams", "Projects", "Settings", "Reports"].map((item, i) => (
-                  <div 
-                    key={i} 
-                    className={`px-4 py-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer transition-colors ${i === 0 ? 'bg-gray-100' : ''}`}
-                    style={{ transform: i === 0 ? "rotate(-0.5deg)" : "rotate(0.3deg)" }}
-                  >
-                    <span className={i === 0 ? "font-bold" : ""}>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </SketchCard>
-          </div>
-
-          {/* Main Content */}
-          <div className="lg:w-3/4">
-            <SketchCard className="h-full bg-white border-2 border-black">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
-                  User Management
-                </h2>
-                <SketchButton className="flex items-center gap-1 transform rotate-0.5">
-                  <UserPlus size={16} />
-                  Add User
-                </SketchButton>
-              </div>
-
-              {/* Search and Filters */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <div className="relative flex-grow">
-                  <SketchInput 
-                    placeholder="Search users..." 
-                    className="pl-10 w-full"
-                  />
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2" size={18} />
-                </div>
-                <div className="flex gap-2">
-                  <button className="flex items-center gap-1 px-3 py-1 border-2 border-black rounded-md transform rotate-0.5 bg-white">
-                    <Filter size={16} />
-                    Filter
-                    <ChevronDown size={14} />
-                  </button>
-                  <button className="flex items-center gap-1 px-3 py-1 border-2 border-black rounded-md transform -rotate-0.5 bg-white">
-                    <Download size={16} />
-                    Export
-                  </button>
-                </div>
-              </div>
-
-              {/* Table */}
-              <div className="overflow-x-auto border-2 border-black transform rotate-0.5">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-100">
-                    <tr>
-                      <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider transform -rotate-0.5">
-                        Name
-                      </th>
-                      <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider transform rotate-0.5">
-                        Email
-                      </th>
-                      <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider transform -rotate-0.5">
-                        Role
-                      </th>
-                      <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider transform rotate-0.5">
-                        Status
-                      </th>
-                      <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider transform -rotate-0.5">
-                        Last Active
-                      </th>
-                      <th className="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider transform rotate-0.5">
-                        Actions
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {users.map((user) => (
-                      <tr key={user.id} className="hover:bg-gray-50">
-                        <td className="px-4 py-3">
-                          {user.name}
-                        </td>
-                        <td className="px-4 py-3 text-sm text-gray-500">
-                          {user.email}
-                        </td>
-                        <td className="px-4 py-3">
-                          <SketchBadge 
-                            variant={user.role === "Admin" ? "primary" : user.role === "Editor" ? "success" : "default"}
-                            className="text-xs"
-                          >
-                            {user.role}
-                          </SketchBadge>
-                        </td>
-                        <td className="px-4 py-3">
-                          <span className={`inline-block w-2 h-2 rounded-full mr-2 ${user.status === "Active" ? "bg-green-500" : "bg-gray-300"}`}></span>
-                          <span className="text-sm">{user.status}</span>
-                        </td>
-                        <td className="px-4 py-3 text-sm text-gray-500">
-                          {user.lastActive}
-                        </td>
-                        <td className="px-4 py-3 text-right space-x-2">
-                          <button className="text-blue-500 hover:text-blue-700">Edit</button>
-                          <button className="text-red-500 hover:text-red-700">Delete</button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Pagination */}
-              <div className="flex justify-between items-center mt-6">
-                <div className="text-sm text-gray-500">
-                  Showing 5 of 24 users
-                </div>
-                <div className="flex gap-2">
-                  {[1, 2, 3, 4, 5].map((page, i) => (
-                    <button 
-                      key={i}
-                      className={`w-8 h-8 flex items-center justify-center border-2 border-black rounded-md transform ${i === 0 ? 'bg-blue-500 text-white rotate-1' : 'bg-white -rotate-0.5'}`}
-                    >
-                      {page}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </SketchCard>
+        
+        <h1 className="text-2xl font-bold mb-8 transform -rotate-1" style={{ fontFamily: "'Shantell Sans', cursive" }}>
+          ScribbleDash
+        </h1>
+        
+        <nav className="flex-1">
+          <ul className="space-y-2">
+            <li className="transform rotate-0.5">
+              <a href="#" className="flex items-center gap-2 p-2 bg-[#BAD7F2] rounded-md border-2 border-black">
+                <Home size={16} />
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li className="transform -rotate-0.5">
+              <a href="#" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-md">
+                <Users size={16} />
+                <span>Team</span>
+              </a>
+            </li>
+            <li className="transform rotate-0.3">
+              <a href="#" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-md">
+                <FileText size={16} />
+                <span>Documents</span>
+              </a>
+            </li>
+            <li className="transform -rotate-0.2">
+              <a href="#" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-md">
+                <MessageCircle size={16} />
+                <span>Messages</span>
+              </a>
+            </li>
+            <li className="transform rotate-0.4">
+              <a href="#" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-md">
+                <Settings size={16} />
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        
+        <div className="border-t-2 border-dashed border-black pt-4">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full border-2 border-black flex items-center justify-center bg-[#BAD7F2]">
+              <User size={14} />
+            </div>
+            <div>
+              <p className="text-sm font-bold">User Name</p>
+              <p className="text-xs">Admin</p>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 p-4 overflow-auto">
+        {/* Top Bar */}
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-bold" style={{ fontFamily: "'Shantell Sans', cursive" }}>
+            Dashboard
+          </h2>
+          
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <SketchInput
+                placeholder="Search..."
+                className="w-40 md:w-64"
+              />
+              <Search size={16} className="absolute right-3 top-1/2 transform -translate-y-1/2" />
+            </div>
+            
+            <button className="relative">
+              <Bell size={20} />
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-white text-xs flex items-center justify-center">
+                3
+              </span>
+            </button>
+            
+            <button className="p-2 border-2 border-black rounded-md">
+              <Menu size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <SketchCard className="transform rotate-0.5 bg-[#BAD7F2]/10">
+            <div className="p-4">
+              <h3 className="text-lg font-bold mb-2">Total Users</h3>
+              <p className="text-3xl font-bold">1,284</p>
+              <p className="text-sm text-green-600">↑ 12% from last month</p>
+            </div>
+          </SketchCard>
+          
+          <SketchCard className="transform -rotate-0.5 bg-[#BAD7F2]/10">
+            <div className="p-4">
+              <h3 className="text-lg font-bold mb-2">Active Projects</h3>
+              <p className="text-3xl font-bold">32</p>
+              <p className="text-sm text-red-600">↓ 3% from last month</p>
+            </div>
+          </SketchCard>
+          
+          <SketchCard className="transform rotate-0.3 bg-[#BAD7F2]/10">
+            <div className="p-4">
+              <h3 className="text-lg font-bold mb-2">Completion Rate</h3>
+              <p className="text-3xl font-bold">78%</p>
+              <p className="text-sm text-green-600">↑ 5% from last month</p>
+            </div>
+          </SketchCard>
+        </div>
+
+        {/* Table Section */}
+        <SketchCard className="mb-8 transform -rotate-0.3">
+          <div className="p-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold">Recent Projects</h3>
+              <SketchButton className="text-sm bg-[#BAD7F2] text-black transform rotate-0.5">
+                View All
+              </SketchButton>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <SketchTable>
+                <thead>
+                  <tr>
+                    <th>Project Name</th>
+                    <th>Status</th>
+                    <th>Team</th>
+                    <th>Deadline</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Website Redesign</td>
+                    <td>
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">
+                        Completed
+                      </span>
+                    </td>
+                    <td>3 members</td>
+                    <td>May 15, 2025</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile App Development</td>
+                    <td>
+                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">
+                        In Progress
+                      </span>
+                    </td>
+                    <td>5 members</td>
+                    <td>June 22, 2025</td>
+                  </tr>
+                  <tr>
+                    <td>Brand Strategy</td>
+                    <td>
+                      <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs">
+                        Pending
+                      </span>
+                    </td>
+                    <td>2 members</td>
+                    <td>July 10, 2025</td>
+                  </tr>
+                </tbody>
+              </SketchTable>
+            </div>
+          </div>
+        </SketchCard>
+
+        {/* Settings Card */}
+        <SketchCard className="transform rotate-0.5">
+          <div className="p-4">
+            <h3 className="text-lg font-bold mb-4">Quick Settings</h3>
+            
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <label className="flex items-center">
+                  <Grid size={16} className="mr-2" />
+                  <span>Compact View</span>
+                </label>
+                <SketchToggle />
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <label className="flex items-center">
+                  <Bell size={16} className="mr-2" />
+                  <span>Notifications</span>
+                </label>
+                <SketchToggle className="active" />
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <label className="flex items-center">
+                  <Users size={16} className="mr-2" />
+                  <span>Team Updates</span>
+                </label>
+                <SketchToggle className="active" />
+              </div>
+            </div>
+          </div>
+        </SketchCard>
       </div>
     </div>
   );
