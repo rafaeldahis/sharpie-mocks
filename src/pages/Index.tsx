@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MarkerStyleDemo from "@/components/MarkerStyleDemo";
@@ -189,7 +188,7 @@ const Index = () => {
         
         <h2 className="text-2xl font-bold marker-heading mb-4">Using with AI Prototyping Tools</h2>
         <div className="space-y-4">
-          <div className="space-y-4 marker-text">
+          <div className="space-y-4 marker-text text-lg">
             <div className="p-3 bg-white rounded-md border border-gray-200 transform rotate-0.4deg">
               <div className="flex items-center gap-2">
                 <Download 
