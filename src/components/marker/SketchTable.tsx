@@ -26,8 +26,8 @@ interface SketchTableProps {
 }
 
 const SketchTable: React.FC<SketchTableProps> = ({ 
-  headers, 
-  rows, 
+  headers = [], 
+  rows = [], 
   className = '',
   showStatus = false,
   showActions = false

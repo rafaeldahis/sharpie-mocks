@@ -6,6 +6,29 @@ import SketchCard from "@/components/marker/SketchCard";
 import { SketchButton, SketchInput, SketchTable, SketchToggle } from "@/components/marker";
 
 const ScribbleDash = () => {
+  // Define the table data
+  const projectTableHeaders = ["Project Name", "Status", "Team", "Deadline"];
+  const projectTableRows = [
+    ["Website Redesign", 
+      <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">
+        Completed
+      </span>, 
+      "3 members", 
+      "May 15, 2025"],
+    ["Mobile App Development", 
+      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">
+        In Progress
+      </span>, 
+      "5 members", 
+      "June 22, 2025"],
+    ["Brand Strategy", 
+      <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs">
+        Pending
+      </span>, 
+      "2 members", 
+      "July 10, 2025"]
+  ];
+  
   return (
     <div className="bg-white min-h-screen flex">
       {/* Sidebar */}
@@ -140,48 +163,10 @@ const ScribbleDash = () => {
             </div>
             
             <div className="overflow-x-auto">
-              <SketchTable>
-                <thead>
-                  <tr>
-                    <th>Project Name</th>
-                    <th>Status</th>
-                    <th>Team</th>
-                    <th>Deadline</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Website Redesign</td>
-                    <td>
-                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">
-                        Completed
-                      </span>
-                    </td>
-                    <td>3 members</td>
-                    <td>May 15, 2025</td>
-                  </tr>
-                  <tr>
-                    <td>Mobile App Development</td>
-                    <td>
-                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">
-                        In Progress
-                      </span>
-                    </td>
-                    <td>5 members</td>
-                    <td>June 22, 2025</td>
-                  </tr>
-                  <tr>
-                    <td>Brand Strategy</td>
-                    <td>
-                      <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs">
-                        Pending
-                      </span>
-                    </td>
-                    <td>2 members</td>
-                    <td>July 10, 2025</td>
-                  </tr>
-                </tbody>
-              </SketchTable>
+              <SketchTable 
+                headers={projectTableHeaders} 
+                rows={projectTableRows} 
+              />
             </div>
           </div>
         </SketchCard>

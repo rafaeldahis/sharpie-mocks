@@ -118,15 +118,15 @@ const Random = () => {
           <div className="space-y-4">
             <div>
               <span className="block mb-2">25% Complete</span>
-              <SketchProgressBar progress={25} color="#9b87f5" />
+              <SketchProgressBar value={25} color="#9b87f5" />
             </div>
             <div>
               <span className="block mb-2">50% Complete</span>
-              <SketchProgressBar progress={50} color="#9b87f5" />
+              <SketchProgressBar value={50} color="#9b87f5" />
             </div>
             <div>
               <span className="block mb-2">75% Complete</span>
-              <SketchProgressBar progress={75} color="#9b87f5" />
+              <SketchProgressBar value={75} color="#9b87f5" />
             </div>
           </div>
         </div>

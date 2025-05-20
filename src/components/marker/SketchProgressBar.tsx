@@ -6,15 +6,20 @@ interface SketchProgressBarProps {
   max?: number;
   color?: string;
   className?: string;
+  // Add the 'progress' property as an alias for 'value' for backward compatibility
+  progress?: number;
 }
 
 const SketchProgressBar: React.FC<SketchProgressBarProps> = ({
-  value,
+  value = 0,
+  progress, // Add this for backward compatibility
   max = 100,
   color = '#2179FF',
   className = '',
 }) => {
-  const percentage = Math.min(100, Math.max(0, (value / max) * 100));
+  // Use progress prop if value is not provided (for backward compatibility)
+  const actualValue = progress !== undefined ? progress : value;
+  const percentage = Math.min(100, Math.max(0, (actualValue / max) * 100));
   
   return (
     <div className={`sketch-progress-container h-5 bg-gray-200 rounded overflow-hidden relative ${className}`} style={{
